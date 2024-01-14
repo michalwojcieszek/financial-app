@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "userData": {
+        "name": "Michal",
+        "password": "abcde",
+        "monthlyLimit": 2000,
+        "monthlyIncome": 3000
+      },
+      "expenses": {
+        "january": {
+          "entertainment": [],
+          "food": []
+        }
+      }
+    },
+    {
+      "id": "4a41",
+      "userData": {
+        "name": "Jonas",
+        "password": "abcde",
+        "monthlyLimit": "500",
+        "monthlyIncome": "2000"
+      },
+      "expenses": {
+        "january": {
+          "entertainment": [],
+          "food": []
+        }
+      }
+    },
+    {
+      "id": "0a74",
+      "userData": {
+        "name": "Jonas",
+        "password": "abcde",
+        "monthlyLimit": "500",
+        "monthlyIncome": "2000"
+      },
+      "expenses": {
+        "january": {
+          "entertainment": [],
+          "food": []
+        }
+      }
+    }
+  ]
+}

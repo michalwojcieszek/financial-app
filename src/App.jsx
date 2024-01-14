@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import GlobalStyles from "./styles/GlobalStyles";
 import AppLayout from "./AppLayout";
 import { AppProvider } from "./contexts/AppContext";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route element={<AppLayout />}>
               <Route index element={<Homepage />} />
               <Route path="login" element={<Login />} />
+              <Route path="users/:id" element={<Dashboard />} />
             </Route>
           </Routes>
         </BrowserRouter>

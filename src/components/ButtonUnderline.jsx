@@ -1,20 +1,23 @@
 import styled from "styled-components";
 const StyledButtonUnderline = styled.button`
   border: none;
-  text-decoration: underline;
+  background: none;
   color: var(--color-blue-500);
   cursor: pointer;
-  font-size: 2rem;
-  padding: 1rem 2rem;
+  font-size: 1.6rem;
   transition: background 1s;
+  border-bottom: 1px solid var(--color-blue-500);
+  margin-bottom: 1rem;
 
   &:hover {
-    background: var(--gradient-hover);
+    border-bottom: none;
   }
 `;
 
-function ButtonUnderline({ children }) {
-  return <StyledButtonUnderline>{children}</StyledButtonUnderline>;
+function ButtonUnderline({ children, onClick }) {
+  return (
+    <StyledButtonUnderline onClick={onClick}>{children}</StyledButtonUnderline>
+  );
 }
 
 export default ButtonUnderline;

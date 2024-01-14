@@ -9,14 +9,17 @@ const StyledButtonPrimary = styled.button`
   font-size: 2rem;
   padding: 1rem 2rem;
   transition: background 1s;
+  letter-spacing: 1px;
 
   &:hover {
     background: var(--gradient-hover);
   }
 `;
 
-function Button({ children }) {
-  return <StyledButtonPrimary>{children}</StyledButtonPrimary>;
+function Button({ children, onClick }) {
+  return (
+    <StyledButtonPrimary onClick={onClick}>{children}</StyledButtonPrimary>
+  );
 }
 
 export default Button;

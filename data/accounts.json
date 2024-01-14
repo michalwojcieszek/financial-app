@@ -44,6 +44,96 @@
           "food": []
         }
       }
+    },
+    {
+      "id": "a5a6",
+      "userData": {
+        "name": "Patrick",
+        "password": "abcde",
+        "monthlyLimit": "4",
+        "monthlyIncome": "123"
+      },
+      "expenses": {
+        "january": {
+          "entertainment": [],
+          "food": []
+        }
+      }
+    },
+    {
+      "id": "8489",
+      "userData": {
+        "name": "Patrick",
+        "password": "abcde",
+        "monthlyLimit": "4",
+        "monthlyIncome": "123"
+      },
+      "expenses": {
+        "january": {
+          "entertainment": [],
+          "food": []
+        }
+      }
+    },
+    {
+      "id": "6148",
+      "userData": {
+        "name": "Patrick",
+        "password": "abcde",
+        "monthlyLimit": "4",
+        "monthlyIncome": "123"
+      },
+      "expenses": {
+        "january": {
+          "entertainment": [],
+          "food": []
+        }
+      }
+    },
+    {
+      "id": "9114",
+      "userData": {
+        "name": "Patrick",
+        "password": "abcde",
+        "monthlyLimit": "4",
+        "monthlyIncome": "123"
+      },
+      "expenses": {
+        "january": {
+          "entertainment": [],
+          "food": []
+        }
+      }
+    },
+    {
+      "id": "7a14",
+      "userData": {
+        "name": "Patrick",
+        "password": "",
+        "monthlyLimit": "",
+        "monthlyIncome": ""
+      },
+      "expenses": {
+        "january": {
+          "entertainment": [],
+          "food": []
+        }
+      }
+    },
+    {
+      "id": "3675",
+      "userData": {
+        "name": "Patrick",
+        "password": "",
+        "monthlyLimit": "",
+        "monthlyIncome": ""
+      },
+      "expenses": {
+        "january": {
+          "entertainment": [],
+          "food": []
+        }
+      }
     }
   ]
 }

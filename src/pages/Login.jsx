@@ -1,9 +1,18 @@
 import Button from "../components/ButtonPrimary";
 import ButtonUnderline from "../components/ButtonUnderline";
+import H2 from "../components/H2";
 import { useApp } from "../contexts/AppContext";
-import { FormDiv, FormRow, Input } from "./../login/loginStyles";
+import Input from "../components/Input";
+import FormRow from "../components/FormRow";
+import { getData, postData } from "../hooks/apiFetching";
+import { useNavigate } from "react-router-dom";
+import userTemplate from "../hooks/userTemplate";
+import { useState } from "react";
+import Spinner from "../components/Spinner";
 
 function Login() {
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
   const {
     ifUserHaveAccount,
     setIfUserHaveAccount,
@@ -17,31 +26,78 @@ function Login() {
     setIncome,
   } = useApp();
 
+  function clearInputs() {
+    setName("");
+    setPassword("");
+    setIncome("");
+    setLimit("");
+  }
+
+  async function handleSignUp() {
+    if (!name || !password || !income || !limit) {
+      console.log(`Fill all the inputs`);
+      return;
+    }
+
+    //Add validation - username cannot be repeated!!!
+    setIsLoading(true);
+    const allUsers = await getData();
+    setIsLoading(false);
+
+    console.log(allUsers);
+    if (allUsers.some((user) => user.userData.name === name)) {
+      console.log(
+        `User with this name already exists. Please enter an unique name`
+      );
+      return;
+    }
+
+    //Adding new user
+    const newUser = {
+      ...userTemplate,
+      userData: {
+        ...userTemplate.userData,
+        name: name,
+        password: password,
+        monthlyIncome: income,
+        monthlyLimit: limit,
+      },
+    };
+    const newUserid = await postData(newUser);
+    navigate(`/users/${newUserid}`);
+    //clean inputs
+    clearInputs();
+  }
+
+  function handleLogIn() {}
+
+  if (isLoading) return <Spinner />;
+
   return (
     <div>
       {ifUserHaveAccount ? (
         <>
-          <p>LOGGING IN</p>
+          <H2>LOGGING IN</H2>
           <p>
             If you do not have your own account click here to sign up &darr;
           </p>
-          <button onClick={() => setIfUserHaveAccount(false)}>
-            go to sign up
-          </button>
+          <ButtonUnderline onClick={() => setIfUserHaveAccount(false)}>
+            GO TO SIGN UP
+          </ButtonUnderline>
         </>
       ) : (
         <>
-          <p>SIGNING UP</p>
+          <H2>SIGNING UP</H2>
           <p>
             If you already have your own account click here to log in &darr;
           </p>
           <ButtonUnderline onClick={() => setIfUserHaveAccount(true)}>
-            go to log in
+            GO TO LOG IN
           </ButtonUnderline>
         </>
       )}
       <>
-        <FormDiv>
+        <div>
           <FormRow>
             <label>Name</label>
             <Input
@@ -53,7 +109,7 @@ function Login() {
           <FormRow>
             <label>Password</label>
             <Input
-              type="text"
+              type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -80,13 +136,11 @@ function Login() {
           ) : (
             ""
           )}
-        </FormDiv>
+        </div>
         {ifUserHaveAccount ? (
-          <Button variation="primary" size="large">
-            LOG IN
-          </Button>
+          <Button onClick={handleLogIn}>LOG IN</Button>
         ) : (
-          <Button>SIGN UP</Button>
+          <Button onClick={handleSignUp}>SIGN UP</Button>
         )}
       </>
     </div>

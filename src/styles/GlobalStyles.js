@@ -43,5 +43,13 @@ body {
   font-size: 1.6rem;
 }
 
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-blue-400);
+  outline-offset: -1px;
+}
+
 `;
 export default GlobalStyles;

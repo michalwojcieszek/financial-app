@@ -16,7 +16,7 @@ function Header() {
   return (
     <>
       <StyledHeader>
-        <StyledH1>Header</StyledH1>
+        <StyledH1>💰 Financial App - track your budget</StyledH1>
       </StyledHeader>
     </>
   );

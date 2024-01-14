@@ -4,13 +4,13 @@ import styled from "styled-components";
 
 const StyledLayout = styled.div`
   display: grid;
-  grid-template-rows: 10rem 1fr;
+  grid-template-rows: 9rem 1fr;
 `;
 
 const StyledDiv = styled.div`
   max-width: 48rem;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 4rem;
 `;
 
 const StyledMain = styled.main`

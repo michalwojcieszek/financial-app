@@ -4,6 +4,9 @@ const GlobalStyles = createGlobalStyle`
 :root {
 /* COLORS https://yeun.github.io/open-color/*/
     /* Grey TEXT color */
+    --color-grey-100: ##f1f3f5;
+    --color-grey-200: #e9ecef;
+    --color-grey-300: #dee2e6;
     --color-grey-700: #212529;
 
     /* Blue */

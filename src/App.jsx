@@ -1,10 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import GlobalStyles from "./styles/GlobalStyles";
 import AppLayout from "./AppLayout";
 import { AppProvider } from "./contexts/AppContext";
 import Dashboard from "./pages/Dashboard";
+import { Toaster } from "react-hot-toast";
+import PageNotFound from "./pages/PageNotFound";
+import Month from "./pages/Month";
 
 function App() {
   return (
@@ -14,12 +16,33 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route element={<AppLayout />}>
-              <Route index element={<Homepage />} />
-              <Route path="login" element={<Login />} />
+              <Route index element={<Login />} />
               <Route path="users/:id" element={<Dashboard />} />
             </Route>
+            <Route element={<AppLayout />}>
+              <Route path="users/:id/:month" element={<Month />} />
+            </Route>
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
+        <Toaster
+          position="top-center"
+          gutter={12}
+          containerStyle={{ margin: "8px" }}
+          toastOption={{
+            success: {
+              duration: 3000,
+            },
+            error: {
+              duration: 5000,
+            },
+            style: {
+              fontSize: "16px",
+              maxWidth: "500px",
+              padding: "16px 24px",
+            },
+          }}
+        />
       </AppProvider>
     </>
   );

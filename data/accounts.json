@@ -31,12 +31,12 @@
       }
     },
     {
-      "id": "0a74",
+      "id": "962e",
       "userData": {
-        "name": "Jonas",
-        "password": "abcde",
-        "monthlyLimit": "500",
-        "monthlyIncome": "2000"
+        "name": "John",
+        "password": "1234",
+        "monthlyLimit": "1234",
+        "monthlyIncome": "1234"
       },
       "expenses": {
         "january": {
@@ -46,12 +46,12 @@
       }
     },
     {
-      "id": "a5a6",
+      "id": "ca7d",
       "userData": {
-        "name": "Patrick",
-        "password": "abcde",
-        "monthlyLimit": "4",
-        "monthlyIncome": "123"
+        "name": "1",
+        "password": "a",
+        "monthlyLimit": "1",
+        "monthlyIncome": "1"
       },
       "expenses": {
         "january": {
@@ -61,72 +61,12 @@
       }
     },
     {
-      "id": "8489",
+      "id": "d492",
       "userData": {
-        "name": "Patrick",
-        "password": "abcde",
-        "monthlyLimit": "4",
-        "monthlyIncome": "123"
-      },
-      "expenses": {
-        "january": {
-          "entertainment": [],
-          "food": []
-        }
-      }
-    },
-    {
-      "id": "6148",
-      "userData": {
-        "name": "Patrick",
-        "password": "abcde",
-        "monthlyLimit": "4",
-        "monthlyIncome": "123"
-      },
-      "expenses": {
-        "january": {
-          "entertainment": [],
-          "food": []
-        }
-      }
-    },
-    {
-      "id": "9114",
-      "userData": {
-        "name": "Patrick",
-        "password": "abcde",
-        "monthlyLimit": "4",
-        "monthlyIncome": "123"
-      },
-      "expenses": {
-        "january": {
-          "entertainment": [],
-          "food": []
-        }
-      }
-    },
-    {
-      "id": "7a14",
-      "userData": {
-        "name": "Patrick",
-        "password": "",
-        "monthlyLimit": "",
-        "monthlyIncome": ""
-      },
-      "expenses": {
-        "january": {
-          "entertainment": [],
-          "food": []
-        }
-      }
-    },
-    {
-      "id": "3675",
-      "userData": {
-        "name": "Patrick",
-        "password": "",
-        "monthlyLimit": "",
-        "monthlyIncome": ""
+        "name": "abc",
+        "password": "abc",
+        "monthlyLimit": "1",
+        "monthlyIncome": "1"
       },
       "expenses": {
         "january": {

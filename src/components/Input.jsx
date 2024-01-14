@@ -4,7 +4,8 @@ const StyledInput = styled.input`
   border: 1px solid gray;
   height: 3rem;
   border-radius: 10px;
-  padding: 0.8rem 1.2rem;
+  padding: 1.8rem 1.2rem;
+  font-size: 1.6rem;
 `;
 
 function Input({ type, value, onChange }) {

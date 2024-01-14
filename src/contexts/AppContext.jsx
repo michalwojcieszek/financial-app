@@ -3,8 +3,10 @@ import { createContext, useContext, useState } from "react";
 const AppContext = createContext();
 
 function AppProvider({ children }) {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   const [ifUserHaveAccount, setIfUserHaveAccount] = useState(false);
-  const [name, setName] = useState("Patrick");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [limit, setLimit] = useState("");
   const [income, setIncome] = useState("");
@@ -30,6 +32,8 @@ function AppProvider({ children }) {
         setLimit,
         income,
         setIncome,
+        isAuthenticated,
+        setIsAuthenticated,
       }}
     >
       {children}

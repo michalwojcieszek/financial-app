@@ -1,6 +1,7 @@
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { useApp } from "../contexts/AppContext";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const StyledHeader = styled.header`
   background: var(--gradient-default);
@@ -34,7 +35,7 @@ const LogOutButton = styled.button`
   cursor: pointer;
   border-radius: 10px;
   transition: background 1s;
-  padding: 0.5rem 0.25rem;
+  padding: 0.5rem 0.75rem;
   font-size: 1.5rem;
 
   &:hover {
@@ -42,22 +43,31 @@ const LogOutButton = styled.button`
   }
 `;
 
-const HelloParagraph = styled.p`
-  color: white;
-`;
+// const HelloParagraph = styled.p`
+//   color: white;
+// `;
 
 function Header() {
-  const { id: userId } = useParams();
+  const { setIsAuthenticated, isAuthenticated } = useApp();
+  const navigate = useNavigate();
 
-  useEffect(function () {}, []);
+  function logOut() {
+    setIsAuthenticated(false);
+    navigate("/");
+    toast.success("You have successfully logged out");
+  }
 
   return (
     <>
       <StyledHeader>
         <StyledH1>💰 Your financial app.</StyledH1>
         <UserInfo>
-          <HelloParagraph>👋 Hello Jonas </HelloParagraph>
-          <LogOutButton>LOG OUT</LogOutButton>
+          {/* <HelloParagraph>👋 Hello Jonas </HelloParagraph> */}
+          {isAuthenticated ? (
+            <LogOutButton onClick={logOut}>LOG OUT</LogOutButton>
+          ) : (
+            ""
+          )}{" "}
         </UserInfo>
       </StyledHeader>
     </>

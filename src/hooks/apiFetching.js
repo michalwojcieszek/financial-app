@@ -18,6 +18,13 @@ export async function getData() {
   return data;
 }
 
+export async function getUserDataLoader(id) {
+  const res = await fetch(URL_JSON_SERVER);
+  const data = await res.json();
+  const userData = data.find((user) => user.id === id);
+  return userData;
+}
+
 // const URL_JSON_SERVER = "http://localhost:8000/users";
 
 // const userTemplate = {

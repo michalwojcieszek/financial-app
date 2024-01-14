@@ -10,7 +10,7 @@ import FormRow from "../components/FormRow";
 import { getData, postData } from "../hooks/apiFetching";
 import { useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Spinner from "../components/Spinner";
 
 function Login() {

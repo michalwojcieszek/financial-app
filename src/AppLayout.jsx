@@ -11,6 +11,7 @@ const StyledDiv = styled.div`
   max-width: 48rem;
   margin: 0 auto;
   margin-top: 4rem;
+  padding: 0 3rem;
 `;
 
 const StyledMain = styled.main`

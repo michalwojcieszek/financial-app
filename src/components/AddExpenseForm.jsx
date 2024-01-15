@@ -6,8 +6,10 @@ import ButtonSecondary from "./ButtonSecondary";
 import { HiOutlineCheckCircle } from "react-icons/hi2";
 import ButtonWithEmojiDiv from "./ButtonWithEmojiDiv";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { useFetcher, useParams } from "react-router-dom";
 import { addMonthlyExpense } from "../hooks/apiHandlers";
+import { useEffect } from "react";
+import Spinner from "./Spinner";
 
 const ExpenseFormRow = styled.div`
   display: flex;
@@ -21,9 +23,24 @@ const ExpenseForm = styled.form`
 `;
 
 function AddExpenseForm() {
+  const fetcher = useFetcher();
   const { id, month } = useParams();
-  const { category, setCategory, cost, setCost, description, setDescription } =
-    useApp();
+  const {
+    category,
+    setCategory,
+    cost,
+    setCost,
+    description,
+    setDescription,
+    setIsLoading,
+    isLoading,
+  } = useApp();
+
+  function resetAddExpenseFields() {
+    setCategory("");
+    setCost("");
+    setDescription("");
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -45,9 +62,17 @@ function AddExpenseForm() {
       cost,
       description,
     };
+    setIsLoading(true);
     const newMonthlyExpenses = await addMonthlyExpense(id, month, newExpense);
     console.log(newMonthlyExpenses);
+    resetAddExpenseFields();
+    // fetcher.load(`/users/${id}/${month}`);
+    fetcher.load("/users/:id/:month");
+    setIsLoading(false);
+    toast.success("Expense has been added successfully");
   }
+
+  if (isLoading) return <Spinner />;
 
   return (
     <Section>

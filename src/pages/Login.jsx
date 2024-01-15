@@ -9,12 +9,10 @@ import FormRow from "../components/FormRow";
 import { getData, postData } from "../hooks/apiFetching";
 import { useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
-import { useState } from "react";
 import Spinner from "../components/Spinner";
 import Section from "../components/Section";
 
 function Login() {
-  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const {
     ifUserHaveAccount,
@@ -28,6 +26,8 @@ function Login() {
     income,
     setIncome,
     setIsAuthenticated,
+    isLoading,
+    setIsLoading,
   } = useApp();
 
   function clearInputs() {

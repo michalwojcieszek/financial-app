@@ -155,55 +155,63 @@
             "description": "3"
           }
         ],
-        "february": [],
-        "march": [],
-        "april": [],
-        "may": [
+        "february": [
           {
-            "expenseId": "2024-01-15T15:42:17.499Z",
+            "expenseId": "2024-01-15T17:32:30.717Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:32"
+            },
             "category": "food",
+            "cost": "3",
+            "description": "3"
+          },
+          {
+            "expenseId": "2024-01-15T17:34:23.486Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:34"
+            },
+            "category": "education",
+            "cost": "2",
+            "description": "2"
+          }
+        ],
+        "march": [
+          {
+            "expenseId": "2024-01-15T17:30:12.239Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:30"
+            },
+            "category": "food",
+            "cost": "3",
+            "description": "3"
+          }
+        ],
+        "april": [
+          {
+            "expenseId": "2024-01-15T17:34:46.539Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:34"
+            },
+            "category": "education",
             "cost": "2",
             "description": "2"
           },
           {
-            "expenseId": "2024-01-15T15:42:47.651Z",
-            "category": "party",
-            "cost": "3",
-            "description": "2"
-          },
-          {
-            "expenseId": "2024-01-15T15:45:13.745Z",
-            "category": "education",
+            "expenseId": "2024-01-15T17:35:17.388Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:35"
+            },
+            "category": "insurance",
             "cost": "3",
             "description": "3"
-          },
-          {
-            "expenseId": "15.01.2024",
-            "category": "education",
-            "cost": "3",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-15T15:49:34.266Z",
-            "date": "16:49:34",
-            "category": "subscription",
-            "cost": "3",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-15T15:50:55.754Z",
-            "date": "15.01.2024 - 16:50:55",
-            "category": "doctors",
-            "cost": "2",
-            "description": "2"
-          },
-          {
-            "expenseId": "2024-01-15T15:53:05.985Z",
-            "addedOn": "15.01.2024 - 16:53",
-            "category": "gift",
-            "cost": "3",
-            "description": "3"
-          },
+          }
+        ],
+        "may": [
           {
             "expenseId": "2024-01-15T15:57:17.803Z",
             "addedOn": {
@@ -213,12 +221,144 @@
             "category": "medicines",
             "cost": "3",
             "description": "3"
+          },
+          {
+            "expenseId": "2024-01-15T16:37:57.819Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "17:37"
+            },
+            "category": "insurance",
+            "cost": "1",
+            "description": ""
+          },
+          {
+            "expenseId": "2024-01-15T16:59:56.172Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "17:59"
+            },
+            "category": "doctors",
+            "cost": "3",
+            "description": "3"
+          },
+          {
+            "expenseId": "2024-01-15T17:02:53.882Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:02"
+            },
+            "category": "doctors",
+            "cost": "3",
+            "description": "3"
+          },
+          {
+            "expenseId": "2024-01-15T17:03:04.983Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:03"
+            },
+            "category": "doctors",
+            "cost": "3",
+            "description": "3"
+          },
+          {
+            "expenseId": "2024-01-15T17:07:39.853Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:07"
+            },
+            "category": "medicines",
+            "cost": "2",
+            "description": "2"
+          },
+          {
+            "expenseId": "2024-01-15T17:09:39.591Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:09"
+            },
+            "category": "medicines",
+            "cost": "2",
+            "description": "2"
+          },
+          {
+            "expenseId": "2024-01-15T17:26:05.582Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:26"
+            },
+            "category": "medicines",
+            "cost": "3",
+            "description": "3"
+          },
+          {
+            "expenseId": "2024-01-15T17:26:51.620Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:26"
+            },
+            "category": "housing",
+            "cost": "4",
+            "description": "4"
+          },
+          {
+            "expenseId": "2024-01-15T17:37:31.235Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:37"
+            },
+            "category": "education",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "june": [],
-        "july": [],
+        "july": [
+          {
+            "expenseId": "2024-01-15T17:35:47.745Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:35"
+            },
+            "category": "food",
+            "cost": "2",
+            "description": "2"
+          },
+          {
+            "expenseId": "2024-01-15T17:37:23.400Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:37"
+            },
+            "category": "insurance",
+            "cost": "3",
+            "description": "3"
+          }
+        ],
         "august": [],
-        "september": [],
+        "september": [
+          {
+            "expenseId": "2024-01-15T17:38:20.568Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:38"
+            },
+            "category": "fuel",
+            "cost": "3",
+            "description": "3"
+          },
+          {
+            "expenseId": "2024-01-15T17:39:25.100Z",
+            "addedOn": {
+              "date": "15.01.2024",
+              "time": "18:39"
+            },
+            "category": "medicines",
+            "cost": "3",
+            "description": "3"
+          }
+        ],
         "october": [],
         "november": [],
         "december": []

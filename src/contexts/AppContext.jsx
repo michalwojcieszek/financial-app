@@ -3,6 +3,7 @@ import { createContext, useContext, useState } from "react";
 const AppContext = createContext();
 
 function AppProvider({ children }) {
+  const [isLoading, setIsLoading] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   //Login form
@@ -41,6 +42,8 @@ function AppProvider({ children }) {
         setCost,
         description,
         setDescription,
+        isLoading,
+        setIsLoading,
       }}
     >
       {children}

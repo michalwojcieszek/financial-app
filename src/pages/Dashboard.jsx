@@ -20,6 +20,7 @@ function Dashboard() {
     },
     [isAuthenticated, navigate]
   );
+
   //Outlet is Month or Year
   return (
     <StyledDashboardLayoutDiv>

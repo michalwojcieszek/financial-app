@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import ButtonSecondary from "./ButtonSecondary";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useApp } from "../contexts/AppContext";
 
 const StyledSelectionDiv = styled.div`
   display: flex;
@@ -11,6 +12,7 @@ const StyledSelectionDiv = styled.div`
   background-color: var(--color-grey-200);
   border-radius: 10px;
   gap: 1rem;
+  margin-bottom: 2rem;
 `;
 
 const ButtonDiv = styled.div`
@@ -27,10 +29,23 @@ const ButtonDiv = styled.div`
 `;
 
 function Selection() {
+  const { setCategory, setCost, setDescription } = useApp();
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  function clearInputs() {
+    setCategory("");
+    setCost("");
+    setDescription("");
+  }
 
   function changeMonth(month) {
-    console.log(month);
+    clearInputs();
+    if (month === "year") {
+      navigate(`/users/${id}`);
+      return;
+    }
+    navigate(`/users/${id}/${month}`);
   }
 
   return (

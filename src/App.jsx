@@ -7,8 +7,9 @@ import Dashboard from "./pages/Dashboard";
 import { Toaster } from "react-hot-toast";
 import PageNotFound from "./pages/PageNotFound";
 import Month from "./pages/Month";
-import { loader as dashboardLoader } from "./pages/Dashboard";
+import { loader as monthLoader } from "./pages/Month";
 import Settings from "./pages/Settings";
+import Year from "./pages/Year";
 
 //---------------------------------------- MY TRY
 const router = createBrowserRouter([
@@ -20,13 +21,18 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "users/:id",
         element: <Dashboard />,
-        loader: dashboardLoader,
-      },
-      {
-        path: "users/:id/:month",
-        element: <Month />,
+        children: [
+          {
+            path: "users/:id/:month",
+            element: <Month />,
+            loader: monthLoader,
+          },
+          {
+            path: "users/:id",
+            element: <Year />,
+          },
+        ],
       },
       {
         path: "users/:id/settings",

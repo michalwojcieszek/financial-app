@@ -5,20 +5,20 @@ const AppContext = createContext();
 function AppProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  //Login form
   const [ifUserHaveAccount, setIfUserHaveAccount] = useState(false);
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [limit, setLimit] = useState("");
   const [income, setIncome] = useState("");
-  const [selectedMonth, setSelectedMonth] = useState("");
 
-  //   const initialState = {
-  //     ifUserHaveAccount: false,
-  //     name: "",
-  //     password: "",
-  //     limit: "",
-  //     income: "",
-  //   };
+  //MonthSelected
+  // const [selectedMonth, setSelectedMonth] = useState("");
+
+  //ExpenseForm
+  const [category, setCategory] = useState("");
+  const [cost, setCost] = useState("");
+  const [description, setDescription] = useState("");
 
   return (
     <AppContext.Provider
@@ -35,6 +35,12 @@ function AppProvider({ children }) {
         setIncome,
         isAuthenticated,
         setIsAuthenticated,
+        category,
+        setCategory,
+        cost,
+        setCost,
+        description,
+        setDescription,
       }}
     >
       {children}

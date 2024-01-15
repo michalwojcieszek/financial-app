@@ -51,7 +51,7 @@ function App() {
     <>
       <AppProvider>
         <GlobalStyles />
-        <RouterProvider router={router} />;
+        <RouterProvider router={router} />
         <Toaster
           position="top-center"
           gutter={12}

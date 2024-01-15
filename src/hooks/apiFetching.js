@@ -1,4 +1,4 @@
-const URL_JSON_SERVER = "http://localhost:8000/users";
+export const URL_JSON_SERVER = "http://localhost:8000/users";
 
 export async function postData(newUser) {
   const res = await fetch(URL_JSON_SERVER, {
@@ -23,6 +23,12 @@ export async function getUserDataLoader(id) {
   const data = await res.json();
   const userData = data.find((user) => user.id === id);
   return userData;
+}
+
+export async function getMonthlyExpensesFromId(id, month) {
+  const user = await getUserDataLoader(id);
+  const montlyExpenses = user?.expenses?.[month];
+  return montlyExpenses;
 }
 
 // const URL_JSON_SERVER = "http://localhost:8000/users";

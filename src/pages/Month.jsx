@@ -1,13 +1,18 @@
-import { useParams } from "react-router-dom";
 import { getUserDataLoader } from "../hooks/apiFetching";
 import AddExpenseForm from "../components/AddExpenseForm";
+import MonthlyExpenses from "../components/MonthlyExpenses";
+import { useLoaderData, useParams } from "react-router-dom";
 
 function Month() {
+  const user = useLoaderData();
   const { month } = useParams();
+  const expensesThisMonth = user.expenses[month];
+
   return (
-    <div>
+    <>
       <AddExpenseForm />
-    </div>
+      <MonthlyExpenses expensesThisMonth={expensesThisMonth} />
+    </>
   );
 }
 

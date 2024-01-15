@@ -3,7 +3,6 @@ import toast from "react-hot-toast";
 import Button from "../components/ButtonPrimary";
 import ButtonUnderline from "../components/ButtonUnderline";
 import H2 from "../components/H2";
-import FormDiv from "../components/FormDiv";
 import { useApp } from "../contexts/AppContext";
 import Input from "../components/Input";
 import FormRow from "../components/FormRow";
@@ -12,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
 import { useState } from "react";
 import Spinner from "../components/Spinner";
+import Section from "../components/Section";
 
 function Login() {
   const [isLoading, setIsLoading] = useState(false);
@@ -65,10 +65,10 @@ function Login() {
       ...userTemplate,
       userData: {
         ...userTemplate.userData,
-        name: name,
-        password: password,
-        monthlyIncome: income,
-        monthlyLimit: limit,
+        name,
+        password,
+        income,
+        limit,
       },
     };
     const newUserId = await postData(newUser);
@@ -76,6 +76,12 @@ function Login() {
     //clean inputs
     clearInputs();
     setIsAuthenticated(true);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (ifUserHaveAccount) handleLogIn();
+    if (!ifUserHaveAccount) handleSignUp();
   }
 
   async function handleLogIn() {
@@ -116,7 +122,7 @@ function Login() {
   if (isLoading) return <Spinner />;
 
   return (
-    <FormDiv>
+    <Section>
       {ifUserHaveAccount ? (
         <>
           <H2>LOGGING IN</H2>
@@ -138,54 +144,58 @@ function Login() {
           </ButtonUnderline>
         </>
       )}
-      <>
-        <div>
-          <FormRow>
-            <label>Name</label>
-            <Input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </FormRow>
-          <FormRow>
-            <label>Password</label>
-            <Input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </FormRow>
-          {!ifUserHaveAccount ? (
-            <>
-              <FormRow>
-                <label>Monthly income</label>
-                <Input
-                  type="number"
-                  value={income}
-                  onChange={(e) => setIncome(e.target.value)}
-                />
-              </FormRow>
-              <FormRow>
-                <label>Monthly limit of expenditures</label>
-                <Input
-                  type="number"
-                  value={limit}
-                  onChange={(e) => setLimit(e.target.value)}
-                />
-              </FormRow>
-            </>
+      <form onSubmit={handleSubmit}>
+        <>
+          <div>
+            <FormRow>
+              <label>Name</label>
+              <Input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </FormRow>
+            <FormRow>
+              <label>Password</label>
+              <Input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </FormRow>
+            {!ifUserHaveAccount ? (
+              <>
+                <FormRow>
+                  <label>Monthly income</label>
+                  <Input
+                    type="number"
+                    value={income}
+                    onChange={(e) => setIncome(e.target.value)}
+                  />
+                </FormRow>
+                <FormRow>
+                  <label>Monthly limit of expenditures</label>
+                  <Input
+                    type="number"
+                    value={limit}
+                    onChange={(e) => setLimit(e.target.value)}
+                  />
+                </FormRow>
+              </>
+            ) : (
+              ""
+            )}
+          </div>
+          {ifUserHaveAccount ? (
+            <Button>LOG IN</Button>
           ) : (
-            ""
+            // <Button onClick={handleLogIn}>LOG IN</Button>
+            <Button>SIGN UP</Button>
+            // <Button onClick={handleSignUp}>SIGN UP</Button>
           )}
-        </div>
-        {ifUserHaveAccount ? (
-          <Button onClick={handleLogIn}>LOG IN</Button>
-        ) : (
-          <Button onClick={handleSignUp}>SIGN UP</Button>
-        )}
-      </>
-    </FormDiv>
+        </>
+      </form>
+    </Section>
   );
 }
 export default Login;

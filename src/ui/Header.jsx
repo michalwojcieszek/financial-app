@@ -15,6 +15,7 @@ const StyledHeader = styled.header`
 const StyledH1 = styled.h1`
   font-weight: 500;
   color: white;
+  font-size: 2.4rem;
 `;
 
 const UserInfo = styled.div`

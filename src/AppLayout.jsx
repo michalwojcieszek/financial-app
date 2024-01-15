@@ -10,7 +10,7 @@ const StyledLayout = styled.div`
 const StyledDiv = styled.div`
   max-width: 48rem;
   margin: 0 auto;
-  margin-top: 4rem;
+  margin-top: 3rem;
   padding: 0 3rem;
 `;
 

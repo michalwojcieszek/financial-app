@@ -2,13 +2,22 @@ const userTemplate = {
   userData: {
     name: "",
     password: "",
-    monthlyLimit: "",
+    limit: "",
+    income: "",
   },
   expenses: {
-    january: {
-      entertainment: [],
-      food: [],
-    },
+    january: [],
+    february: [],
+    march: [],
+    april: [],
+    may: [],
+    june: [],
+    july: [],
+    august: [],
+    september: [],
+    october: [],
+    november: [],
+    december: [],
   },
 };
 

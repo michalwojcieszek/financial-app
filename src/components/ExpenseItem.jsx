@@ -1,5 +1,10 @@
 import { HiOutlineXCircle } from "react-icons/hi2";
 import styled from "styled-components";
+import { deleteExpense } from "../hooks/apiHandlers";
+import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import Spinner from "./Spinner";
+import toast from "react-hot-toast";
 
 const StyledListItem = styled.li`
   display: grid;
@@ -17,6 +22,7 @@ const StyledListItem = styled.li`
     height: 2.5rem;
     width: 2.5rem;
     color: var(--color-blue-700);
+    cursor: pointer;
   }
 `;
 
@@ -79,19 +85,33 @@ function getEmoji(text) {
 }
 
 function ExpenseItem({ expense }) {
-  const emoji = getEmoji(expense.category);
+  const [isLoading, setIsLoading] = useState("");
+  const navigate = useNavigate();
+  const { category, cost, description, addedOn, expenseId } = expense;
+  const emoji = getEmoji(category);
+  const { id, month } = useParams();
+
+  async function handleDelete() {
+    setIsLoading(true);
+    await deleteExpense(id, month, expenseId);
+    navigate(`/users/${id}/${month}`);
+    toast.success("Expense successfully deleted");
+    setIsLoading(false);
+  }
+
+  if (isLoading) return <Spinner />;
 
   return (
-    <StyledListItem key={expense.expenseId}>
+    <StyledListItem key={expenseId}>
       <StyledEmojiSpan>{emoji}</StyledEmojiSpan>
-      <StyledCostSpan>$ {expense.cost}</StyledCostSpan>
+      <StyledCostSpan>$ {cost}</StyledCostSpan>
       {expense.description ? (
-        <StyledDescription>{expense.description}</StyledDescription>
+        <StyledDescription>{description}</StyledDescription>
       ) : (
         <StyledNoDescription>No description</StyledNoDescription>
       )}
-      <span>{expense.addedOn.date}</span>
-      <HiOutlineXCircle />
+      <span>{addedOn.date}</span>
+      <HiOutlineXCircle onClick={handleDelete} />
     </StyledListItem>
   );
 }

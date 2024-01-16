@@ -6,14 +6,15 @@ import ButtonSecondary from "./ButtonSecondary";
 import { HiOutlineCheckCircle } from "react-icons/hi2";
 import ButtonWithEmojiDiv from "./ButtonWithEmojiDiv";
 import toast from "react-hot-toast";
-import { useFetcher, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { addMonthlyExpense } from "../hooks/apiHandlers";
-import { useEffect } from "react";
 import Spinner from "./Spinner";
+import StyledSelect from "./StyledSelect";
 
 const ExpenseFormRow = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const ExpenseForm = styled.form`
@@ -23,7 +24,7 @@ const ExpenseForm = styled.form`
 `;
 
 function AddExpenseForm() {
-  const fetcher = useFetcher();
+  const navigate = useNavigate();
   const { id, month } = useParams();
   const {
     category,
@@ -44,7 +45,6 @@ function AddExpenseForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("submit");
     if (!category || !cost) {
       toast.error("Category and cost of the expense must be filled");
       return;
@@ -66,9 +66,9 @@ function AddExpenseForm() {
     const newMonthlyExpenses = await addMonthlyExpense(id, month, newExpense);
     console.log(newMonthlyExpenses);
     resetAddExpenseFields();
-    // fetcher.load(`/users/${id}/${month}`);
-    fetcher.load("/users/:id/:month");
+    //HERE I WANT TO RE-RENDER MONTH COMPONENT
     setIsLoading(false);
+    navigate(`/users/${id}/${month}`);
     toast.success("Expense has been added successfully");
   }
 
@@ -80,7 +80,8 @@ function AddExpenseForm() {
       <ExpenseForm onSubmit={handleSubmit}>
         <ExpenseFormRow>
           <label>Expense category</label>
-          <select
+          <StyledSelect
+            size="medium"
             name="expense-category"
             id="expense-category"
             value={category}
@@ -104,7 +105,7 @@ function AddExpenseForm() {
             <option value="clothes">👕 clothes</option>
             <option value="commuting">🚈 commuting</option>
             <option value="others">❓ others</option>
-          </select>
+          </StyledSelect>
         </ExpenseFormRow>
         <ExpenseFormRow>
           <label>Expense in $</label>

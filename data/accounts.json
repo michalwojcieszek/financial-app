@@ -191,16 +191,6 @@
         ],
         "april": [
           {
-            "expenseId": "2024-01-15T17:34:46.539Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:34"
-            },
-            "category": "education",
-            "cost": "2",
-            "description": "2"
-          },
-          {
             "expenseId": "2024-01-15T17:35:17.388Z",
             "addedOn": {
               "date": "15.01.2024",
@@ -209,110 +199,19 @@
             "category": "insurance",
             "cost": "3",
             "description": "3"
+          },
+          {
+            "expenseId": "2024-01-16T08:02:20.216Z",
+            "addedOn": {
+              "date": "16.01.2024",
+              "time": "09:02"
+            },
+            "category": "medicines",
+            "cost": "5",
+            "description": "5"
           }
         ],
-        "may": [
-          {
-            "expenseId": "2024-01-15T15:57:17.803Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "16:57"
-            },
-            "category": "medicines",
-            "cost": "3",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-15T16:37:57.819Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "17:37"
-            },
-            "category": "insurance",
-            "cost": "1",
-            "description": ""
-          },
-          {
-            "expenseId": "2024-01-15T16:59:56.172Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "17:59"
-            },
-            "category": "doctors",
-            "cost": "3",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-15T17:02:53.882Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:02"
-            },
-            "category": "doctors",
-            "cost": "3",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-15T17:03:04.983Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:03"
-            },
-            "category": "doctors",
-            "cost": "3",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-15T17:07:39.853Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:07"
-            },
-            "category": "medicines",
-            "cost": "2",
-            "description": "2"
-          },
-          {
-            "expenseId": "2024-01-15T17:09:39.591Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:09"
-            },
-            "category": "medicines",
-            "cost": "2",
-            "description": "2"
-          },
-          {
-            "expenseId": "2024-01-15T17:26:05.582Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:26"
-            },
-            "category": "medicines",
-            "cost": "3",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-15T17:26:51.620Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:26"
-            },
-            "category": "housing",
-            "cost": "4",
-            "description": "4"
-          },
-          {
-            "expenseId": "2024-01-15T17:37:31.235Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:37"
-            },
-            "category": "education",
-            "cost": "2",
-            "description": "2"
-          }
-        ],
+        "may": [],
         "june": [],
         "july": [
           {

@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useApp } from "../contexts/AppContext";
 import H2 from "./H2";
 import ButtonWithEmojiDiv from "./ButtonWithEmojiDiv";
+import StyledSelect from "./StyledSelect";
 
 const StyledSelectionDiv = styled.div`
   display: flex;
@@ -39,7 +40,8 @@ function Selection() {
   return (
     <StyledSelectionDiv>
       <H2>Choose the period</H2>
-      <select
+      <StyledSelect
+        size="large"
         name="months"
         id="month-select"
         onChange={(e) => changeMonth(e.target.value)}
@@ -57,7 +59,7 @@ function Selection() {
         <option value="october">october</option>
         <option value="november">november</option>
         <option value="december">december</option>
-      </select>
+      </StyledSelect>
       <ButtonSecondary>
         <ButtonWithEmojiDiv>
           <HiOutlineCog6Tooth />

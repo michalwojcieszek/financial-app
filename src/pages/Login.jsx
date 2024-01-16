@@ -1,16 +1,18 @@
 import toast from "react-hot-toast";
-
-import Button from "../ui/ButtonPrimary";
 import ButtonUnderline from "../ui/ButtonUnderline";
 import H2 from "../ui/H2";
 import { useApp } from "../contexts/AppContext";
-import FormRow from "../ui/FormRow";
 import { getData, postData } from "../hooks/apiFetching";
 import { useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
 import Spinner from "../ui/Spinner";
 import Section from "../ui/Section";
 import StyledInput from "../ui/StyledInput";
+import StyledFormRow from "../ui/StyledFormRow";
+import StyledButtonPrimary from "../ui/StyledButtonPrimary";
+import StyledFormDiv from "../ui/StyledFormDiv";
+import { HiOutlineUser, HiOutlineUserPlus } from "react-icons/hi2";
+import StyledButtonWithEmojiDiv from "../ui/StyledButtonWithEmojiDiv";
 
 function Login() {
   const navigate = useNavigate();
@@ -146,8 +148,8 @@ function Login() {
       )}
       <form onSubmit={handleSubmit}>
         <>
-          <div>
-            <FormRow>
+          <StyledFormDiv>
+            <StyledFormRow>
               <label>Name</label>
               <StyledInput
                 size="large"
@@ -155,8 +157,8 @@ function Login() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
-            </FormRow>
-            <FormRow>
+            </StyledFormRow>
+            <StyledFormRow>
               <label>Password</label>
               <StyledInput
                 size="large"
@@ -164,10 +166,10 @@ function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-            </FormRow>
+            </StyledFormRow>
             {!ifUserHaveAccount ? (
               <>
-                <FormRow>
+                <StyledFormRow>
                   <label>Monthly income</label>
                   <StyledInput
                     size="large"
@@ -175,8 +177,8 @@ function Login() {
                     value={income}
                     onChange={(e) => setIncome(e.target.value)}
                   />
-                </FormRow>
-                <FormRow>
+                </StyledFormRow>
+                <StyledFormRow>
                   <label>Monthly limit of expenditures</label>
                   <StyledInput
                     size="large"
@@ -184,19 +186,31 @@ function Login() {
                     value={limit}
                     onChange={(e) => setLimit(e.target.value)}
                   />
-                </FormRow>
+                </StyledFormRow>
               </>
             ) : (
               ""
             )}
-          </div>
-          {ifUserHaveAccount ? (
-            <Button>LOG IN</Button>
-          ) : (
-            // <Button onClick={handleLogIn}>LOG IN</Button>
-            <Button>SIGN UP</Button>
-            // <Button onClick={handleSignUp}>SIGN UP</Button>
-          )}
+            <div>
+              {ifUserHaveAccount ? (
+                <StyledButtonPrimary>
+                  <StyledButtonWithEmojiDiv>
+                    <HiOutlineUser />
+                    LOG IN
+                  </StyledButtonWithEmojiDiv>
+                </StyledButtonPrimary>
+              ) : (
+                // <Button onClick={handleLogIn}>LOG IN</Button>
+                <StyledButtonPrimary>
+                  <StyledButtonWithEmojiDiv>
+                    <HiOutlineUserPlus />
+                    SIGN UP
+                  </StyledButtonWithEmojiDiv>
+                </StyledButtonPrimary>
+                // <Button onClick={handleSignUp}>SIGN UP</Button>
+              )}
+            </div>
+          </StyledFormDiv>
         </>
       </form>
     </Section>

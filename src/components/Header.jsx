@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { useApp } from "../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { HiArrowRightOnRectangle } from "react-icons/hi2";
+import StyledButtonWithEmojiDiv from "../ui/StyledButtonWithEmojiDiv";
 
 const StyledHeader = styled.header`
   background: var(--gradient-default);
@@ -37,7 +39,9 @@ const LogOutButton = styled.button`
   border-radius: 10px;
   transition: background 1s;
   padding: 0.5rem 0.75rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  font-family: inherit;
 
   &:hover {
     background-color: var(--color-grey-200);
@@ -65,7 +69,12 @@ function Header() {
         <UserInfo>
           {/* <HelloParagraph>👋 Hello Jonas </HelloParagraph> */}
           {isAuthenticated ? (
-            <LogOutButton onClick={logOut}>LOG OUT</LogOutButton>
+            <LogOutButton onClick={logOut}>
+              <StyledButtonWithEmojiDiv>
+                <HiArrowRightOnRectangle style={{ flexShrink: "0" }} />
+                LOG OUT
+              </StyledButtonWithEmojiDiv>
+            </LogOutButton>
           ) : (
             ""
           )}{" "}

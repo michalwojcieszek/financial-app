@@ -3,7 +3,6 @@ import { createContext, useContext, useState } from "react";
 const AppContext = createContext();
 
 function AppProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -13,9 +12,6 @@ function AppProvider({ children }) {
   const [password, setPassword] = useState("");
   const [limit, setLimit] = useState("");
   const [income, setIncome] = useState("");
-
-  //MonthSelected
-  // const [selectedMonth, setSelectedMonth] = useState("");
 
   //ExpenseForm
   const [category, setCategory] = useState("");

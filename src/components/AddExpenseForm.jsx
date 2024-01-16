@@ -2,15 +2,15 @@ import H3 from "../ui/H3";
 import styled from "styled-components";
 import { useApp } from "../contexts/AppContext";
 import Section from "../ui/Section";
-import ButtonSecondary from "../ui/ButtonSecondary";
 import { HiOutlineCheckCircle } from "react-icons/hi2";
-import ButtonWithEmojiDiv from "../ui/ButtonWithEmojiDiv";
+import ButtonWithEmojiDiv from "../ui/StyledButtonWithEmojiDiv";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 import { addMonthlyExpense } from "../hooks/apiHandlers";
 import Spinner from "../ui/Spinner";
 import StyledSelect from "../ui/StyledSelect";
 import StyledInput from "../ui/StyledInput";
+import StyledButtonSecondary from "../ui/StyledButtonSecondary";
 
 const ExpenseFormRow = styled.div`
   display: flex;
@@ -140,12 +140,12 @@ function AddExpenseForm() {
           </InputSelectDiv>
         </ExpenseFormRow>
         <div>
-          <ButtonSecondary>
+          <StyledButtonSecondary>
             <ButtonWithEmojiDiv>
               <HiOutlineCheckCircle />
               <span>Add Expense</span>
             </ButtonWithEmojiDiv>
-          </ButtonSecondary>
+          </StyledButtonSecondary>
         </div>
       </ExpenseForm>
     </Section>

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
-import ButtonSecondary from "../ui/ButtonSecondary";
 import { useNavigate, useParams } from "react-router-dom";
 import { useApp } from "../contexts/AppContext";
 import H2 from "../ui/H2";
-import ButtonWithEmojiDiv from "../ui/ButtonWithEmojiDiv";
+import ButtonWithEmojiDiv from "../ui/StyledButtonWithEmojiDiv";
 import StyledSelect from "../ui/StyledSelect";
+import StyledButtonSecondary from "../ui/StyledButtonSecondary";
 
 const StyledSelectionDiv = styled.div`
   display: flex;
@@ -21,6 +21,10 @@ function Selection() {
   const { setCategory, setCost, setDescription } = useApp();
   const navigate = useNavigate();
   const { id } = useParams();
+
+  function handleGoToSettings() {
+    navigate(`/users/${id}/settings`);
+  }
 
   function clearInputs() {
     setCategory("");
@@ -60,12 +64,12 @@ function Selection() {
         <option value="november">november</option>
         <option value="december">december</option>
       </StyledSelect>
-      <ButtonSecondary>
+      <StyledButtonSecondary onClick={handleGoToSettings}>
         <ButtonWithEmojiDiv>
           <HiOutlineCog6Tooth />
           <span>Go to settings</span>
         </ButtonWithEmojiDiv>
-      </ButtonSecondary>
+      </StyledButtonSecondary>
     </StyledSelectionDiv>
   );
 }

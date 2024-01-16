@@ -13,8 +13,4 @@ const StyledButtonWithEmojiDiv = styled.div`
   }
 `;
 
-function ButtonWithEmojiDiv({ children }) {
-  return <StyledButtonWithEmojiDiv>{children}</StyledButtonWithEmojiDiv>;
-}
-
-export default ButtonWithEmojiDiv;
+export default StyledButtonWithEmojiDiv;

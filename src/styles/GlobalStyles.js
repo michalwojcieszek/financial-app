@@ -16,9 +16,20 @@ const GlobalStyles = createGlobalStyle`
     --color-blue-400: #4dabf7;
     --color-blue-000: #e7f5ff;
 
+    /* RED */
+    --color-red-800: #e03131;
+    --color-red-700: #f03e3e;
+    --color-red-600: #fa5252;
+    --color-red-500: #ff6b6b;
+    --color-red-400: #ff8787;
+
+
 /* GRADIENTS */
-    --gradient-default: linear-gradient(to left, #1c7ed6, #339af0);
-    --gradient-hover: linear-gradient(to left, #339af0, #4dabf7);
+    --gradient-default: linear-gradient(to right, #1c7ed6, #339af0);
+    --gradient-hover: linear-gradient(to right, #339af0, #4dabf7);
+
+    --gradient-red-default: linear-gradient(to right, #e03131, #fa5252);
+    --gradient-red-hover: linear-gradient(to right, #f03e3e, #ff6b6b);
 }
 
 *,
@@ -52,6 +63,15 @@ textarea:focus,
 select:focus {
   outline: 2px solid var(--color-blue-400);
   outline-offset: -1px;
+}
+button:focus
+ {
+  outline: 2px solid white;
+  outline-offset: -1px;
+}
+
+button {
+  font-weight: 500;
 }
 
 `;

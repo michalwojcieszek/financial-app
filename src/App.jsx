@@ -7,7 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import { Toaster } from "react-hot-toast";
 import PageNotFound from "./pages/PageNotFound";
 import Month from "./pages/Month";
-import { loader as monthLoader } from "./pages/Month";
+import { loader as userLoader } from "./pages/Month";
 import Settings from "./pages/Settings";
 import Year from "./pages/Year";
 
@@ -26,17 +26,19 @@ const router = createBrowserRouter([
           {
             path: "users/:id/:month",
             element: <Month />,
-            loader: monthLoader,
+            loader: userLoader,
           },
           {
             path: "users/:id",
             element: <Year />,
+            loader: userLoader,
           },
         ],
       },
       {
         path: "users/:id/settings",
         element: <Settings />,
+        loader: userLoader,
       },
       {
         path: "*",
@@ -65,7 +67,7 @@ function App() {
             },
             style: {
               fontSize: "16px",
-              maxWidth: "500px",
+              maxWidth: "300px",
               padding: "16px 24px",
             },
           }}

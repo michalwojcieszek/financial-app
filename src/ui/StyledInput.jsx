@@ -20,7 +20,7 @@ const StyledInput = styled.input`
     
   border-radius: 10px;
   border: 1px solid gray;
-  font-style: inherit;
+  font-family: inherit;
 `;
 
 export default StyledInput;

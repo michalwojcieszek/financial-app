@@ -1,16 +1,16 @@
 import toast from "react-hot-toast";
 
-import Button from "../components/ButtonPrimary";
-import ButtonUnderline from "../components/ButtonUnderline";
-import H2 from "../components/H2";
+import Button from "../ui/ButtonPrimary";
+import ButtonUnderline from "../ui/ButtonUnderline";
+import H2 from "../ui/H2";
 import { useApp } from "../contexts/AppContext";
-import Input from "../components/Input";
-import FormRow from "../components/FormRow";
+import FormRow from "../ui/FormRow";
 import { getData, postData } from "../hooks/apiFetching";
 import { useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
-import Spinner from "../components/Spinner";
-import Section from "../components/Section";
+import Spinner from "../ui/Spinner";
+import Section from "../ui/Section";
+import StyledInput from "../ui/StyledInput";
 
 function Login() {
   const navigate = useNavigate();
@@ -149,7 +149,8 @@ function Login() {
           <div>
             <FormRow>
               <label>Name</label>
-              <Input
+              <StyledInput
+                size="large"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -157,7 +158,8 @@ function Login() {
             </FormRow>
             <FormRow>
               <label>Password</label>
-              <Input
+              <StyledInput
+                size="large"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -167,7 +169,8 @@ function Login() {
               <>
                 <FormRow>
                   <label>Monthly income</label>
-                  <Input
+                  <StyledInput
+                    size="large"
                     type="number"
                     value={income}
                     onChange={(e) => setIncome(e.target.value)}
@@ -175,7 +178,8 @@ function Login() {
                 </FormRow>
                 <FormRow>
                   <label>Monthly limit of expenditures</label>
-                  <Input
+                  <StyledInput
+                    size="large"
                     type="number"
                     value={limit}
                     onChange={(e) => setLimit(e.target.value)}

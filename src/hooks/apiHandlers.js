@@ -1,7 +1,7 @@
 import {
   URL_JSON_SERVER,
   getMonthlyExpensesFromId,
-  getUserDataLoader,
+  getUserDataById,
 } from "./apiFetching";
 
 //Editing existing user's expense based on form - AddExpenseForm
@@ -11,7 +11,7 @@ export async function addMonthlyExpense(id, month, newExpense) {
   const newMonthlyExpenses = [...monthlyExpenses, newExpense];
 
   //getting current user's object
-  const user = await getUserDataLoader(id);
+  const user = await getUserDataById(id);
 
   //refactoring user's object to have new expenses
   const userWithNewExpense = {
@@ -41,7 +41,7 @@ export async function deleteExpense(id, month, expenseId) {
   console.log(newMonthlyExpenses);
 
   // //getting current user's object
-  const user = await getUserDataLoader(id);
+  const user = await getUserDataById(id);
 
   // //refactoring user's object to have new expenses
   const userWithNewExpense = {

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
-import ButtonSecondary from "./ButtonSecondary";
+import ButtonSecondary from "../ui/ButtonSecondary";
 import { useNavigate, useParams } from "react-router-dom";
 import { useApp } from "../contexts/AppContext";
-import H2 from "./H2";
-import ButtonWithEmojiDiv from "./ButtonWithEmojiDiv";
-import StyledSelect from "./StyledSelect";
+import H2 from "../ui/H2";
+import ButtonWithEmojiDiv from "../ui/ButtonWithEmojiDiv";
+import StyledSelect from "../ui/StyledSelect";
 
 const StyledSelectionDiv = styled.div`
   display: flex;

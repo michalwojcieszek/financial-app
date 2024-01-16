@@ -124,35 +124,64 @@
       "expenses": {
         "january": [
           {
-            "expenseId": "2024-01-15T14:48:02.650Z",
-            "category": "food",
-            "cost": "2",
-            "description": "2"
+            "expenseId": "2024-01-16T11:33:51.088Z",
+            "addedOn": {
+              "date": "16.01.2024",
+              "time": "12:33"
+            },
+            "category": "medicines",
+            "cost": "5",
+            "description": "5"
           },
           {
-            "expenseId": "2024-01-15T14:49:03.427Z",
-            "category": "insurance",
+            "expenseId": "2024-01-16T11:33:59.416Z",
+            "addedOn": {
+              "date": "16.01.2024",
+              "time": "12:33"
+            },
+            "category": "housing",
             "cost": "3",
             "description": "3"
           },
           {
-            "expenseId": "2024-01-15T14:51:09.203Z",
+            "expenseId": "2024-01-16T11:34:06.081Z",
+            "addedOn": {
+              "date": "16.01.2024",
+              "time": "12:34"
+            },
             "category": "doctors",
             "cost": "5",
             "description": "5"
           },
           {
-            "expenseId": "15.01.2024",
-            "category": "education",
-            "cost": "3",
+            "expenseId": "2024-01-16T11:34:11.825Z",
+            "addedOn": {
+              "date": "16.01.2024",
+              "time": "12:34"
+            },
+            "category": "car",
+            "cost": "2",
             "description": "3"
           },
           {
-            "expenseId": "2024-01-15T15:48:39.795Z",
-            "date": "16:48:39",
-            "category": "education",
-            "cost": "3",
+            "expenseId": "2024-01-16T11:34:17.862Z",
+            "addedOn": {
+              "date": "16.01.2024",
+              "time": "12:34"
+            },
+            "category": "commuting",
+            "cost": "2",
             "description": "3"
+          },
+          {
+            "expenseId": "2024-01-16T11:34:24.549Z",
+            "addedOn": {
+              "date": "16.01.2024",
+              "time": "12:34"
+            },
+            "category": "fuel",
+            "cost": "5",
+            "description": "5"
           }
         ],
         "february": [
@@ -189,29 +218,19 @@
             "description": "3"
           }
         ],
-        "april": [
+        "april": [],
+        "may": [
           {
-            "expenseId": "2024-01-15T17:35:17.388Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:35"
-            },
-            "category": "insurance",
-            "cost": "3",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-16T08:02:20.216Z",
+            "expenseId": "2024-01-16T12:07:14.078Z",
             "addedOn": {
               "date": "16.01.2024",
-              "time": "09:02"
+              "time": "13:07"
             },
-            "category": "medicines",
-            "cost": "5",
-            "description": "5"
+            "category": "subscription",
+            "cost": "3",
+            "description": "3"
           }
         ],
-        "may": [],
         "june": [],
         "july": [
           {
@@ -236,28 +255,7 @@
           }
         ],
         "august": [],
-        "september": [
-          {
-            "expenseId": "2024-01-15T17:38:20.568Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:38"
-            },
-            "category": "fuel",
-            "cost": "3",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-15T17:39:25.100Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:39"
-            },
-            "category": "medicines",
-            "cost": "3",
-            "description": "3"
-          }
-        ],
+        "september": [],
         "october": [],
         "november": [],
         "december": []

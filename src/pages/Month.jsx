@@ -1,7 +1,9 @@
-import { getUserDataLoader } from "../hooks/apiFetching";
+import { getUserDataById } from "../hooks/apiFetching";
 import AddExpenseForm from "../components/AddExpenseForm";
 import MonthlyExpenses from "../components/MonthlyExpenses";
 import { useLoaderData, useParams } from "react-router-dom";
+import ExpensesChart from "../components/ExpensesChart";
+import ExpensesLimit from "../components/ExpensesLimit";
 
 function Month() {
   const user = useLoaderData();
@@ -12,6 +14,8 @@ function Month() {
     <>
       <AddExpenseForm />
       <MonthlyExpenses expensesThisMonth={expensesThisMonth} />
+      <ExpensesChart />
+      <ExpensesLimit />
     </>
   );
 }
@@ -19,6 +23,6 @@ function Month() {
 export default Month;
 
 export async function loader({ params }) {
-  const userData = await getUserDataLoader(params.id);
+  const userData = await getUserDataById(params.id);
   return userData;
 }

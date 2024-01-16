@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { deleteExpense } from "../hooks/apiHandlers";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
-import Spinner from "./Spinner";
+import Spinner from "../ui/Spinner";
 import toast from "react-hot-toast";
 
 const StyledListItem = styled.li`
@@ -42,6 +42,11 @@ const StyledNoDescription = styled.span`
 `;
 
 const StyledDescription = styled.span`
+  justify-self: center;
+`;
+
+const StyledDateSpan = styled.span`
+  font-size: 1.2rem;
   justify-self: center;
 `;
 
@@ -110,7 +115,7 @@ function ExpenseItem({ expense }) {
       ) : (
         <StyledNoDescription>No description</StyledNoDescription>
       )}
-      <span>{addedOn.date}</span>
+      <StyledDateSpan>{addedOn.date}</StyledDateSpan>
       <HiOutlineXCircle onClick={handleDelete} />
     </StyledListItem>
   );

@@ -18,7 +18,7 @@ export async function getData() {
   return data;
 }
 
-export async function getUserDataLoader(id) {
+export async function getUserDataById(id) {
   const res = await fetch(URL_JSON_SERVER);
   const data = await res.json();
   const userData = data.find((user) => user.id === id);
@@ -26,7 +26,7 @@ export async function getUserDataLoader(id) {
 }
 
 export async function getMonthlyExpensesFromId(id, month) {
-  const user = await getUserDataLoader(id);
+  const user = await getUserDataById(id);
   const montlyExpenses = user?.expenses?.[month];
   return montlyExpenses;
 }

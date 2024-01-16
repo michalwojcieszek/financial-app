@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import H3 from "./H3";
-import Section from "./Section";
+import H3 from "../ui/H3";
+import Section from "../ui/Section";
 import ExpenseItem from "./ExpenseItem";
 import styled from "styled-components";
 
@@ -9,7 +9,9 @@ const StyledExpensesList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  overflow: scroll;
+  overflow-y: scroll;
+  max-height: 25rem;
+
   /* color: var(--color-blue-700); */
 `;
 

@@ -1,20 +1,26 @@
-import H3 from "./H3";
+import H3 from "../ui/H3";
 import styled from "styled-components";
 import { useApp } from "../contexts/AppContext";
-import Section from "./Section";
-import ButtonSecondary from "./ButtonSecondary";
+import Section from "../ui/Section";
+import ButtonSecondary from "../ui/ButtonSecondary";
 import { HiOutlineCheckCircle } from "react-icons/hi2";
-import ButtonWithEmojiDiv from "./ButtonWithEmojiDiv";
+import ButtonWithEmojiDiv from "../ui/ButtonWithEmojiDiv";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 import { addMonthlyExpense } from "../hooks/apiHandlers";
-import Spinner from "./Spinner";
-import StyledSelect from "./StyledSelect";
+import Spinner from "../ui/Spinner";
+import StyledSelect from "../ui/StyledSelect";
+import StyledInput from "../ui/StyledInput";
 
 const ExpenseFormRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+const InputSelectDiv = styled.div`
+  width: 20rem;
+  flex-shrink: 0;
 `;
 
 const ExpenseForm = styled.form`
@@ -80,50 +86,58 @@ function AddExpenseForm() {
       <ExpenseForm onSubmit={handleSubmit}>
         <ExpenseFormRow>
           <label>Expense category</label>
-          <StyledSelect
-            size="medium"
-            name="expense-category"
-            id="expense-category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="">⬇️ SELECT A CATEGORY</option>
-            <option value="food">🥕 food</option>
-            <option value="education">🎓 education</option>
-            <option value="insurance">🏥 insurance</option>
-            <option value="medicines">💊 medicines</option>
-            <option value="subscription">💳 subscription</option>
-            <option value="party">🥳 party</option>
-            <option value="housing">🏠 housing fees</option>
-            <option value="doctors">🩺 doctors</option>
-            <option value="gadgets">🎧 gadgets</option>
-            <option value="gift">🎁 gift</option>
-            <option value="fuel">⛽ fuel</option>
-            <option value="car">🚗 car</option>
-            <option value="entertainment">🍿 entertainment</option>
-            <option value="restaurant">🍽️ restaurant</option>
-            <option value="clothes">👕 clothes</option>
-            <option value="commuting">🚈 commuting</option>
-            <option value="others">❓ others</option>
-          </StyledSelect>
+          <InputSelectDiv>
+            <StyledSelect
+              size="medium"
+              name="expense-category"
+              id="expense-category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="">⬇️ SELECT A CATEGORY</option>
+              <option value="food">🥕 food</option>
+              <option value="education">🎓 education</option>
+              <option value="insurance">🏥 insurance</option>
+              <option value="medicines">💊 medicines</option>
+              <option value="subscription">💳 subscription</option>
+              <option value="party">🥳 party</option>
+              <option value="housing">🏠 housing fees</option>
+              <option value="doctors">🩺 doctors</option>
+              <option value="gadgets">🎧 gadgets</option>
+              <option value="gift">🎁 gift</option>
+              <option value="fuel">⛽ fuel</option>
+              <option value="car">🚗 car</option>
+              <option value="entertainment">🍿 entertainment</option>
+              <option value="restaurant">🍽️ restaurant</option>
+              <option value="clothes">👕 clothes</option>
+              <option value="commuting">🚈 commuting</option>
+              <option value="others">❓ others</option>
+            </StyledSelect>
+          </InputSelectDiv>
         </ExpenseFormRow>
         <ExpenseFormRow>
           <label>Expense in $</label>
-          <input
-            type="number"
-            name="cost"
-            value={cost}
-            onChange={(e) => setCost(e.target.value)}
-          />
+          <InputSelectDiv>
+            <StyledInput
+              size="medium"
+              type="number"
+              name="cost"
+              value={cost}
+              onChange={(e) => setCost(e.target.value)}
+            />
+          </InputSelectDiv>
         </ExpenseFormRow>
         <ExpenseFormRow>
           <label>Description (optional)</label>
-          <input
-            type="text"
-            name="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
+          <InputSelectDiv>
+            <StyledInput
+              size="medium"
+              type="text"
+              name="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </InputSelectDiv>
         </ExpenseFormRow>
         <div>
           <ButtonSecondary>

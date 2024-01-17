@@ -7,7 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import { Toaster } from "react-hot-toast";
 import PageNotFound from "./pages/PageNotFound";
 import Month from "./pages/Month";
-import { loader as userLoader } from "./pages/Month";
+import { userLoader } from "./hooks/userLoader";
 import Settings from "./pages/Settings";
 import Year from "./pages/Year";
 

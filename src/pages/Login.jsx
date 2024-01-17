@@ -44,6 +44,10 @@ function Login() {
       toast.error(`Fill all the fields`);
       return;
     }
+    if (password.length < 5) {
+      toast.error(`Password need to have at least 5 characters`);
+      return;
+    }
 
     if (income < 0 || limit < 0) {
       toast.error(`Income and limit cannot be less than zero`);

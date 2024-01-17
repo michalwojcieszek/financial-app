@@ -4,19 +4,10 @@ import H3 from "../ui/H3";
 import Section from "../ui/Section";
 import StyledFormRow from "../ui/StyledFormRow";
 import StyledFormDiv from "../ui/StyledFormDiv";
-import styled from "styled-components";
 import ProgressBar from "../ui/ProgressBar";
-import { useState } from "react";
 import StyledStatsSpan from "../ui/StyledStatsSpan";
 import StyledStatsSpanGreyedOut from "../ui/StyledStatsSpanGreyedOut";
 import H4 from "../ui/H4";
-
-const StyledProgress = styled.progress`
-  flex-grow: 1;
-  color: red;
-  background-color: red;
-  border-radius: 2px;
-`;
 
 function MonthlyStats({ userData, expensesThisMonth, monthString }) {
   const { income, limit } = userData;
@@ -120,7 +111,7 @@ function MonthlyStats({ userData, expensesThisMonth, monthString }) {
               <StyledStatsSpan color={limitColor}>
                 $ {leftToSpend}
               </StyledStatsSpan>{" "}
-              left to spend not cross the limit.
+              left to spend to not cross the limit.
             </p>
           )}
           <p>

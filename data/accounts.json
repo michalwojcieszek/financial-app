@@ -114,156 +114,6 @@
       }
     },
     {
-      "id": "52f5",
-      "userData": {
-        "name": "222",
-        "password": "222",
-        "limit": "222",
-        "income": "222",
-        "monthlyIncome": "5",
-        "monthlyLimit": "5"
-      },
-      "expenses": {
-        "january": [
-          {
-            "expenseId": "2024-01-16T11:33:51.088Z",
-            "addedOn": {
-              "date": "16.01.2024",
-              "time": "12:33"
-            },
-            "category": "medicines",
-            "cost": "5",
-            "description": "5"
-          },
-          {
-            "expenseId": "2024-01-16T11:33:59.416Z",
-            "addedOn": {
-              "date": "16.01.2024",
-              "time": "12:33"
-            },
-            "category": "housing",
-            "cost": "3",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-16T11:34:06.081Z",
-            "addedOn": {
-              "date": "16.01.2024",
-              "time": "12:34"
-            },
-            "category": "doctors",
-            "cost": "5",
-            "description": "5"
-          },
-          {
-            "expenseId": "2024-01-16T11:34:11.825Z",
-            "addedOn": {
-              "date": "16.01.2024",
-              "time": "12:34"
-            },
-            "category": "car",
-            "cost": "2",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-16T11:34:17.862Z",
-            "addedOn": {
-              "date": "16.01.2024",
-              "time": "12:34"
-            },
-            "category": "commuting",
-            "cost": "2",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-16T11:34:24.549Z",
-            "addedOn": {
-              "date": "16.01.2024",
-              "time": "12:34"
-            },
-            "category": "fuel",
-            "cost": "5",
-            "description": "5"
-          }
-        ],
-        "february": [
-          {
-            "expenseId": "2024-01-15T17:32:30.717Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:32"
-            },
-            "category": "food",
-            "cost": "3",
-            "description": "3"
-          },
-          {
-            "expenseId": "2024-01-15T17:34:23.486Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:34"
-            },
-            "category": "education",
-            "cost": "2",
-            "description": "2"
-          }
-        ],
-        "march": [
-          {
-            "expenseId": "2024-01-15T17:30:12.239Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:30"
-            },
-            "category": "food",
-            "cost": "3",
-            "description": "3"
-          }
-        ],
-        "april": [],
-        "may": [
-          {
-            "expenseId": "2024-01-16T12:07:14.078Z",
-            "addedOn": {
-              "date": "16.01.2024",
-              "time": "13:07"
-            },
-            "category": "subscription",
-            "cost": "3",
-            "description": "3"
-          }
-        ],
-        "june": [],
-        "july": [
-          {
-            "expenseId": "2024-01-15T17:35:47.745Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:35"
-            },
-            "category": "food",
-            "cost": "2",
-            "description": "2"
-          },
-          {
-            "expenseId": "2024-01-15T17:37:23.400Z",
-            "addedOn": {
-              "date": "15.01.2024",
-              "time": "18:37"
-            },
-            "category": "insurance",
-            "cost": "3",
-            "description": "3"
-          }
-        ],
-        "august": [],
-        "september": [],
-        "october": [],
-        "november": [],
-        "december": []
-      }
-    },
-    {
       "id": "bb13",
       "userData": {
         "name": "3",
@@ -279,6 +129,112 @@
         "may": [],
         "june": [],
         "july": [],
+        "august": [],
+        "september": [],
+        "october": [],
+        "november": [],
+        "december": []
+      }
+    },
+    {
+      "id": "0550",
+      "userData": {
+        "name": "123",
+        "password": "123",
+        "limit": "123",
+        "income": "123"
+      },
+      "expenses": {
+        "january": [],
+        "february": [
+          {
+            "expenseId": "2024-01-17T10:43:22.891Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "11:43"
+            },
+            "category": "subscription",
+            "cost": "2",
+            "description": "3"
+          }
+        ],
+        "march": [
+          {
+            "expenseId": "2024-01-17T09:16:20.814Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "10:16"
+            },
+            "category": "education",
+            "cost": "2",
+            "description": "studies"
+          },
+          {
+            "expenseId": "2024-01-17T10:08:02.932Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "11:08"
+            },
+            "category": "medicines",
+            "cost": "2523",
+            "description": "allergy pills"
+          },
+          {
+            "expenseId": "2024-01-17T10:32:57.612Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "11:32"
+            },
+            "category": "insurance",
+            "cost": "3",
+            "description": "3"
+          },
+          {
+            "expenseId": "2024-01-17T10:33:03.043Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "11:33"
+            },
+            "category": "party",
+            "cost": "3",
+            "description": "3"
+          },
+          {
+            "expenseId": "2024-01-17T10:33:08.655Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "11:33"
+            },
+            "category": "medicines",
+            "cost": "5",
+            "description": "5"
+          }
+        ],
+        "april": [],
+        "may": [],
+        "june": [],
+        "july": [
+          {
+            "expenseId": "2024-01-17T11:31:17.132Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "12:31"
+            },
+            "category": "medicines",
+            "cost": "3",
+            "description": "3"
+          },
+          {
+            "expenseId": "2024-01-17T11:38:36.344Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "12:38"
+            },
+            "category": "gadgets",
+            "cost": "23",
+            "description": "23"
+          }
+        ],
         "august": [],
         "september": [],
         "october": [],

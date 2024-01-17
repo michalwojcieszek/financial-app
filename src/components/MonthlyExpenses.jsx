@@ -1,22 +1,40 @@
-import { useParams } from "react-router-dom";
 import H3 from "../ui/H3";
 import Section from "../ui/Section";
 import ExpenseItem from "./ExpenseItem";
 import styled from "styled-components";
 
 const StyledExpensesList = styled.ul`
+  max-height: 25rem;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   overflow-y: scroll;
-  max-height: 25rem;
-
   /* color: var(--color-blue-700); */
 `;
 
-function MonthlyExpenses({ expensesThisMonth }) {
-  const { month } = useParams();
+const StyledHeaderOfTable = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr 1.5fr 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+
+  & > div:not(:last-child) {
+    color: var(--color-blue-700);
+  }
+
+  & > div:last-child {
+    color: red;
+  }
+`;
+
+function MonthlyExpenses({ expensesThisMonth, monthString }) {
   console.log(expensesThisMonth);
 
   return (
@@ -28,7 +46,14 @@ function MonthlyExpenses({ expensesThisMonth }) {
         </>
       ) : (
         <>
-          <H3>All expenses in {month}</H3>
+          <H3>All expenses in {monthString}</H3>
+          <StyledHeaderOfTable>
+            <div>category</div>
+            <div>cost</div>
+            <div>description</div>
+            <div>added on</div>
+            <div>DELETE</div>
+          </StyledHeaderOfTable>
           <StyledExpensesList>
             {expensesThisMonth.map((expense) => (
               <ExpenseItem key={expense.expenseId} expense={expense} />

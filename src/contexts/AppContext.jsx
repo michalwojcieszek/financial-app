@@ -18,6 +18,9 @@ function AppProvider({ children }) {
   const [cost, setCost] = useState("");
   const [description, setDescription] = useState("");
 
+  //SettingsPopup
+  const [isSettingsPopupOpen, setIsSettingsPopupOpen] = useState(false);
+
   return (
     <AppContext.Provider
       value={{
@@ -41,6 +44,8 @@ function AppProvider({ children }) {
         setDescription,
         isLoading,
         setIsLoading,
+        isSettingsPopupOpen,
+        setIsSettingsPopupOpen,
       }}
     >
       {children}

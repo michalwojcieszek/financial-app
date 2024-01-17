@@ -4,7 +4,7 @@ import {
   getUserDataById,
 } from "./apiFetching";
 
-//Editing existing user's expense based on form - AddExpenseForm
+//Adding new expense
 export async function addMonthlyExpense(id, month, newExpense) {
   //creating new expenses array
   const monthlyExpenses = await getMonthlyExpensesFromId(id, month);
@@ -40,10 +40,10 @@ export async function deleteExpense(id, month, expenseId) {
   );
   console.log(newMonthlyExpenses);
 
-  // //getting current user's object
+  //getting current user's object
   const user = await getUserDataById(id);
 
-  // //refactoring user's object to have new expenses
+  //refactoring user's object to have new expenses
   const userWithNewExpense = {
     ...user,
     expenses: { ...user.expenses, [month]: newMonthlyExpenses },
@@ -60,7 +60,7 @@ export async function deleteExpense(id, month, expenseId) {
   return data;
 }
 
-//Deleting existing user's expense based on delete from ExpenseItem
+//Changing user's income and limit
 export async function changeIncomeAndLimit(id, newIncome, newLimit) {
   //getting current user's object
   const user = await getUserDataById(id);
@@ -81,6 +81,16 @@ export async function changeIncomeAndLimit(id, newIncome, newLimit) {
     method: "PUT",
     body: JSON.stringify(userWithNewIncomeAndLimit),
     headers: { "Content-Type": "application/json" },
+  });
+  const data = await res.json();
+  console.log(data);
+  return data;
+}
+
+//Deleting whole account
+export async function deleteAccount(id) {
+  const res = await fetch(`${URL_JSON_SERVER}/${id}`, {
+    method: "DELETE",
   });
   const data = await res.json();
   console.log(data);

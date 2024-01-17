@@ -12,6 +12,10 @@ import StyledSelect from "../ui/StyledSelect";
 import StyledInput from "../ui/StyledInput";
 import StyledButtonSecondary from "../ui/StyledButtonSecondary";
 
+const StyledOptional = styled.span`
+  color: var(--color-grey-500);
+`;
+
 const ExpenseFormRow = styled.div`
   display: flex;
   justify-content: space-between;
@@ -128,7 +132,9 @@ function AddExpenseForm() {
           </InputSelectDiv>
         </ExpenseFormRow>
         <ExpenseFormRow>
-          <label>Description (optional)</label>
+          <label>
+            Description <StyledOptional>(optional)</StyledOptional>
+          </label>
           <InputSelectDiv>
             <StyledInput
               size="medium"

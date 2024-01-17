@@ -16,8 +16,11 @@ import { changeIncomeAndLimit } from "../hooks/apiHandlers";
 import StyledButtonDeleteAccount from "../ui/StyledButtonDeleteAccount";
 import StyledFormDiv from "../ui/StyledFormDiv";
 import StyledDivDeleteButton from "../ui/StyledDivDeleteButton";
+import SettingsPopupContainer from "../ui/SettingsPopupContainer";
+import { useApp } from "../contexts/AppContext";
 
 function Settings() {
+  const { setIsSettingsPopupOpen } = useApp();
   const user = useLoaderData();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -34,6 +37,7 @@ function Settings() {
       return;
     }
     await changeIncomeAndLimit(id, newIncome, newLimit);
+    toast.success("Your change has been saved");
   }
 
   function handleGoBackToDashboard() {
@@ -81,7 +85,9 @@ function Settings() {
           </StyledButtonSecondary>
         </div>
         <StyledDivDeleteButton>
-          <StyledButtonDeleteAccount onClick={handleSaveChanges}>
+          <StyledButtonDeleteAccount
+            onClick={() => setIsSettingsPopupOpen(true)}
+          >
             <StyledButtonWithEmojiDiv>
               <HiOutlineTrash />
               Delete your account

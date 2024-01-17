@@ -8,15 +8,14 @@ import toast from "react-hot-toast";
 
 const StyledListItem = styled.li`
   display: grid;
-  grid-template-columns: auto 1fr 2fr auto auto;
+  grid-template-columns: auto 1fr 1.5fr 1fr auto;
   gap: 1rem;
   align-items: center;
-  /* display: flex;
-  justify-content: space-around;
-  align-items: center; */
-  background-color: white;
+  justify-items: center;
   border-radius: 5px;
   padding: 1rem;
+  background-color: var(--color-grey-100);
+  /* box-shadow: 0 0px 32px rgb(0, 0, 0, 0.12); */
 
   & svg {
     height: 2.5rem;
@@ -28,26 +27,21 @@ const StyledListItem = styled.li`
 
 const StyledEmojiSpan = styled.span`
   font-size: 2rem;
-  justify-self: center;
 `;
 
 const StyledCostSpan = styled.span`
   color: var(--color-blue-700);
   font-weight: 600;
-  justify-self: center;
 `;
 
 const StyledNoDescription = styled.span`
   color: var(--color-grey-300);
 `;
 
-const StyledDescription = styled.span`
-  justify-self: center;
-`;
+const StyledDescription = styled.span``;
 
 const StyledDateSpan = styled.span`
   font-size: 1.2rem;
-  justify-self: center;
 `;
 
 function getEmoji(text) {
@@ -116,7 +110,10 @@ function ExpenseItem({ expense }) {
         <StyledNoDescription>No description</StyledNoDescription>
       )}
       <StyledDateSpan>{addedOn.date}</StyledDateSpan>
-      <HiOutlineXCircle onClick={handleDelete} />
+      <HiOutlineXCircle
+        style={{ color: "var(--color-red-700)" }}
+        onClick={handleDelete}
+      />
     </StyledListItem>
   );
 }

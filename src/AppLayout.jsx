@@ -2,10 +2,12 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import styled from "styled-components";
 import Footer from "./components/Footer";
+import SettingsPopupContainer from "./ui/SettingsPopupContainer";
 
 const StyledLayout = styled.div`
   display: grid;
   grid-template-rows: 9rem 1fr;
+  position: relative;
 `;
 
 const StyledDiv = styled.div`
@@ -22,15 +24,18 @@ const StyledMain = styled.main`
 
 function AppLayout() {
   return (
-    <StyledLayout>
-      <Header />
-      <StyledMain>
-        <StyledDiv>
-          <Outlet />
-        </StyledDiv>
-      </StyledMain>
-      <Footer />
-    </StyledLayout>
+    <>
+      <StyledLayout>
+        <Header />
+        <StyledMain>
+          <StyledDiv>
+            <Outlet />
+          </StyledDiv>
+        </StyledMain>
+        <SettingsPopupContainer />
+      </StyledLayout>
+      {/* <Footer /> */}
+    </>
   );
 }
 

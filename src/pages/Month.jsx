@@ -2,20 +2,26 @@ import { getUserDataById } from "../hooks/apiFetching";
 import AddExpenseForm from "../components/AddExpenseForm";
 import MonthlyExpenses from "../components/MonthlyExpenses";
 import { useLoaderData, useParams } from "react-router-dom";
-import ExpensesChart from "../components/ExpensesChart";
-import ExpensesLimit from "../components/ExpensesLimit";
+import MonthlyStats from "../components/MonthlyStats";
 
 function Month() {
   const user = useLoaderData();
   const { month } = useParams();
+  const monthString = month[0].toUpperCase() + month.slice(1);
   const expensesThisMonth = user.expenses[month];
 
   return (
     <>
       <AddExpenseForm />
-      <MonthlyExpenses expensesThisMonth={expensesThisMonth} />
-      <ExpensesChart />
-      <ExpensesLimit />
+      <MonthlyExpenses
+        expensesThisMonth={expensesThisMonth}
+        monthString={monthString}
+      />
+      <MonthlyStats
+        userData={user.userData}
+        expensesThisMonth={expensesThisMonth}
+        monthString={monthString}
+      />
     </>
   );
 }

@@ -4,9 +4,10 @@ const GlobalStyles = createGlobalStyle`
 :root {
 /* COLORS https://yeun.github.io/open-color/*/
     /* Grey TEXT color */
-    --color-grey-100: ##f1f3f5;
+    --color-grey-100: #f1f3f5;
     --color-grey-200: #e9ecef;
     --color-grey-300: #dee2e6;
+    --color-grey-500: #adb5bd;
     --color-grey-700: #212529;
 
     /* Blue */
@@ -50,7 +51,7 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   color: var(--color-grey-700);
-
+  background-color: var(--color-grey-100);
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
   line-height: 1.5;

@@ -48,10 +48,6 @@ const LogOutButton = styled.button`
   }
 `;
 
-// const HelloParagraph = styled.p`
-//   color: white;
-// `;
-
 function Header() {
   const { setIsAuthenticated, isAuthenticated } = useApp();
   const navigate = useNavigate();

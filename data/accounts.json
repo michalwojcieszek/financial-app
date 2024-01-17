@@ -141,8 +141,8 @@
       "userData": {
         "name": "123",
         "password": "123",
-        "limit": "123",
-        "income": "123"
+        "limit": "200",
+        "income": "1000"
       },
       "expenses": {
         "january": [],
@@ -168,16 +168,6 @@
             "category": "education",
             "cost": "2",
             "description": "studies"
-          },
-          {
-            "expenseId": "2024-01-17T10:08:02.932Z",
-            "addedOn": {
-              "date": "17.01.2024",
-              "time": "11:08"
-            },
-            "category": "medicines",
-            "cost": "2523",
-            "description": "allergy pills"
           },
           {
             "expenseId": "2024-01-17T10:32:57.612Z",
@@ -208,9 +198,30 @@
             "category": "medicines",
             "cost": "5",
             "description": "5"
+          },
+          {
+            "expenseId": "2024-01-17T16:15:58.384Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "17:15"
+            },
+            "category": "subscription",
+            "cost": "400",
+            "description": "3"
           }
         ],
-        "april": [],
+        "april": [
+          {
+            "expenseId": "2024-01-17T14:30:55.593Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "15:30"
+            },
+            "category": "medicines",
+            "cost": "300",
+            "description": "pills"
+          }
+        ],
         "may": [],
         "june": [],
         "july": [
@@ -225,16 +236,60 @@
             "description": "3"
           },
           {
-            "expenseId": "2024-01-17T11:38:36.344Z",
+            "expenseId": "2024-01-17T14:29:08.254Z",
             "addedOn": {
               "date": "17.01.2024",
-              "time": "12:38"
+              "time": "15:29"
             },
-            "category": "gadgets",
-            "cost": "23",
-            "description": "23"
+            "category": "housing",
+            "cost": "400",
+            "description": "4"
           }
         ],
+        "august": [],
+        "september": [],
+        "october": [],
+        "november": [],
+        "december": []
+      }
+    },
+    {
+      "id": "c42f",
+      "userData": {
+        "name": "m",
+        "password": "1",
+        "limit": "1000",
+        "income": "2000"
+      },
+      "expenses": {
+        "january": [],
+        "february": [],
+        "march": [
+          {
+            "expenseId": "2024-01-17T13:01:27.392Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "14:01"
+            },
+            "category": "subscription",
+            "cost": "1000",
+            "description": "1000"
+          },
+          {
+            "expenseId": "2024-01-17T13:58:45.827Z",
+            "addedOn": {
+              "date": "17.01.2024",
+              "time": "14:58"
+            },
+            "category": "subscription",
+            "cost": "3",
+            "description": "3"
+          }
+        ],
+        "april": [],
+        "may": [],
+        "june": [],
+        "july": [],
         "august": [],
         "september": [],
         "october": [],

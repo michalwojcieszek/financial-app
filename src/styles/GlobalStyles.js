@@ -24,6 +24,13 @@ const GlobalStyles = createGlobalStyle`
     --color-red-500: #ff6b6b;
     --color-red-400: #ff8787;
 
+    /* PROGRESS BARS COLORS */
+    --stats-green: #40c057;
+    --stats-yellow: #ffd43b;
+    --stats-orange: #fd7e14;
+    --stats-red: #f03e3e;
+
+
 
 /* GRADIENTS */
     --gradient-default: linear-gradient(to right, #1c7ed6, #339af0);

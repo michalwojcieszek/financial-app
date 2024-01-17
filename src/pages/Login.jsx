@@ -45,6 +45,18 @@ function Login() {
       return;
     }
 
+    if (income < 0 || limit < 0) {
+      toast.error(`Income and limit cannot be less than zero`);
+      return;
+    }
+
+    if (income < limit) {
+      toast.error(
+        `In order to save money you cannot spend more than you earn 😊`
+      );
+      return;
+    }
+
     setIsLoading(true);
     const allUsers = await getData();
     setIsLoading(false);
@@ -179,7 +191,7 @@ function Login() {
                   />
                 </StyledFormRow>
                 <StyledFormRow>
-                  <label>Monthly limit of expenditures</label>
+                  <label>Monthly limit of expenses</label>
                   <StyledInput
                     size="large"
                     type="number"

@@ -1,12 +1,13 @@
-import StyledFormRow from "../../ui/StyledFormRow";
-import StyledStatsSpan from "../../ui/StyledStatsSpan";
-import StyledStatsSpanGreyedOut from "../../ui/StyledStatsSpanGreyedOut";
-import ProgressBar from "../../ui/ProgressBar";
-import H4 from "../../ui/H4";
+import H4 from "../ui/H4";
+import ProgressBar from "../ui/ProgressBar";
+import StyledFormRow from "../ui/StyledFormRow";
+import StyledStatsSpan from "../ui/StyledStatsSpan";
+import StyledStatsSpanGreyedOut from "../ui/StyledStatsSpanGreyedOut";
 
-function YearlyLimitStats({ sumExpenses, sumLimits, isLimitCrossed }) {
+function LimitStats({ sumExpenses, sumLimits, isLimitCrossed }) {
+  const expensesCompLimit = (100 - (sumExpenses / sumLimits) * 100).toFixed(2);
   const crossedLimitBy = sumExpenses - sumLimits;
-  const expensesCompLimit = ((sumExpenses / sumLimits) * 100).toFixed(2);
+  const percExpensesOfLimit = ((sumExpenses / sumLimits) * 100).toFixed(2);
   const leftToSpend = sumLimits - sumExpenses;
 
   let limitColor;
@@ -51,7 +52,7 @@ function YearlyLimitStats({ sumExpenses, sumLimits, isLimitCrossed }) {
           $ {sumExpenses}
         </StyledStatsSpan>{" "}
         <StyledStatsSpanGreyedOut>
-          ({expensesCompLimit}% of limit)
+          ({percExpensesOfLimit}% of limit)
         </StyledStatsSpanGreyedOut>
       </p>
       <ProgressBar filled={expensesCompLimit} color={limitColor} />
@@ -62,4 +63,4 @@ function YearlyLimitStats({ sumExpenses, sumLimits, isLimitCrossed }) {
   );
 }
 
-export default YearlyLimitStats;
+export default LimitStats;

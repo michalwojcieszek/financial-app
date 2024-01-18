@@ -2,9 +2,9 @@ import { useLoaderData } from "react-router-dom";
 import Section from "../../ui/Section";
 import StyledFormDiv from "../../ui/StyledFormDiv";
 import YearlyIncomeStats from "./YearlyIncomeStats";
-import YearlyLimitStats from "./YearlyLimitStats";
 import YearlySummary from "./YearlySummary";
 import YearlyExpensesChart from "./YearlyExpensesChart";
+import LimitStats from "../LimitStats";
 
 function YearlyStats() {
   const user = useLoaderData();
@@ -60,7 +60,7 @@ function YearlyStats() {
         isLimitCrossed={isLimitCrossed}
       />
       <StyledFormDiv>
-        <YearlyLimitStats sumExpenses={sumExpenses} sumLimits={sumLimits} />
+        <LimitStats sumExpenses={sumExpenses} sumLimits={sumLimits} />
         <YearlyIncomeStats
           sumExpenses={sumExpenses}
           sumIncomes={sumIncomes}

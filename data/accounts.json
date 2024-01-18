@@ -400,30 +400,20 @@
         "january": [],
         "february": [],
         "march": [],
-        "april": [],
-        "may": [],
-        "june": [
+        "april": [
           {
-            "expenseId": "2024-01-18T13:00:31.637Z",
+            "expenseId": "2024-01-18T13:19:50.638Z",
             "addedOn": {
               "date": "18.01.2024",
-              "time": "14:00"
+              "time": "14:19"
             },
             "category": "education",
-            "cost": "23",
-            "description": "32"
-          },
-          {
-            "expenseId": "2024-01-18T13:00:35.289Z",
-            "addedOn": {
-              "date": "18.01.2024",
-              "time": "14:00"
-            },
-            "category": "medicines",
-            "cost": "55",
-            "description": "55"
+            "cost": "50",
+            "description": "2"
           }
         ],
+        "may": [],
+        "june": [],
         "july": [],
         "august": [],
         "september": [],

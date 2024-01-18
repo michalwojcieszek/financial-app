@@ -4,9 +4,9 @@ import H3 from "../../ui/H3";
 import Section from "../../ui/Section";
 import StyledFormDiv from "../../ui/StyledFormDiv";
 import StyledStatsSpan from "../../ui/StyledStatsSpan";
-import MonthlyLimitStats from "./MonthlyLimitStats";
 import MonthlyIncomeStats from "./MonthlyIncomeStats";
 import MonthlyExpensesChart from "./MonthlyExpensesChart";
+import LimitStats from "../LimitStats";
 
 function MonthlyStats({ userData, expensesThisMonth, monthString }) {
   const { income, limit } = userData;
@@ -48,8 +48,8 @@ function MonthlyStats({ userData, expensesThisMonth, monthString }) {
         </p>
       </div>
       <StyledFormDiv>
-        <MonthlyLimitStats
-          sumExpensesThisMonth={sumExpensesThisMonth}
+        <LimitStats
+          sumExpenses={sumExpensesThisMonth}
           limit={limit}
           isLimitCrossed={isLimitCrossed}
         />

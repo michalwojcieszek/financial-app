@@ -4,6 +4,7 @@ import StyledFormDiv from "../../ui/StyledFormDiv";
 import YearlyIncomeStats from "./YearlyIncomeStats";
 import YearlyLimitStats from "./YearlyLimitStats";
 import YearlySummary from "./YearlySummary";
+import YearlyExpensesChart from "./YearlyExpensesChart";
 
 function YearlyStats() {
   const user = useLoaderData();
@@ -44,6 +45,9 @@ function YearlyStats() {
       break;
   }
 
+  console.log(expenses);
+  if (expenses === 0) return;
+
   return (
     <Section>
       <YearlySummary
@@ -65,6 +69,7 @@ function YearlyStats() {
           isLimitCrossed={isLimitCrossed}
           totalSavings={totalSavings}
         />
+        <YearlyExpensesChart expenses={expenses} />
       </StyledFormDiv>
     </Section>
   );

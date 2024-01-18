@@ -64,12 +64,12 @@ function Login() {
       return;
     }
 
-    if (income < 0 || limit < 0) {
+    if (+income < 0 || +limit < 0) {
       toast.error(`Income and limit cannot be less than zero`);
       return;
     }
 
-    if (income < limit) {
+    if (+income < +limit) {
       toast.error(
         `In order to save money you cannot spend more than you earn 😊`
       );

@@ -387,6 +387,61 @@
         "november": [],
         "december": []
       }
+    },
+    {
+      "id": "1ca3",
+      "userData": {
+        "name": "5",
+        "password": "55555",
+        "limit": "200",
+        "income": "1000"
+      },
+      "expenses": {
+        "january": [],
+        "february": [],
+        "march": [],
+        "april": [],
+        "may": [],
+        "june": [
+          {
+            "expenseId": "2024-01-18T13:00:31.637Z",
+            "addedOn": {
+              "date": "18.01.2024",
+              "time": "14:00"
+            },
+            "category": "education",
+            "cost": "23",
+            "description": "32"
+          },
+          {
+            "expenseId": "2024-01-18T13:00:35.289Z",
+            "addedOn": {
+              "date": "18.01.2024",
+              "time": "14:00"
+            },
+            "category": "medicines",
+            "cost": "55",
+            "description": "55"
+          }
+        ],
+        "july": [],
+        "august": [],
+        "september": [],
+        "october": [],
+        "november": [
+          {
+            "expenseId": "2024-01-18T13:00:41.958Z",
+            "addedOn": {
+              "date": "18.01.2024",
+              "time": "14:00"
+            },
+            "category": "car",
+            "cost": "222",
+            "description": "2"
+          }
+        ],
+        "december": []
+      }
     }
   ]
 }

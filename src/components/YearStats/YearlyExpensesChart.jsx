@@ -1,10 +1,13 @@
 import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 import H3 from "../../ui/H3";
-
+import styled from "styled-components";
 import StyledChartContainerDiv from "../../ui/StyledChartContainerDiv";
 
-function MonthlyExpensesChart({ expensesThisMonth }) {
-  const categoryCost = expensesThisMonth.reduce((acc, expense) => {
+function YearlyExpensesChart({ expenses }) {
+  const expensesThisYear = Object.values(expenses).flat();
+  console.log(expensesThisYear);
+
+  const categoryCost = expensesThisYear.reduce((acc, expense) => {
     const { category, cost } = expense;
     acc[category] = (acc[category] || 0) + Number(cost);
     return acc;
@@ -14,6 +17,7 @@ function MonthlyExpensesChart({ expensesThisMonth }) {
     const [name, value] = arr;
     return { name, value };
   });
+  console.log(categoryCostToChart);
 
   const colors = [
     "#1f78b4",
@@ -79,4 +83,4 @@ function MonthlyExpensesChart({ expensesThisMonth }) {
   );
 }
 
-export default MonthlyExpensesChart;
+export default YearlyExpensesChart;

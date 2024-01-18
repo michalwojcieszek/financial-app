@@ -6,6 +6,7 @@ import StyledFormDiv from "../../ui/StyledFormDiv";
 import StyledStatsSpan from "../../ui/StyledStatsSpan";
 import MonthlyLimitStats from "./MonthlyLimitStats";
 import MonthlyIncomeStats from "./MonthlyIncomeStats";
+import MonthlyExpensesChart from "./MonthlyExpensesChart";
 
 function MonthlyStats({ userData, expensesThisMonth, monthString }) {
   const { income, limit } = userData;
@@ -58,6 +59,7 @@ function MonthlyStats({ userData, expensesThisMonth, monthString }) {
           isLimitCrossed={isLimitCrossed}
           goalToSave={goalToSave}
         />
+        <MonthlyExpensesChart expensesThisMonth={expensesThisMonth} />
       </StyledFormDiv>
     </Section>
   );

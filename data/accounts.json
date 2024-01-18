@@ -198,6 +198,16 @@
             "category": "medicines",
             "cost": "5",
             "description": "5"
+          },
+          {
+            "expenseId": "2024-01-18T11:03:28.657Z",
+            "addedOn": {
+              "date": "18.01.2024",
+              "time": "12:03"
+            },
+            "category": "medicines",
+            "cost": "100",
+            "description": "2"
           }
         ],
         "april": [

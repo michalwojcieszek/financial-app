@@ -2,8 +2,8 @@ import toast from "react-hot-toast";
 import ButtonUnderline from "../ui/ButtonUnderline";
 import H2 from "../ui/H2";
 import { useApp } from "../contexts/AppContext";
-import { getData, postData } from "../hooks/apiFetching";
-import { useNavigate } from "react-router-dom";
+import { postData } from "../hooks/apiFetching";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
 import Spinner from "../ui/Spinner";
 import Section from "../ui/Section";
@@ -15,6 +15,8 @@ import { HiOutlineUser, HiOutlineUserPlus } from "react-icons/hi2";
 import StyledButtonWithEmojiDiv from "../ui/StyledButtonWithEmojiDiv";
 
 function Login() {
+  const allUsers = useLoaderData();
+  console.log(allUsers);
   const navigate = useNavigate();
   const {
     ifUserHaveAccount,
@@ -29,7 +31,6 @@ function Login() {
     setIncome,
     setIsAuthenticated,
     isLoading,
-    setIsLoading,
   } = useApp();
 
   function clearInputs() {
@@ -44,6 +45,20 @@ function Login() {
       toast.error(`Fill all the fields`);
       return;
     }
+
+    //Check if name is unique
+    console.log(allUsers);
+    if (
+      allUsers.some(
+        (user) => user.userData.name.toLowerCase() === name.toLowerCase()
+      )
+    ) {
+      toast.error(
+        `User with this name already exists. Please enter an unique name.`
+      );
+      return;
+    }
+
     if (password.length < 5) {
       toast.error(`Password need to have at least 5 characters`);
       return;
@@ -57,23 +72,6 @@ function Login() {
     if (income < limit) {
       toast.error(
         `In order to save money you cannot spend more than you earn 😊`
-      );
-      return;
-    }
-
-    setIsLoading(true);
-    const allUsers = await getData();
-    setIsLoading(false);
-
-    //Check if name is unique
-    console.log(allUsers);
-    if (
-      allUsers.some(
-        (user) => user.userData.name.toLowerCase() === name.toLowerCase()
-      )
-    ) {
-      toast.error(
-        `User with this name already exists. Please enter an unique name.`
       );
       return;
     }
@@ -107,9 +105,6 @@ function Login() {
       toast.error(`Fill all the fields`);
       return;
     }
-    setIsLoading(true);
-    const allUsers = await getData();
-    setIsLoading(false);
 
     //Check if userName exists
     if (

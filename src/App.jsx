@@ -10,6 +10,7 @@ import Month from "./pages/Month";
 import { userLoader } from "./hooks/userLoader";
 import Settings from "./pages/Settings";
 import Year from "./pages/Year";
+import { getAllUsers as allUsersLoader } from "./hooks/apiFetching";
 
 //---------------------------------------- MY TRY
 const router = createBrowserRouter([
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Login />,
+        loader: allUsersLoader,
       },
       {
         element: <Dashboard />,

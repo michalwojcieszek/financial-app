@@ -2,7 +2,7 @@ import { getUserDataById } from "../hooks/apiFetching";
 import AddExpenseForm from "../components/AddExpenseForm";
 import MonthlyExpenses from "../components/MonthlyExpenses";
 import { useLoaderData, useParams } from "react-router-dom";
-import MonthlyStats from "../components/MonthlyStats";
+import MonthlyStats from "../components/MonthStats/MonthlyStats";
 
 function Month() {
   const user = useLoaderData();

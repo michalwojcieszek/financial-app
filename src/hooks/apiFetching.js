@@ -11,7 +11,7 @@ export async function postData(newUser) {
   return data.id;
 }
 
-export async function getData() {
+export async function getAllUsers() {
   const res = await fetch(URL_JSON_SERVER);
   const data = await res.json();
   console.log(data);

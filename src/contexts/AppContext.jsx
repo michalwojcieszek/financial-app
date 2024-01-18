@@ -12,6 +12,7 @@ function AppProvider({ children }) {
   const [password, setPassword] = useState("");
   const [limit, setLimit] = useState("");
   const [income, setIncome] = useState("");
+  const [currency, setCurrency] = useState("USD");
 
   //ExpenseForm
   const [category, setCategory] = useState("");
@@ -46,6 +47,8 @@ function AppProvider({ children }) {
         setIsLoading,
         isSettingsPopupOpen,
         setIsSettingsPopupOpen,
+        currency,
+        setCurrency,
       }}
     >
       {children}

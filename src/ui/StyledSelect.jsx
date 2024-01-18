@@ -25,7 +25,6 @@ const StyledSelect = styled.select`
   cursor: pointer;
   text-transform: capitalize;
   text-align-last: center;
-  /* -webkit-appearance: menulist-button; */
 `;
 
 export default StyledSelect;

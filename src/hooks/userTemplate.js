@@ -4,6 +4,7 @@ const userTemplate = {
     password: "",
     limit: "",
     income: "",
+    currency: "",
   },
   expenses: {
     january: [],

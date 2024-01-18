@@ -442,6 +442,30 @@
         "november": [],
         "december": []
       }
+    },
+    {
+      "id": "e2e4",
+      "userData": {
+        "name": "aaa",
+        "password": "11111",
+        "limit": "150",
+        "income": "2000",
+        "currency": "EUR"
+      },
+      "expenses": {
+        "january": [],
+        "february": [],
+        "march": [],
+        "april": [],
+        "may": [],
+        "june": [],
+        "july": [],
+        "august": [],
+        "september": [],
+        "october": [],
+        "november": [],
+        "december": []
+      }
     }
   ]
 }

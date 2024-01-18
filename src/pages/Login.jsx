@@ -13,6 +13,7 @@ import StyledButtonPrimary from "../ui/StyledButtonPrimary";
 import StyledFormDiv from "../ui/StyledFormDiv";
 import { HiOutlineUser, HiOutlineUserPlus } from "react-icons/hi2";
 import StyledButtonWithEmojiDiv from "../ui/StyledButtonWithEmojiDiv";
+import { SelectCurrency } from "../ui/SelectCurrency";
 
 function Login() {
   const allUsers = useLoaderData();
@@ -31,6 +32,8 @@ function Login() {
     setIncome,
     setIsAuthenticated,
     isLoading,
+    currency,
+    setCurrency,
   } = useApp();
 
   function clearInputs() {
@@ -85,6 +88,7 @@ function Login() {
         password,
         income,
         limit,
+        currency,
       },
     };
     const newUserId = await postData(newUser);
@@ -197,6 +201,18 @@ function Login() {
                     value={limit}
                     onChange={(e) => setLimit(e.target.value)}
                   />
+                </StyledFormRow>
+                <StyledFormRow>
+                  <label>Select currency</label>
+                  <SelectCurrency onChange={(e) => setCurrency(e.target.value)}>
+                    <option value="USD" selected>
+                      USD (🇺🇸)
+                    </option>
+                    <option value="EUR">EUR (🇪🇺)</option>
+                    <option value="GBP">GBP (🇬🇧)</option>
+                    <option value="CHF">CHF (🇨🇭)</option>
+                    <option value="PLN">PLN (🇵🇱)</option>
+                  </SelectCurrency>
                 </StyledFormRow>
               </>
             ) : (

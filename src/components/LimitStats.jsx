@@ -13,7 +13,7 @@ function LimitStats({ sumExpenses, limit, isLimitCrossed, period }) {
   console.log(expensesCompLimit);
   let limitColor;
   switch (true) {
-    case expensesCompLimit >= 100 || expensesCompLimit < 0:
+    case expensesCompLimit > 100 || expensesCompLimit < 0:
       limitColor = "--stats-red";
       break;
     case expensesCompLimit > 75:

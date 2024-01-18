@@ -5,6 +5,7 @@ import YearlySummary from "./YearlySummary";
 import YearlyExpensesChart from "./YearlyExpensesChart";
 import LimitStats from "../LimitStats";
 import IncomeStats from "../IncomeStats";
+import H3 from "../../ui/H3";
 
 function YearlyStats() {
   const user = useLoaderData();
@@ -46,7 +47,14 @@ function YearlyStats() {
       break;
   }
 
-  if (expenses === 0) return;
+  console.log(Object.entries(expenses));
+  if (sumExpenses === 0)
+    return (
+      <Section>
+        <H3>You have no expenses yet</H3>
+        <p>Choose the month and add some &uarr;</p>
+      </Section>
+    );
 
   return (
     <Section>

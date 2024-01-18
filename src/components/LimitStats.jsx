@@ -4,25 +4,26 @@ import StyledFormRow from "../ui/StyledFormRow";
 import StyledStatsSpan from "../ui/StyledStatsSpan";
 import StyledStatsSpanGreyedOut from "../ui/StyledStatsSpanGreyedOut";
 
-function LimitStats({ sumExpenses, sumLimits, isLimitCrossed }) {
-  const expensesCompLimit = (100 - (sumExpenses / sumLimits) * 100).toFixed(2);
-  const crossedLimitBy = sumExpenses - sumLimits;
-  const percExpensesOfLimit = ((sumExpenses / sumLimits) * 100).toFixed(2);
-  const leftToSpend = sumLimits - sumExpenses;
+function LimitStats({ sumExpenses, limit, isLimitCrossed, period }) {
+  const expensesCompLimit = (100 - (sumExpenses / limit) * 100).toFixed(2);
+  const crossedLimitBy = sumExpenses - limit;
+  const percExpensesOfLimit = ((sumExpenses / limit) * 100).toFixed(2);
+  const leftToSpend = limit - sumExpenses;
 
+  console.log(expensesCompLimit);
   let limitColor;
   switch (true) {
-    case expensesCompLimit >= 100:
+    case expensesCompLimit >= 100 || expensesCompLimit < 0:
       limitColor = "--stats-red";
       break;
     case expensesCompLimit > 75:
-      limitColor = "--stats-orange";
+      limitColor = "--stats-green";
       break;
     case expensesCompLimit >= 50:
       limitColor = "--stats-yellow";
       break;
     case expensesCompLimit < 50:
-      limitColor = "--stats-green";
+      limitColor = "--stats-orange";
       break;
     default:
       limitColor = "--color-blue-700";
@@ -46,18 +47,15 @@ function LimitStats({ sumExpenses, sumLimits, isLimitCrossed }) {
         </p>
       )}
       <p>
-        Expenses this year:
-        <StyledStatsSpan color={limitColor}>
-          {" "}
-          $ {sumExpenses}
-        </StyledStatsSpan>{" "}
+        Expenses this {period}:
+        <StyledStatsSpan color={limitColor}> $ {sumExpenses}</StyledStatsSpan>{" "}
         <StyledStatsSpanGreyedOut>
           ({percExpensesOfLimit}% of limit)
         </StyledStatsSpanGreyedOut>
       </p>
       <ProgressBar filled={expensesCompLimit} color={limitColor} />
       <StyledStatsSpanGreyedOut size="small">
-        limit of expenses: $ {sumLimits}
+        limit of expenses: $ {limit}
       </StyledStatsSpanGreyedOut>
     </StyledFormRow>
   );

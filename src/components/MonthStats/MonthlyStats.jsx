@@ -4,9 +4,9 @@ import H3 from "../../ui/H3";
 import Section from "../../ui/Section";
 import StyledFormDiv from "../../ui/StyledFormDiv";
 import StyledStatsSpan from "../../ui/StyledStatsSpan";
-import MonthlyIncomeStats from "./MonthlyIncomeStats";
 import MonthlyExpensesChart from "./MonthlyExpensesChart";
 import LimitStats from "../LimitStats";
+import IncomeStats from "../IncomeStats";
 
 function MonthlyStats({ userData, expensesThisMonth, monthString }) {
   const { income, limit } = userData;
@@ -21,12 +21,31 @@ function MonthlyStats({ userData, expensesThisMonth, monthString }) {
     (acc, cur) => acc + cur,
     0
   );
-
+  const sumSaved = income - sumExpensesThisMonth;
   const goalToSave = income - limit;
   const isLimitCrossed = sumExpensesThisMonth > limit ? true : false;
 
   function handleGoToSettings() {
     navigate(`/users/${id}/settings`);
+  }
+
+  let incomeColor;
+  switch (true) {
+    case sumSaved < goalToSave * 0.25:
+      incomeColor = "--stats-red";
+      break;
+    case sumSaved < goalToSave * 0.5:
+      incomeColor = "--stats-orange";
+      break;
+    case sumSaved < goalToSave:
+      incomeColor = "--stats-yellow";
+      break;
+    case sumSaved >= goalToSave:
+      incomeColor = "--stats-green";
+      break;
+    default:
+      incomeColor = "--color-blue-700";
+      break;
   }
 
   if (!expensesThisMonth.length) return;
@@ -52,12 +71,15 @@ function MonthlyStats({ userData, expensesThisMonth, monthString }) {
           sumExpenses={sumExpensesThisMonth}
           limit={limit}
           isLimitCrossed={isLimitCrossed}
+          period="month"
         />
-        <MonthlyIncomeStats
-          sumExpensesThisMonth={sumExpensesThisMonth}
+        <IncomeStats
+          expense={sumExpensesThisMonth}
           income={income}
+          incomeColor={incomeColor}
           isLimitCrossed={isLimitCrossed}
-          goalToSave={goalToSave}
+          sumSaved={sumSaved}
+          period="month"
         />
         <MonthlyExpensesChart expensesThisMonth={expensesThisMonth} />
       </StyledFormDiv>

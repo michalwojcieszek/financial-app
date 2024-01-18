@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 const StyledListItem = styled.li`
   display: grid;
-  grid-template-columns: auto 1fr 1.5fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1.5fr 1fr auto;
   gap: 1rem;
   align-items: center;
   justify-items: center;

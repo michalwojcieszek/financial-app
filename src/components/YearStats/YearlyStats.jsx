@@ -1,10 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import Section from "../../ui/Section";
 import StyledFormDiv from "../../ui/StyledFormDiv";
-import YearlyIncomeStats from "./YearlyIncomeStats";
 import YearlySummary from "./YearlySummary";
 import YearlyExpensesChart from "./YearlyExpensesChart";
 import LimitStats from "../LimitStats";
+import IncomeStats from "../IncomeStats";
 
 function YearlyStats() {
   const user = useLoaderData();
@@ -26,6 +26,7 @@ function YearlyStats() {
 
   const averageCost = (sumExpenses / monthsNum).toFixed(2);
   const totalSavings = sumIncomes - sumExpenses;
+
   let incomeColor;
   switch (true) {
     case totalSavings < goalToSave * 0.25:
@@ -45,7 +46,6 @@ function YearlyStats() {
       break;
   }
 
-  console.log(expenses);
   if (expenses === 0) return;
 
   return (
@@ -60,14 +60,15 @@ function YearlyStats() {
         isLimitCrossed={isLimitCrossed}
       />
       <StyledFormDiv>
-        <LimitStats sumExpenses={sumExpenses} sumLimits={sumLimits} />
-        <YearlyIncomeStats
-          sumExpenses={sumExpenses}
-          sumIncomes={sumIncomes}
+        <LimitStats sumExpenses={sumExpenses} limit={sumLimits} period="year" />
+        <IncomeStats
+          expense={sumExpenses}
+          income={sumIncomes}
           incomeColor={incomeColor}
-          sumSaved={sumSaved}
           isLimitCrossed={isLimitCrossed}
           totalSavings={totalSavings}
+          sumSaved={sumSaved}
+          period="year"
         />
         <YearlyExpensesChart expenses={expenses} />
       </StyledFormDiv>

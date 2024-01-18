@@ -12,7 +12,9 @@ import Spinner from "./Spinner";
 
 const StyledPopupContainerDiv = styled.div`
   /* display: none; */
-  display: ${(props) => (props.isSettingsPopupOpen ? "block" : "none")};
+  display: ${(props) =>
+    props.isSettingsPopupOpen === "true" ? "block" : "none"};
+  /* props.$isSettingsPopupOpen.toString() === "true" ? "block" : "none"}; */
   position: absolute;
   top: 0;
   right: 0;
@@ -86,7 +88,7 @@ function SettingsPopupContainer() {
 
   return (
     <StyledPopupContainerDiv
-      isSettingsPopupOpen={isSettingsPopupOpen}
+      isSettingsPopupOpen={isSettingsPopupOpen ? "true" : "false"}
       onClick={handleClickBackground}
     >
       <StyledConfirmDiv>

@@ -16,7 +16,6 @@ import { changeIncomeAndLimit } from "../hooks/apiHandlers";
 import StyledButtonDeleteAccount from "../ui/StyledButtonDeleteAccount";
 import StyledFormDiv from "../ui/StyledFormDiv";
 import StyledDivDeleteButton from "../ui/StyledDivDeleteButton";
-import SettingsPopupContainer from "../ui/SettingsPopupContainer";
 import { useApp } from "../contexts/AppContext";
 
 function Settings() {

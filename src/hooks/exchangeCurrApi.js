@@ -6,7 +6,5 @@ export async function exchangeCurrApi(from, to) {
   );
   const data = await res.json();
   const rate = data.rates[to];
-  console.log(rate);
-  console.log(data);
   return rate;
 }

@@ -43,9 +43,8 @@ function ChangingCurrency({ currenciesRatesArray, currency, id }) {
       (el) => el.currency === newCurrency
     )[0].rate;
     await exchangeUserExpenses(id, exchangeRate, newCurrency);
-    console.log(exchangeRate);
     setIsLoading(false);
-    navigate(`/users/${id}/settings`);
+    navigate(`/users/${id}`);
   }
 
   return (

@@ -18,15 +18,15 @@ function YearlyStats() {
     return acc + sumInMonth;
   }, 0);
 
-  const sumIncomes = income * monthsNum;
-  const sumLimits = limit * monthsNum;
-  const goalToSave = sumIncomes - sumLimits;
+  const sumIncomes = (income * monthsNum).toFixed(2);
+  const sumLimits = (limit * monthsNum).toFixed(2);
+  const goalToSave = (sumIncomes - sumLimits).toFixed(2);
   const isLimitCrossed = sumLimits < sumExpenses ? true : false;
 
   const sumSaved = sumIncomes - sumExpenses;
 
   const averageCost = (sumExpenses / monthsNum).toFixed(2);
-  const totalSavings = sumIncomes - sumExpenses;
+  const totalSavings = (sumIncomes - sumExpenses).toFixed(2);
 
   let incomeColor;
   switch (true) {
@@ -36,10 +36,10 @@ function YearlyStats() {
     case totalSavings < goalToSave * 0.5:
       incomeColor = "--stats-orange";
       break;
-    case totalSavings < goalToSave:
+    case totalSavings < goalToSave * 0.75:
       incomeColor = "--stats-yellow";
       break;
-    case totalSavings >= goalToSave:
+    case totalSavings >= goalToSave * 0.75:
       incomeColor = "--stats-green";
       break;
     default:
@@ -48,7 +48,7 @@ function YearlyStats() {
   }
 
   console.log(Object.entries(expenses));
-  if (sumExpenses === 0)
+  if (Object.entries(expenses).length === 0)
     return (
       <Section>
         <H3>You have no expenses yet</H3>

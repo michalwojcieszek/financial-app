@@ -33,6 +33,7 @@ const colors = [
 function Chart({ categoryCost }) {
   const categoryCostToChart = Object.entries(categoryCost).map((arr) => {
     const [name, value] = arr;
+    // const valueFixed = value.toFixed(2);
     return { name, value };
   });
   return (

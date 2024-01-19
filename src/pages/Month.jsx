@@ -6,6 +6,7 @@ import MonthlyStats from "../components/MonthStats/MonthlyStats";
 
 function Month() {
   const user = useLoaderData();
+  const currency = user.userData.currency;
   const { month } = useParams();
   const monthString = month[0].toUpperCase() + month.slice(1);
   const expensesThisMonth = user.expenses[month];
@@ -16,11 +17,13 @@ function Month() {
       <MonthlyExpenses
         expensesThisMonth={expensesThisMonth}
         monthString={monthString}
+        currency={currency}
       />
       <MonthlyStats
         userData={user.userData}
         expensesThisMonth={expensesThisMonth}
         monthString={monthString}
+        currency={currency}
       />
     </>
   );

@@ -83,7 +83,7 @@ function getEmoji(text) {
   }
 }
 
-function ExpenseItem({ expense }) {
+function ExpenseItem({ expense, currency }) {
   const [isLoading, setIsLoading] = useState("");
   const navigate = useNavigate();
   const { category, cost, description, addedOn, expenseId } = expense;
@@ -103,7 +103,7 @@ function ExpenseItem({ expense }) {
   return (
     <StyledListItem key={expenseId}>
       <StyledEmojiSpan>{emoji}</StyledEmojiSpan>
-      <StyledCostSpan>$ {cost}</StyledCostSpan>
+      <StyledCostSpan>{cost.toFixed(2)}</StyledCostSpan>
       {expense.description ? (
         <StyledDescription>{description}</StyledDescription>
       ) : (

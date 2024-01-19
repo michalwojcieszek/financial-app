@@ -4,7 +4,7 @@ import StyledFormRow from "../ui/StyledFormRow";
 import StyledStatsSpan from "../ui/StyledStatsSpan";
 import StyledStatsSpanGreyedOut from "../ui/StyledStatsSpanGreyedOut";
 
-function LimitStats({ sumExpenses, limit, isLimitCrossed, period }) {
+function LimitStats({ sumExpenses, limit, isLimitCrossed, period, currency }) {
   const expensesCompLimit = (100 - (sumExpenses / limit) * 100).toFixed(2);
   const crossedLimitBy = sumExpenses - limit;
   const percExpensesOfLimit = ((sumExpenses / limit) * 100).toFixed(2);
@@ -37,18 +37,23 @@ function LimitStats({ sumExpenses, limit, isLimitCrossed, period }) {
         <p>
           Crossed the limit by{" "}
           <StyledStatsSpan color={limitColor}>
-            $ {crossedLimitBy}
+            {currency} {crossedLimitBy.toFixed(2)}
           </StyledStatsSpan>
         </p>
       ) : (
         <p>
-          <StyledStatsSpan color={limitColor}>$ {leftToSpend}</StyledStatsSpan>{" "}
+          <StyledStatsSpan color={limitColor}>
+            {currency} {leftToSpend.toFixed(2)}
+          </StyledStatsSpan>{" "}
           left to spend to not cross the limit.
         </p>
       )}
       <p>
         Expenses this {period}:
-        <StyledStatsSpan color={limitColor}> $ {sumExpenses}</StyledStatsSpan>{" "}
+        <StyledStatsSpan color={limitColor}>
+          {" "}
+          {currency} {sumExpenses.toFixed(2)}
+        </StyledStatsSpan>{" "}
         <StyledStatsSpanGreyedOut>
           ({percExpensesOfLimit}% of limit)
         </StyledStatsSpanGreyedOut>

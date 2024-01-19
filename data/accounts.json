@@ -448,12 +448,23 @@
       "userData": {
         "name": "aaa",
         "password": "11111",
-        "limit": "150",
-        "income": "2000",
-        "currency": "EUR"
+        "limit": 659.8549504904162,
+        "income": 8798.066006538884,
+        "currency": "PLN"
       },
       "expenses": {
-        "january": [],
+        "january": [
+          {
+            "expenseId": "2024-01-19T10:46:19.888Z",
+            "addedOn": {
+              "date": "19.01.2024",
+              "time": "11:46"
+            },
+            "category": "insurance",
+            "cost": 43.9903300326944,
+            "description": "2"
+          }
+        ],
         "february": [],
         "march": [],
         "april": [],

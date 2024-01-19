@@ -38,12 +38,14 @@ function YearlySummary({
         <li>Limit has not been exceeded in any month</li>
       )}
       <li>
-        <StyledStatsSpan>$ {sumExpenses}</StyledStatsSpan> spent (
+        <StyledStatsSpan>$ {sumExpenses.toFixed(2)}</StyledStatsSpan> spent (
         <StyledStatsSpan>$ {averageCost}</StyledStatsSpan> on average)
       </li>
       {sumSaved > 0 ? (
         <li>
-          <StyledStatsSpan color={incomeColor}>$ {sumSaved}</StyledStatsSpan>{" "}
+          <StyledStatsSpan color={incomeColor}>
+            $ {sumSaved.toFixed(2)}
+          </StyledStatsSpan>{" "}
           saved
         </li>
       ) : (

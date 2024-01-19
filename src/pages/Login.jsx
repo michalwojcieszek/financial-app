@@ -204,10 +204,11 @@ function Login() {
                 </StyledFormRow>
                 <StyledFormRow>
                   <label>Select currency</label>
-                  <SelectCurrency onChange={(e) => setCurrency(e.target.value)}>
-                    <option value="USD" selected>
-                      USD (🇺🇸)
-                    </option>
+                  <SelectCurrency
+                    onChange={(e) => setCurrency(e.target.value)}
+                    defaultValue="USD"
+                  >
+                    <option value="USD">USD (🇺🇸)</option>
                     <option value="EUR">EUR (🇪🇺)</option>
                     <option value="GBP">GBP (🇬🇧)</option>
                     <option value="CHF">CHF (🇨🇭)</option>

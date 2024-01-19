@@ -1,5 +1,6 @@
 import H3 from "../ui/H3";
 import Section from "../ui/Section";
+import StyledStatsSpan from "../ui/StyledStatsSpan";
 import ExpenseItem from "./ExpenseItem";
 import styled from "styled-components";
 
@@ -34,7 +35,7 @@ const StyledHeaderOfTable = styled.div`
   }
 `;
 
-function MonthlyExpenses({ expensesThisMonth, monthString }) {
+function MonthlyExpenses({ expensesThisMonth, monthString, currency }) {
   console.log(expensesThisMonth);
 
   return (
@@ -49,14 +50,20 @@ function MonthlyExpenses({ expensesThisMonth, monthString }) {
           <H3>All expenses in {monthString}</H3>
           <StyledHeaderOfTable>
             <div>category</div>
-            <div>cost</div>
+            <div>
+              cost <strong>{currency}</strong>
+            </div>
             <div>description</div>
             <div>added on</div>
             <div>DELETE</div>
           </StyledHeaderOfTable>
           <StyledExpensesList>
             {expensesThisMonth.map((expense) => (
-              <ExpenseItem key={expense.expenseId} expense={expense} />
+              <ExpenseItem
+                key={expense.expenseId}
+                expense={expense}
+                currency={currency}
+              />
             ))}
           </StyledExpensesList>
         </>

@@ -8,7 +8,7 @@ import MonthlyExpensesChart from "./MonthlyExpensesChart";
 import LimitStats from "../LimitStats";
 import IncomeStats from "../IncomeStats";
 
-function MonthlyStats({ userData, expensesThisMonth, monthString }) {
+function MonthlyStats({ userData, expensesThisMonth, monthString, currency }) {
   const { income, limit } = userData;
   const { id } = useParams();
   const navigate = useNavigate();
@@ -37,10 +37,10 @@ function MonthlyStats({ userData, expensesThisMonth, monthString }) {
     case sumSaved < goalToSave * 0.5:
       incomeColor = "--stats-orange";
       break;
-    case sumSaved < goalToSave:
+    case sumSaved < goalToSave * 75:
       incomeColor = "--stats-yellow";
       break;
-    case sumSaved >= goalToSave:
+    case sumSaved >= goalToSave * 75:
       incomeColor = "--stats-green";
       break;
     default:
@@ -56,7 +56,7 @@ function MonthlyStats({ userData, expensesThisMonth, monthString }) {
       <div>
         Your goal is to save{" "}
         <StyledStatsSpan color="--color-blue-700">
-          $ {goalToSave}
+          {currency} {goalToSave.toFixed(2)}
         </StyledStatsSpan>{" "}
         each month.{" "}
         <p>
@@ -72,14 +72,16 @@ function MonthlyStats({ userData, expensesThisMonth, monthString }) {
           limit={limit}
           isLimitCrossed={isLimitCrossed}
           period="month"
+          currency={currency}
         />
         <IncomeStats
           expense={sumExpensesThisMonth}
-          income={income}
+          income={income.toFixed(2)}
           incomeColor={incomeColor}
           isLimitCrossed={isLimitCrossed}
           sumSaved={sumSaved}
           period="month"
+          currency={currency}
         />
         <MonthlyExpensesChart expensesThisMonth={expensesThisMonth} />
       </StyledFormDiv>

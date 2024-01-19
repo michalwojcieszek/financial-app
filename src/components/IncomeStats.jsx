@@ -12,9 +12,10 @@ function IncomeStats({
   isLimitCrossed,
   sumSaved,
   period,
+  currency,
 }) {
   const isIncomeCrossed = expense > income ? true : false;
-  const crossedIncomeBy = expense - income;
+  const crossedIncomeBy = (expense - income).toFixed(2);
   const totalSavingsPerc = ((sumSaved / income) * 100).toFixed(2);
   const crossedIncomeByPerc = ((crossedIncomeBy / income) * 100).toFixed(2);
 
@@ -25,7 +26,7 @@ function IncomeStats({
         <p>
           Total savings:{" "}
           <StyledStatsSpan color={incomeColor}>
-            $ {totalSavings}{" "}
+            {currency} {sumSaved.toFixed(2)}{" "}
           </StyledStatsSpan>
           <StyledStatsSpanGreyedOut>
             ({totalSavingsPerc}% of income)
@@ -35,7 +36,9 @@ function IncomeStats({
       {isLimitCrossed && !isIncomeCrossed && (
         <p>
           Your total savings this {period} despite crossing the limit:{" "}
-          <StyledStatsSpan color={incomeColor}>$ {sumSaved} </StyledStatsSpan>
+          <StyledStatsSpan color={incomeColor}>
+            {currency} {sumSaved}{" "}
+          </StyledStatsSpan>
           <StyledStatsSpanGreyedOut>
             ({totalSavingsPerc}% of income)
           </StyledStatsSpanGreyedOut>
@@ -45,7 +48,7 @@ function IncomeStats({
         <p>
           You have spent{" "}
           <StyledStatsSpan color={incomeColor}>
-            $ {crossedIncomeBy}
+            {currency} {crossedIncomeBy}
           </StyledStatsSpan>{" "}
           <StyledStatsSpanGreyedOut>
             ({crossedIncomeByPerc}%){" "}
@@ -62,7 +65,7 @@ function IncomeStats({
         color={incomeColor}
       />
       <StyledStatsSpanGreyedOut size="small">
-        income: $ {income}
+        income: {currency} {income}
       </StyledStatsSpanGreyedOut>
     </StyledFormRow>
   );

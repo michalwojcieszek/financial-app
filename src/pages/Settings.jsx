@@ -23,10 +23,20 @@ import { SelectCurrency } from "../ui/SelectCurrency";
 import { exchangeCurrency } from "../hooks/exchangeCurrency";
 import Spinner from "../ui/Spinner";
 import StyledStatsSpan from "../ui/StyledStatsSpan";
+import styled from "styled-components";
+import BackToDashboard from "../components/Settings/BackToDashboard";
+
+const StyledUl = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  list-style: none;
+`;
 
 function Settings() {
   const { setIsSettingsPopupOpen } = useApp();
-  const user = useLoaderData();
+  const { user, currenciesRatesArray } = useLoaderData();
   const { id } = useParams();
   const navigate = useNavigate();
   const { limit, income, currency } = user.userData;
@@ -50,10 +60,6 @@ function Settings() {
     toast.success("Your change has been saved");
   }
 
-  function handleGoBackToDashboard() {
-    navigate(`/users/${id}`);
-  }
-
   async function handleChangeCurrency(e) {
     setNewCurrency(e.target.value);
     if (!isCurrencyChanged) {
@@ -70,14 +76,7 @@ function Settings() {
   return (
     <Section>
       <StyledFormDiv>
-        <div>
-          <StyledButtonSecondary onClick={handleGoBackToDashboard}>
-            <StyledButtonWithEmojiDiv>
-              <HiArrowUturnLeft />
-              Go back to your dashboard
-            </StyledButtonWithEmojiDiv>
-          </StyledButtonSecondary>
-        </div>
+        <BackToDashboard id={id} />
         <H2>Settings</H2>
       </StyledFormDiv>
       <StyledFormDiv>
@@ -118,6 +117,18 @@ function Settings() {
                 Income, limit and your expenses will be displayed in the other
                 currency.
               </label>
+              <div>
+                <p>Your current currency: {currency}</p>
+                <p>Live currency rates:</p>
+                <StyledUl>
+                  {currenciesRatesArray.map((el) => (
+                    <li>
+                      1 <StyledStatsSpan>{currency}</StyledStatsSpan> is{" "}
+                      {el.rate} <StyledStatsSpan>{el.currency}</StyledStatsSpan>
+                    </li>
+                  ))}
+                </StyledUl>
+              </div>
               <SelectCurrency
                 onChange={handleChangeCurrency}
                 defaultValue={currency}

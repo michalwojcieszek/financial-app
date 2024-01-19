@@ -11,6 +11,7 @@ import { userLoader } from "./hooks/userLoader";
 import Settings from "./pages/Settings";
 import Year from "./pages/Year";
 import { getAllUsers as allUsersLoader } from "./hooks/apiFetching";
+import { userCurrenciesLoader } from "./hooks/userCurrenciesLoader";
 
 //---------------------------------------- MY TRY
 const router = createBrowserRouter([
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: "users/:id/settings",
         element: <Settings />,
-        loader: userLoader,
+        loader: userCurrenciesLoader,
       },
       {
         path: "*",

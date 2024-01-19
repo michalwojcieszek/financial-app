@@ -1,21 +1,21 @@
 import styled from "styled-components";
-import Section from "./Section";
+import Section from "../../ui/Section";
 import { HiOutlinePower, HiXMark } from "react-icons/hi2";
-import StyledButtonDeleteAccount from "./StyledButtonDeleteAccount";
-import StyledButtonWithEmojiDiv from "./StyledButtonWithEmojiDiv";
-import { useApp } from "../contexts/AppContext";
+import StyledButtonDeleteAccount from "../../ui/StyledButtonDeleteAccount";
+import StyledButtonWithEmojiDiv from "../../ui/StyledButtonWithEmojiDiv";
+import { useApp } from "../../contexts/AppContext";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
-import { deleteAccount } from "../hooks/apiHandlers";
+import { deleteAccount } from "../../hooks/apiHandlers";
 import { useState } from "react";
-import Spinner from "./Spinner";
+import Spinner from "../../ui/Spinner";
 
 const StyledPopupContainerDiv = styled.div`
   /* display: none; */
   display: ${(props) =>
     props.isSettingsPopupOpen === "true" ? "block" : "none"};
   /* props.$isSettingsPopupOpen.toString() === "true" ? "block" : "none"}; */
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;

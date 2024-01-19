@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import styled from "styled-components";
 import Footer from "./components/Footer";
-import SettingsPopupContainer from "./ui/SettingsPopupContainer";
+import SettingsPopupContainer from "./components/Settings/SettingsPopupContainer";
 
 const StyledLayout = styled.div`
   display: grid;

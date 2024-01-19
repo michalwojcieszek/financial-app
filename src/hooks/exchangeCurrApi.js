@@ -1,6 +1,6 @@
 const host = "api.frankfurter.app";
 
-export async function exchangeCurrency(from, to) {
+export async function exchangeCurrApi(from, to) {
   const res = await fetch(
     `https://${host}/latest?amount=1&from=${from}&to=${to}`
   );

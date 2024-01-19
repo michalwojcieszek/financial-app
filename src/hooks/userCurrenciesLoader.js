@@ -1,5 +1,5 @@
 import { getUserDataById } from "./apiFetching";
-import { exchangeCurrency } from "./exchangeCurrency";
+import { exchangeCurrApi } from "./exchangeCurrApi";
 
 export async function userCurrenciesLoader({ params }) {
   const user = await getUserDataById(params.id);
@@ -13,7 +13,7 @@ export async function userCurrenciesLoader({ params }) {
 
   const exchangeRatePromises = currenciesAvailableToExchange.map(
     async (currency) => {
-      const rate = await exchangeCurrency(userCurrency, currency);
+      const rate = await exchangeCurrApi(userCurrency, currency);
       return { rate, currency };
     }
   );

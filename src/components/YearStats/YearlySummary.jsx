@@ -17,6 +17,7 @@ function YearlySummary({
   averageCost,
   incomeColor,
   sumSaved,
+  currency,
 }) {
   const monthsExceedingLimit = Object.values(expenses).reduce((acc, cur) => {
     const monthlyExpenses = cur.reduce(
@@ -38,13 +39,19 @@ function YearlySummary({
         <li>Limit has not been exceeded in any month</li>
       )}
       <li>
-        <StyledStatsSpan>$ {sumExpenses.toFixed(2)}</StyledStatsSpan> spent (
-        <StyledStatsSpan>$ {averageCost}</StyledStatsSpan> on average)
+        <StyledStatsSpan>
+          {currency} {sumExpenses.toFixed(2)}
+        </StyledStatsSpan>{" "}
+        spent (
+        <StyledStatsSpan>
+          {currency} {averageCost}
+        </StyledStatsSpan>{" "}
+        on average)
       </li>
       {sumSaved > 0 ? (
         <li>
           <StyledStatsSpan color={incomeColor}>
-            $ {sumSaved.toFixed(2)}
+            {currency} {sumSaved}
           </StyledStatsSpan>{" "}
           saved
         </li>

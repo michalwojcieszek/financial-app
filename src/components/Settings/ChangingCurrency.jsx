@@ -68,7 +68,7 @@ function ChangingCurrency({ currenciesRatesArray, currency, id }) {
             </StyledParagraph>
             <StyledUl>
               {currenciesRatesArray.map((el) => (
-                <li>
+                <li key={el.currency}>
                   1 <StyledStatsSpan>{currency}</StyledStatsSpan> is {el.rate}{" "}
                   <StyledStatsSpan>{el.currency}</StyledStatsSpan>
                 </li>

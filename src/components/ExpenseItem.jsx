@@ -103,7 +103,7 @@ function ExpenseItem({ expense, currency }) {
   return (
     <StyledListItem key={expenseId}>
       <StyledEmojiSpan>{emoji}</StyledEmojiSpan>
-      <StyledCostSpan>{cost.toFixed(2)}</StyledCostSpan>
+      <StyledCostSpan>{cost}</StyledCostSpan>
       {expense.description ? (
         <StyledDescription>{description}</StyledDescription>
       ) : (

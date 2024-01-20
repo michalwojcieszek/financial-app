@@ -29,18 +29,19 @@ function MonthlyStats({ userData, expensesThisMonth, monthString, currency }) {
     navigate(`/users/${id}/settings`);
   }
 
+  console.log(sumSaved, income);
   let incomeColor;
   switch (true) {
-    case sumSaved < goalToSave * 0.25:
+    case sumSaved < income * 0.25:
       incomeColor = "--stats-red";
       break;
-    case sumSaved < goalToSave * 0.5:
+    case sumSaved < income * 0.5:
       incomeColor = "--stats-orange";
       break;
-    case sumSaved < goalToSave * 75:
+    case sumSaved < income * 0.75:
       incomeColor = "--stats-yellow";
       break;
-    case sumSaved >= goalToSave * 75:
+    case sumSaved >= income * 0.75:
       incomeColor = "--stats-green";
       break;
     default:
@@ -76,7 +77,7 @@ function MonthlyStats({ userData, expensesThisMonth, monthString, currency }) {
         />
         <IncomeStats
           expense={sumExpensesThisMonth}
-          income={income.toFixed(2)}
+          income={income}
           incomeColor={incomeColor}
           isLimitCrossed={isLimitCrossed}
           sumSaved={sumSaved}

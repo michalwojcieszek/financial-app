@@ -31,7 +31,7 @@ function SetIncomeLimit({ income, limit, id }) {
         <StyledInput
           type="number"
           size="large"
-          defaultValue={income.toFixed(2)}
+          defaultValue={income}
           onChange={(e) => setNewIncome(e.target.value)}
         />
       </StyledFormRow>

@@ -29,7 +29,7 @@ function LimitStats({ sumExpenses, limit, isLimitCrossed, period, currency }) {
       limitColor = "--color-blue-700";
       break;
   }
-
+  console.log(typeof limit, limit);
   return (
     <StyledFormRow>
       <H4>Limit tracking</H4>
@@ -60,7 +60,7 @@ function LimitStats({ sumExpenses, limit, isLimitCrossed, period, currency }) {
       </p>
       <ProgressBar filled={expensesCompLimit} color={limitColor} />
       <StyledStatsSpanGreyedOut size="small">
-        limit of expenses: $ {limit}
+        limit of expenses: {currency} {limit}
       </StyledStatsSpanGreyedOut>
     </StyledFormRow>
   );

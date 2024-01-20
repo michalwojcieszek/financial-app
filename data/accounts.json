@@ -448,21 +448,96 @@
       "userData": {
         "name": "aaa",
         "password": "11111",
-        "limit": 659.8549504904162,
-        "income": 8798.066006538884,
+        "limit": "151.28",
+        "income": "2017.04",
+        "currency": "EUR"
+      },
+      "expenses": {
+        "january": [
+          {
+            "expenseId": "2024-01-20T07:13:54.956Z",
+            "addedOn": {
+              "date": "20.01.2024",
+              "time": "08:13"
+            },
+            "category": "food",
+            "cost": "0.23",
+            "description": "1"
+          },
+          {
+            "expenseId": "2024-01-20T07:22:39.442Z",
+            "addedOn": {
+              "date": "20.01.2024",
+              "time": "08:22"
+            },
+            "category": "education",
+            "cost": "5.27",
+            "description": "2"
+          },
+          {
+            "expenseId": "2024-01-20T07:23:02.307Z",
+            "addedOn": {
+              "date": "20.01.2024",
+              "time": "08:23"
+            },
+            "category": "medicines",
+            "cost": "11.46",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-20T07:29:51.022Z",
+            "addedOn": {
+              "date": "20.01.2024",
+              "time": "08:29"
+            },
+            "category": "insurance",
+            "cost": "0.69",
+            "description": "3"
+          },
+          {
+            "expenseId": "2024-01-20T07:35:37.410Z",
+            "addedOn": {
+              "date": "20.01.2024",
+              "time": "08:35"
+            },
+            "category": "education",
+            "cost": "0.69",
+            "description": "3"
+          }
+        ],
+        "february": [],
+        "march": [],
+        "april": [],
+        "may": [],
+        "june": [],
+        "july": [],
+        "august": [],
+        "september": [],
+        "october": [],
+        "november": [],
+        "december": []
+      }
+    },
+    {
+      "id": "0f52",
+      "userData": {
+        "name": "abcdefg",
+        "password": "12345",
+        "limit": "196.31",
+        "income": "8012.80",
         "currency": "PLN"
       },
       "expenses": {
         "january": [
           {
-            "expenseId": "2024-01-19T10:46:19.888Z",
+            "expenseId": "2024-01-20T08:20:09.299Z",
             "addedOn": {
-              "date": "19.01.2024",
-              "time": "11:46"
+              "date": "20.01.2024",
+              "time": "09:20"
             },
-            "category": "insurance",
-            "cost": 43.9903300326944,
-            "description": "2"
+            "category": "food",
+            "cost": "4.01",
+            "description": "a"
           }
         ],
         "february": [],

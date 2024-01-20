@@ -7,10 +7,7 @@ import LimitStats from "../LimitStats";
 import IncomeStats from "../IncomeStats";
 import H3 from "../../ui/H3";
 
-function YearlyStats() {
-  const user = useLoaderData();
-  const { expenses } = user;
-  const { limit, income } = user.userData;
+function YearlyStats({ expenses, limit, income, currency }) {
   const monthsNum = 12;
 
   const sumExpenses = Object.values(expenses).reduce((acc, cur) => {
@@ -47,8 +44,7 @@ function YearlyStats() {
       break;
   }
 
-  console.log(Object.entries(expenses));
-  if (Object.entries(expenses).length === 0)
+  if (sumExpenses === 0)
     return (
       <Section>
         <H3>You have no expenses yet</H3>
@@ -66,9 +62,15 @@ function YearlyStats() {
         incomeColor={incomeColor}
         sumSaved={sumSaved}
         isLimitCrossed={isLimitCrossed}
+        currency={currency}
       />
       <StyledFormDiv>
-        <LimitStats sumExpenses={sumExpenses} limit={sumLimits} period="year" />
+        <LimitStats
+          sumExpenses={sumExpenses}
+          limit={sumLimits}
+          period="year"
+          currency={currency}
+        />
         <IncomeStats
           expense={sumExpenses}
           income={sumIncomes}
@@ -77,6 +79,7 @@ function YearlyStats() {
           totalSavings={totalSavings}
           sumSaved={sumSaved}
           period="year"
+          currency={currency}
         />
         <YearlyExpensesChart expenses={expenses} />
       </StyledFormDiv>

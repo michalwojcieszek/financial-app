@@ -10,8 +10,8 @@ export async function exchangeUserExpenses(id, rate, newCurrency) {
   const newUserData = {
     ...userData,
     currency: newCurrency,
-    income: userData.income * rate,
-    limit: userData.limit * rate,
+    income: (userData.income * rate).toFixed(2),
+    limit: (userData.limit * rate).toFixed(2),
   };
 
   console.log(Object.entries(expenses));
@@ -19,7 +19,7 @@ export async function exchangeUserExpenses(id, rate, newCurrency) {
   const newExpenses = Object.fromEntries(
     Object.entries(expenses).map(([month, expensesArray]) => {
       const newExpensesArray = expensesArray.map((expense) => {
-        return { ...expense, cost: expense.cost * rate };
+        return { ...expense, cost: (expense.cost * rate).toFixed(2) };
       });
       return [month, newExpensesArray];
     })

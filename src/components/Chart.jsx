@@ -4,20 +4,20 @@ import H3 from "../ui/H3";
 
 const colors = [
   "#ff7f00",
-  "#6a3d9a",
-  "#cab2d6",
-  "#6b4226",
+  "#1f78b4",
   "#fdbf6f",
+  "#cab2d6",
   "#fb9a99",
   "#9edae5",
-  "#1f78b4",
   "#8c564b",
   "#c49c94",
   "#b2df8a",
   "#969696",
   "#bdbdbd",
+  "#6b4226",
   "#a6cee3",
   "#d9d9d9",
+  "#6a3d9a",
   "#636363",
   "#8dd3c7",
   "#ffffb3",
@@ -52,7 +52,9 @@ function Chart({ categoryCost }) {
             paddingAngle={
               Object.entries(categoryCostToChart).length <= 1 ? 0 : 3
             }
+            dot={false}
             label
+            offset={10}
           >
             {categoryCostToChart.map((entry, index) => (
               <Cell key={index} fill={colors[index]} />
@@ -60,13 +62,13 @@ function Chart({ categoryCost }) {
           </Pie>
           <Tooltip />
           <Legend
-            width="20%"
-            verticalAlign="middle"
-            align="right"
+            width="100%"
             iconSize={5}
-            layout="vertical"
+            layout="horizontal"
+            verticalAlign="top"
             iconType="circle"
-            wrapperStyle={{ fontSize: "12px" }}
+            wrapperStyle={{ fontSize: "15px" }}
+            align="center"
           />
         </PieChart>
       </StyledChartContainerDiv>

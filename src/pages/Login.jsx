@@ -1,19 +1,19 @@
 import toast from "react-hot-toast";
-import ButtonUnderline from "../ui/ButtonUnderline";
-import H2 from "../ui/H2";
+import ButtonUnderline from "../ui/styledComponents/ButtonUnderline";
+import H2 from "../ui/styledComponents/H2";
 import { useApp } from "../contexts/AppContext";
 import { postData } from "../hooks/UsersDataAPI/apiFetching";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
 import Spinner from "../ui/Spinner";
-import Section from "../ui/Section";
-import StyledInput from "../ui/StyledInput";
-import StyledFormRow from "../ui/StyledFormRow";
-import StyledButtonPrimary from "../ui/StyledButtonPrimary";
-import StyledFormDiv from "../ui/StyledFormDiv";
+import Section from "../ui/styledComponents/Section";
+import Input from "../ui/styledComponents/Input";
+import FormRow from "../ui/styledComponents/FormRow";
+import ButtonPrimary from "../ui/styledComponents/ButtonPrimary";
+import FormDiv from "../ui/styledComponents/FormDiv";
 import { HiOutlineUser, HiOutlineUserPlus } from "react-icons/hi2";
-import StyledButtonWithEmojiDiv from "../ui/StyledButtonWithEmojiDiv";
-import { SelectCurrency } from "../ui/SelectCurrency";
+import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
+import { SelectCurrency } from "../ui/styledComponents/SelectCurrency";
 
 function Login() {
   const allUsers = useLoaderData();
@@ -161,46 +161,46 @@ function Login() {
       )}
       <form onSubmit={handleSubmit}>
         <>
-          <StyledFormDiv>
-            <StyledFormRow>
+          <FormDiv>
+            <FormRow>
               <label>Name</label>
-              <StyledInput
+              <Input
                 size="large"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
-            </StyledFormRow>
-            <StyledFormRow>
+            </FormRow>
+            <FormRow>
               <label>Password</label>
-              <StyledInput
+              <Input
                 size="large"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-            </StyledFormRow>
+            </FormRow>
             {!ifUserHaveAccount ? (
               <>
-                <StyledFormRow>
+                <FormRow>
                   <label>Monthly income</label>
-                  <StyledInput
+                  <Input
                     size="large"
                     type="number"
                     value={income}
                     onChange={(e) => setIncome(e.target.value)}
                   />
-                </StyledFormRow>
-                <StyledFormRow>
+                </FormRow>
+                <FormRow>
                   <label>Monthly limit of expenses</label>
-                  <StyledInput
+                  <Input
                     size="large"
                     type="number"
                     value={limit}
                     onChange={(e) => setLimit(e.target.value)}
                   />
-                </StyledFormRow>
-                <StyledFormRow>
+                </FormRow>
+                <FormRow>
                   <label>Select currency</label>
                   <SelectCurrency
                     onChange={(e) => setCurrency(e.target.value)}
@@ -212,31 +212,31 @@ function Login() {
                     <option value="CHF">CHF (🇨🇭)</option>
                     <option value="PLN">PLN (🇵🇱)</option>
                   </SelectCurrency>
-                </StyledFormRow>
+                </FormRow>
               </>
             ) : (
               ""
             )}
             <div>
               {ifUserHaveAccount ? (
-                <StyledButtonPrimary>
-                  <StyledButtonWithEmojiDiv>
+                <ButtonPrimary>
+                  <ButtonWithEmojiDiv>
                     <HiOutlineUser />
                     LOG IN
-                  </StyledButtonWithEmojiDiv>
-                </StyledButtonPrimary>
+                  </ButtonWithEmojiDiv>
+                </ButtonPrimary>
               ) : (
                 // <Button onClick={handleLogIn}>LOG IN</Button>
-                <StyledButtonPrimary>
-                  <StyledButtonWithEmojiDiv>
+                <ButtonPrimary>
+                  <ButtonWithEmojiDiv>
                     <HiOutlineUserPlus />
                     SIGN UP
-                  </StyledButtonWithEmojiDiv>
-                </StyledButtonPrimary>
+                  </ButtonWithEmojiDiv>
+                </ButtonPrimary>
                 // <Button onClick={handleSignUp}>SIGN UP</Button>
               )}
             </div>
-          </StyledFormDiv>
+          </FormDiv>
         </>
       </form>
     </Section>

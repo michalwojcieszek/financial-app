@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import StyledStatsSpan from "../../ui/StyledStatsSpan";
-import H3 from "../../ui/H3";
+import StatsSpan from "../../ui/styledComponents/StatsSpan";
+import H3 from "../../ui/styledComponents/H3";
 
 const StyledYearStatsUl = styled.ul`
   display: flex;
@@ -32,33 +32,31 @@ function YearlySummary({
       <H3>Yearly stats</H3>
       {monthsExceedingLimit ? (
         <li>
-          Limit has been exceeded{" "}
-          <StyledStatsSpan>{monthsExceedingLimit}</StyledStatsSpan> times
+          Limit has been exceeded <StatsSpan>{monthsExceedingLimit}</StatsSpan>{" "}
+          times
         </li>
       ) : (
         <li>Limit has not been exceeded in any month</li>
       )}
       <li>
-        <StyledStatsSpan>
+        <StatsSpan>
           {currency} {sumExpenses.toFixed(2)}
-        </StyledStatsSpan>{" "}
+        </StatsSpan>{" "}
         spent (
-        <StyledStatsSpan>
+        <StatsSpan>
           {currency} {averageCost.toFixed(2)}
-        </StyledStatsSpan>{" "}
+        </StatsSpan>{" "}
         on average)
       </li>
       {sumSaved > 0 ? (
         <li>
-          <StyledStatsSpan color={incomeColor}>
+          <StatsSpan color={incomeColor}>
             {currency} {sumSaved.toFixed(2)}
-          </StyledStatsSpan>{" "}
+          </StatsSpan>{" "}
           saved
         </li>
       ) : (
-        <StyledStatsSpan color={incomeColor}>
-          No money has been saved
-        </StyledStatsSpan>
+        <StatsSpan color={incomeColor}>No money has been saved</StatsSpan>
       )}
     </StyledYearStatsUl>
   );

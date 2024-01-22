@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const StyledChartContainerDiv = styled.div`
+const ChartContainerDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-export default StyledChartContainerDiv;
+export default ChartContainerDiv;

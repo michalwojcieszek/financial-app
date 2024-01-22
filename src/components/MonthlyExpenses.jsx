@@ -1,6 +1,6 @@
-import H3 from "../ui/H3";
-import Section from "../ui/Section";
-import StyledStatsSpan from "../ui/StyledStatsSpan";
+import H3 from "../ui/styledComponents/H3";
+import Section from "../ui/styledComponents/Section";
+import StatsSpan from "../ui/styledComponents/StatsSpan";
 import ExpenseItem from "./ExpenseItem";
 import styled from "styled-components";
 

@@ -1,8 +1,8 @@
-import H4 from "../ui/H4";
+import H4 from "../ui/styledComponents/H4";
 import ProgressBar from "../ui/ProgressBar";
-import StyledFormRow from "../ui/StyledFormRow";
-import StyledStatsSpan from "../ui/StyledStatsSpan";
-import StyledStatsSpanGreyedOut from "../ui/StyledStatsSpanGreyedOut";
+import FormRow from "../ui/styledComponents/FormRow";
+import StatsSpan from "../ui/styledComponents/StatsSpan";
+import SpanGreyedOut from "../ui/styledComponents/SpanGreyedOut";
 
 function IncomeStats({
   expense,
@@ -20,54 +20,49 @@ function IncomeStats({
   const crossedIncomeByPerc = (crossedIncomeBy / income) * 100;
 
   return (
-    <StyledFormRow>
+    <FormRow>
       <H4>Total savings</H4>
       {!isLimitCrossed && !isIncomeCrossed && (
         <p>
           Total savings:{" "}
-          <StyledStatsSpan color={incomeColor}>
+          <StatsSpan color={incomeColor}>
             {currency} {sumSaved.toFixed(2)}{" "}
-          </StyledStatsSpan>
-          <StyledStatsSpanGreyedOut>
+          </StatsSpan>
+          <SpanGreyedOut>
             ({totalSavingsPerc.toFixed(2)}% of income)
-          </StyledStatsSpanGreyedOut>
+          </SpanGreyedOut>
         </p>
       )}
       {isLimitCrossed && !isIncomeCrossed && (
         <p>
           Your total savings this {period} despite crossing the limit:{" "}
-          <StyledStatsSpan color={incomeColor}>
-            {currency} {sumSaved}{" "}
-          </StyledStatsSpan>
-          <StyledStatsSpanGreyedOut>
-            ({totalSavingsPerc}% of income)
-          </StyledStatsSpanGreyedOut>
+          <StatsSpan color={incomeColor}>
+            {currency} {sumSaved.toFixed(2)}{" "}
+          </StatsSpan>
+          <SpanGreyedOut>
+            ({totalSavingsPerc.toFixed(2)}% of income)
+          </SpanGreyedOut>
         </p>
       )}
       {isLimitCrossed && isIncomeCrossed && (
         <p>
           You have spent{" "}
-          <StyledStatsSpan color={incomeColor}>
+          <StatsSpan color={incomeColor}>
             {currency} {crossedIncomeBy}
-          </StyledStatsSpan>{" "}
-          <StyledStatsSpanGreyedOut>
-            ({crossedIncomeByPerc}%){" "}
-          </StyledStatsSpanGreyedOut>
+          </StatsSpan>{" "}
+          <SpanGreyedOut>({crossedIncomeByPerc}%) </SpanGreyedOut>
           more than your income, which means{" "}
-          <StyledStatsSpan color={incomeColor}>
-            you have no savings
-          </StyledStatsSpan>
-          .
+          <StatsSpan color={incomeColor}>you have no savings</StatsSpan>.
         </p>
       )}
       <ProgressBar
         filled={totalSavingsPerc > 0 ? totalSavingsPerc : 0}
         color={incomeColor}
       />
-      <StyledStatsSpanGreyedOut size="small">
+      <SpanGreyedOut size="small">
         income: {currency} {income.toFixed(2)}
-      </StyledStatsSpanGreyedOut>
-    </StyledFormRow>
+      </SpanGreyedOut>
+    </FormRow>
   );
 }
 

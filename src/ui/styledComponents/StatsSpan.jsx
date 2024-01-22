@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const StyledStatsSpan = styled.span`
+const StatsSpan = styled.span`
   color: ${(props) =>
     props.color ? `var(${props.color})` : "var(--color-blue-700)"};
   font-weight: 500;
 `;
 
-export default StyledStatsSpan;
+export default StatsSpan;

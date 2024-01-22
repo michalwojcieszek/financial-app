@@ -1,9 +1,9 @@
-import H3 from "../ui/H3";
+import H3 from "../ui/styledComponents/H3";
 import styled from "styled-components";
 import { useApp } from "../contexts/AppContext";
-import Section from "../ui/Section";
+import Section from "../ui/styledComponents/Section";
 import { HiOutlineCheckCircle } from "react-icons/hi2";
-import ButtonWithEmojiDiv from "../ui/StyledButtonWithEmojiDiv";
+import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 import {
@@ -11,10 +11,10 @@ import {
   addMonthlyExpense,
 } from "../hooks/UsersDataAPI/apiHandlers";
 import Spinner from "../ui/Spinner";
-import StyledSelect from "../ui/StyledSelect";
-import StyledInput from "../ui/StyledInput";
-import StyledButtonSecondary from "../ui/StyledButtonSecondary";
-import StyledStatsSpan from "../ui/StyledStatsSpan";
+import Select from "../ui/styledComponents/Select";
+import Input from "../ui/styledComponents/Input";
+import ButtonSecondary from "../ui/styledComponents/ButtonSecondary";
+import StatsSpan from "../ui/styledComponents/StatsSpan";
 import { useState } from "react";
 
 const StyledOptional = styled.span`
@@ -119,7 +119,7 @@ function AddExpenseForm({ currency }) {
         <ExpenseFormRow>
           <label>Expense category</label>
           <InputSelectDiv>
-            <StyledSelect
+            <Select
               size="medium"
               name="expense-category"
               id="expense-category"
@@ -144,15 +144,15 @@ function AddExpenseForm({ currency }) {
               <option value="clothes">👕 clothes</option>
               <option value="commuting">🚈 commuting</option>
               <option value="others">❓ others</option>
-            </StyledSelect>
+            </Select>
           </InputSelectDiv>
         </ExpenseFormRow>
         <ExpenseFormRow>
           <label>
-            Expense in <StyledStatsSpan>{currency}</StyledStatsSpan>
+            Expense in <StatsSpan>{currency}</StatsSpan>
           </label>
           <InputSelectDiv>
-            <StyledInput
+            <Input
               size="medium"
               type="number"
               name="cost"
@@ -166,7 +166,7 @@ function AddExpenseForm({ currency }) {
             Description <StyledOptional>(optional)</StyledOptional>
           </label>
           <InputSelectDiv>
-            <StyledInput
+            <Input
               size="medium"
               type="text"
               name="description"
@@ -187,12 +187,12 @@ function AddExpenseForm({ currency }) {
         </ExpenseFormRow>
 
         <div>
-          <StyledButtonSecondary>
+          <ButtonSecondary>
             <ButtonWithEmojiDiv>
               <HiOutlineCheckCircle />
               <span>Add Expense</span>
             </ButtonWithEmojiDiv>
-          </StyledButtonSecondary>
+          </ButtonSecondary>
         </div>
       </ExpenseForm>
     </Section>

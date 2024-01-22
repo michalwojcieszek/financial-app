@@ -1,30 +1,26 @@
 import styled, { css } from "styled-components";
 
-const StyledSelect = styled.select`
+const Input = styled.input`
   ${(props) =>
     props.size === "large" &&
     css`
-      padding: 1rem;
-      width: 50%;
+      height: 3rem;
+      padding: 1.8rem 1.2rem;
       font-size: 1.6rem;
     `}
 
   ${(props) =>
     props.size === "medium" &&
     css`
-      padding: 0.8rem;
+      height: 3rem;
+      padding: 0.4rem 0.8rem;
       font-size: 1.4rem;
       width: 100%;
     `}
-      
+    
+  border-radius: 10px;
   border: 1px solid gray;
   font-family: inherit;
-  border-radius: 10px;
-  background-color: white;
-  color: var(--color-grey-700);
-  cursor: pointer;
-  text-transform: capitalize;
-  text-align-last: center;
 `;
 
-export default StyledSelect;
+export default Input;

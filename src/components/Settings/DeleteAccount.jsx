@@ -1,18 +1,18 @@
 import { HiOutlineTrash } from "react-icons/hi2";
-import StyledButtonDeleteAccount from "../../ui/StyledButtonDeleteAccount";
-import StyledButtonWithEmojiDiv from "../../ui/StyledButtonWithEmojiDiv";
-import StyledDivDeleteButton from "../../ui/StyledDivDeleteButton";
+import ButtonDeleteAccount from "../../ui/styledComponents/ButtonDeleteAccount";
+import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
+import DivDeleteButton from "../../ui/styledComponents/DivDeleteButton";
 
 function DeleteAccount({ setIsSettingsPopupOpen }) {
   return (
-    <StyledDivDeleteButton>
-      <StyledButtonDeleteAccount onClick={() => setIsSettingsPopupOpen(true)}>
-        <StyledButtonWithEmojiDiv>
+    <DivDeleteButton>
+      <ButtonDeleteAccount onClick={() => setIsSettingsPopupOpen(true)}>
+        <ButtonWithEmojiDiv>
           <HiOutlineTrash />
           Delete your account
-        </StyledButtonWithEmojiDiv>
-      </StyledButtonDeleteAccount>
-    </StyledDivDeleteButton>
+        </ButtonWithEmojiDiv>
+      </ButtonDeleteAccount>
+    </DivDeleteButton>
   );
 }
 

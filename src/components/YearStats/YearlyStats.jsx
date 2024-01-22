@@ -1,10 +1,10 @@
-import Section from "../../ui/Section";
-import StyledFormDiv from "../../ui/StyledFormDiv";
+import Section from "../../ui/styledComponents/Section";
+import FormDiv from "../../ui/styledComponents/FormDiv";
 import YearlySummary from "./YearlySummary";
 import YearlyExpensesChart from "./YearlyExpensesChart";
 import LimitStats from "../LimitStats";
 import IncomeStats from "../IncomeStats";
-import H3 from "../../ui/H3";
+import H3 from "../../ui/styledComponents/H3";
 
 function YearlyStats({ expenses, limit, income, currency }) {
   const monthsNum = 12;
@@ -62,7 +62,7 @@ function YearlyStats({ expenses, limit, income, currency }) {
         isLimitCrossed={isLimitCrossed}
         currency={currency}
       />
-      <StyledFormDiv>
+      <FormDiv>
         <LimitStats
           sumExpenses={sumExpenses}
           limit={sumLimits}
@@ -80,7 +80,7 @@ function YearlyStats({ expenses, limit, income, currency }) {
           currency={currency}
         />
         <YearlyExpensesChart expenses={expenses} />
-      </StyledFormDiv>
+      </FormDiv>
     </Section>
   );
 }

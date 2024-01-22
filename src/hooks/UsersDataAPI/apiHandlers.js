@@ -2,7 +2,7 @@ import { getAllUsers, updateUserData } from "./apiFetching";
 
 //GET user
 export async function getUserDataById(id) {
-  const allUsers = getAllUsers();
+  const allUsers = await getAllUsers();
   const userData = allUsers.find((user) => user.id === id);
   return userData;
 }

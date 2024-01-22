@@ -1,6 +1,6 @@
 import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
-import StyledChartContainerDiv from "../ui/StyledChartContainerDiv";
-import H3 from "../ui/H3";
+import ChartContainerDiv from "../ui/styledComponents/ChartContainerDiv";
+import H3 from "../ui/styledComponents/H3";
 
 const colors = [
   "#ff7f00",
@@ -33,13 +33,12 @@ const colors = [
 function Chart({ categoryCost }) {
   const categoryCostToChart = Object.entries(categoryCost).map((arr) => {
     const [name, value] = arr;
-    // const valueFixed = value.toFixed(2);
     return { name, value };
   });
   return (
     <>
       <H3>Expenses summary</H3>
-      <StyledChartContainerDiv>
+      <ChartContainerDiv>
         <PieChart width={400} height={300}>
           <Pie
             data={categoryCostToChart}
@@ -60,7 +59,7 @@ function Chart({ categoryCost }) {
               <Cell key={index} fill={colors[index]} />
             ))}
           </Pie>
-          <Tooltip />
+          <Tooltip formatter={(value, name, props) => value.toFixed(2)} />
           <Legend
             width="100%"
             iconSize={5}
@@ -71,7 +70,7 @@ function Chart({ categoryCost }) {
             align="center"
           />
         </PieChart>
-      </StyledChartContainerDiv>
+      </ChartContainerDiv>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const StyledStatsSpanGreyedOut = styled.span`
+const SpanGreyedOut = styled.span`
   color: var(--color-grey-500);
   ${(props) =>
     props.size === "small" &&
@@ -13,4 +13,4 @@ const StyledStatsSpanGreyedOut = styled.span`
     `} */
 `;
 
-export default StyledStatsSpanGreyedOut;
+export default SpanGreyedOut;

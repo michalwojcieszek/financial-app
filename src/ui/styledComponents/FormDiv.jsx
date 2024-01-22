@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const StyledFormDiv = styled.div`
+const FormDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
 `;
 
-export default StyledFormDiv;
+export default FormDiv;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const StyledButtonDeleteAccount = styled.button`
+const ButtonDeleteAccount = styled.button`
   border: none;
   background: var(--gradient-red-default);
   color: white;
@@ -21,4 +21,4 @@ const StyledButtonDeleteAccount = styled.button`
   } */
 `;
 
-export default StyledButtonDeleteAccount;
+export default ButtonDeleteAccount;

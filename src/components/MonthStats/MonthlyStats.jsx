@@ -1,12 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
-import ButtonUnderline from "../../ui/ButtonUnderline";
-import H3 from "../../ui/H3";
-import Section from "../../ui/Section";
-import StyledFormDiv from "../../ui/StyledFormDiv";
-import StyledStatsSpan from "../../ui/StyledStatsSpan";
+import H3 from "../../ui/styledComponents/H3";
+import Section from "../../ui/styledComponents/Section";
+import FormDiv from "../../ui/styledComponents/FormDiv";
+import StatsSpan from "../../ui/styledComponents/StatsSpan";
 import MonthlyExpensesChart from "./MonthlyExpensesChart";
 import LimitStats from "../LimitStats";
 import IncomeStats from "../IncomeStats";
+import ButtonUnderline from "../../ui/styledComponents/ButtonUnderline";
 
 function MonthlyStats({
   expensesThisMonth,
@@ -60,9 +60,9 @@ function MonthlyStats({
       <H3>State of the budget in {monthString}</H3>
       <div>
         Your goal is to save{" "}
-        <StyledStatsSpan color="--color-blue-700">
+        <StatsSpan color="--color-blue-700">
           {currency} {goalToSave.toFixed(2)}
-        </StyledStatsSpan>{" "}
+        </StatsSpan>{" "}
         each month.{" "}
         <p>
           If you want to change it, then{" "}
@@ -71,7 +71,7 @@ function MonthlyStats({
           </ButtonUnderline>
         </p>
       </div>
-      <StyledFormDiv>
+      <FormDiv>
         <LimitStats
           sumExpenses={sumExpensesThisMonth}
           limit={limit}
@@ -89,7 +89,7 @@ function MonthlyStats({
           currency={currency}
         />
         <MonthlyExpensesChart expensesThisMonth={expensesThisMonth} />
-      </StyledFormDiv>
+      </FormDiv>
     </Section>
   );
 }

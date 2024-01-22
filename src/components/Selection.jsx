@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { useNavigate, useParams } from "react-router-dom";
 import { useApp } from "../contexts/AppContext";
-import H2 from "../ui/H2";
-import ButtonWithEmojiDiv from "../ui/StyledButtonWithEmojiDiv";
-import StyledSelect from "../ui/StyledSelect";
-import StyledButtonSecondary from "../ui/StyledButtonSecondary";
+import H2 from "../ui/styledComponents/H2";
+import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
+import Select from "../ui/styledComponents/Select";
+import ButtonSecondary from "../ui/styledComponents/ButtonSecondary";
 
-const StyledSelectionDiv = styled.div`
+const SelectionDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,9 +43,9 @@ function Selection() {
   }
 
   return (
-    <StyledSelectionDiv>
+    <SelectionDiv>
       <H2>Choose the period</H2>
-      <StyledSelect
+      <Select
         size="large"
         name="months"
         id="month-select"
@@ -64,14 +64,14 @@ function Selection() {
         <option value="october">october</option>
         <option value="november">november</option>
         <option value="december">december</option>
-      </StyledSelect>
-      <StyledButtonSecondary onClick={handleGoToSettings}>
+      </Select>
+      <ButtonSecondary onClick={handleGoToSettings}>
         <ButtonWithEmojiDiv>
           <HiOutlineCog6Tooth />
           <span>Go to settings</span>
         </ButtonWithEmojiDiv>
-      </StyledButtonSecondary>
-    </StyledSelectionDiv>
+      </ButtonSecondary>
+    </SelectionDiv>
   );
 }
 

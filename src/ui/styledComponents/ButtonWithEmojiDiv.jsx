@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledButtonWithEmojiDiv = styled.div`
+const ButtonWithEmojiDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,4 +13,4 @@ const StyledButtonWithEmojiDiv = styled.div`
   }
 `;
 
-export default StyledButtonWithEmojiDiv;
+export default ButtonWithEmojiDiv;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const StyledButtonUnderline = styled.button`
+const ButtonUnderline = styled.button`
   border: none;
   background: none;
   color: var(--color-blue-500);
@@ -14,11 +14,5 @@ const StyledButtonUnderline = styled.button`
     margin-bottom: 3.1rem;
   }
 `;
-
-function ButtonUnderline({ children, onClick }) {
-  return (
-    <StyledButtonUnderline onClick={onClick}>{children}</StyledButtonUnderline>
-  );
-}
 
 export default ButtonUnderline;

@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Section from "../../ui/Section";
+import Section from "../../ui/styledComponents/Section";
 import { HiOutlinePower, HiXMark } from "react-icons/hi2";
-import StyledButtonDeleteAccount from "../../ui/StyledButtonDeleteAccount";
-import StyledButtonWithEmojiDiv from "../../ui/StyledButtonWithEmojiDiv";
+import ButtonDeleteAccount from "../../ui/styledComponents/ButtonDeleteAccount";
+import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
 import { useApp } from "../../contexts/AppContext";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -99,12 +99,12 @@ function SettingsPopupContainer() {
           <StyledParagraphSmall>
             Your will lose all your data.
           </StyledParagraphSmall>
-          <StyledButtonDeleteAccount onClick={confirmDeleteAccount}>
-            <StyledButtonWithEmojiDiv>
+          <ButtonDeleteAccount onClick={confirmDeleteAccount}>
+            <ButtonWithEmojiDiv>
               <StyledPowerIcon />
               Delete account anyway
-            </StyledButtonWithEmojiDiv>
-          </StyledButtonDeleteAccount>
+            </ButtonWithEmojiDiv>
+          </ButtonDeleteAccount>
         </Section>
       </StyledConfirmDiv>
     </StyledPopupContainerDiv>

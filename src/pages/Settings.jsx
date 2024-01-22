@@ -1,7 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import H2 from "../ui/H2";
-import Section from "../ui/Section";
-import StyledFormDiv from "../ui/StyledFormDiv";
+import H2 from "../ui/styledComponents/H2";
+import Section from "../ui/styledComponents/Section";
+import FormDiv from "../ui/styledComponents/FormDiv";
 import { useApp } from "../contexts/AppContext";
 import BackToDashboard from "../components/Settings/BackToDashboard";
 import SetIncomeLimit from "../components/Settings/SetIncomeLimit";
@@ -16,20 +16,20 @@ function Settings() {
 
   return (
     <Section type="flex">
-      <StyledFormDiv>
+      <FormDiv>
         <BackToDashboard id={id} />
         <H2>Settings</H2>
-      </StyledFormDiv>
-      <StyledFormDiv>
+      </FormDiv>
+      <FormDiv>
         <SetIncomeLimit income={income} limit={limit} id={id} />
-      </StyledFormDiv>
-      <StyledFormDiv>
+      </FormDiv>
+      <FormDiv>
         <ChangingCurrency
           currenciesRatesArray={currenciesRatesArray}
           currency={currency}
           id={id}
         />
-      </StyledFormDiv>
+      </FormDiv>
       <DeleteAccount setIsSettingsPopupOpen={setIsSettingsPopupOpen} />
     </Section>
   );

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { changeIncomeAndLimit } from "../../hooks/UsersDataAPI/apiHandlers";
 import toast from "react-hot-toast";
-import StyledInput from "../../ui/StyledInput";
-import StyledFormRow from "../../ui/StyledFormRow";
-import StyledButtonSecondary from "../../ui/StyledButtonSecondary";
-import StyledButtonWithEmojiDiv from "../../ui/StyledButtonWithEmojiDiv";
+import Input from "../../ui/styledComponents/Input";
+import FormRow from "../../ui/styledComponents/FormRow";
+import ButtonSecondary from "../../ui/styledComponents/ButtonSecondary";
+import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
 import { HiAdjustmentsVertical } from "react-icons/hi2";
-import H3 from "../../ui/H3";
+import H3 from "../../ui/styledComponents/H3";
 
 function SetIncomeLimit({ income, limit, id }) {
   const [newIncome, setNewIncome] = useState(income);
@@ -25,32 +25,32 @@ function SetIncomeLimit({ income, limit, id }) {
 
   return (
     <>
-      <StyledFormRow>
+      <FormRow>
         <H3>Set new income and limit</H3>
         <label>Set new monthly income</label>
-        <StyledInput
+        <Input
           type="number"
           size="large"
           defaultValue={income}
           onChange={(e) => setNewIncome(e.target.value)}
         />
-      </StyledFormRow>
-      <StyledFormRow>
+      </FormRow>
+      <FormRow>
         <label>Set new limit of expenses</label>
-        <StyledInput
+        <Input
           type="number"
           size="large"
           defaultValue={limit}
           onChange={(e) => setNewLimit(e.target.value)}
         />
-      </StyledFormRow>
+      </FormRow>
       <div>
-        <StyledButtonSecondary onClick={handleSaveChanges}>
-          <StyledButtonWithEmojiDiv>
+        <ButtonSecondary onClick={handleSaveChanges}>
+          <ButtonWithEmojiDiv>
             <HiAdjustmentsVertical />
             Save changes
-          </StyledButtonWithEmojiDiv>
-        </StyledButtonSecondary>
+          </ButtonWithEmojiDiv>
+        </ButtonSecondary>
       </div>
     </>
   );

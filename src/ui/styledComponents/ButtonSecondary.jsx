@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const StyledButtonSecondary = styled.button`
+const ButtonSecondary = styled.button`
   border: none;
   background: var(--gradient-default);
   color: white;
@@ -17,4 +17,4 @@ const StyledButtonSecondary = styled.button`
   }
 `;
 
-export default StyledButtonSecondary;
+export default ButtonSecondary;

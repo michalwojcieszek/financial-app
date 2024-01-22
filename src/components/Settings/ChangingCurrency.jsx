@@ -1,15 +1,15 @@
 import toast from "react-hot-toast";
-import { SelectCurrency } from "../../ui/SelectCurrency";
+import { SelectCurrency } from "../../ui/styledComponents/SelectCurrency";
 import Spinner from "../../ui/Spinner";
-import StyledButtonSecondary from "../../ui/StyledButtonSecondary";
-import StyledButtonWithEmojiDiv from "../../ui/StyledButtonWithEmojiDiv";
-import StyledFormRow from "../../ui/StyledFormRow";
-import StyledStatsSpan from "../../ui/StyledStatsSpan";
+import ButtonSecondary from "../../ui/styledComponents/ButtonSecondary";
+import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
+import FormRow from "../../ui/styledComponents/FormRow";
+import StatsSpan from "../../ui/styledComponents/StatsSpan";
 import styled from "styled-components";
 import { useState } from "react";
 import { HiArrowPath } from "react-icons/hi2";
-import H3 from "../../ui/H3";
-import H4 from "../../ui/H4";
+import H3 from "../../ui/styledComponents/H3";
+import H4 from "../../ui/styledComponents/H4";
 import { exchangeUserExpenses } from "../../hooks/UsersDataAPI/exchangeUserExpenses";
 import { useNavigate } from "react-router-dom";
 
@@ -53,24 +53,23 @@ function ChangingCurrency({ currenciesRatesArray, currency, id }) {
         <Spinner />
       ) : (
         <>
-          <StyledFormRow>
+          <FormRow>
             <H3>Change currency</H3>
             <label>
               Income, limit and your expenses will be calculated to the new
               currency.
             </label>
-          </StyledFormRow>
-          <StyledFormRow>
+          </FormRow>
+          <FormRow>
             <H4>Live currency rates:</H4>
             <StyledParagraph>
-              Your current currency:{" "}
-              <StyledStatsSpan>{currency}</StyledStatsSpan>
+              Your current currency: <StatsSpan>{currency}</StatsSpan>
             </StyledParagraph>
             <StyledUl>
               {currenciesRatesArray.map((el) => (
                 <li key={el.currency}>
-                  1 <StyledStatsSpan>{currency}</StyledStatsSpan> is {el.rate}{" "}
-                  <StyledStatsSpan>{el.currency}</StyledStatsSpan>
+                  1 <StatsSpan>{currency}</StatsSpan> is {el.rate}{" "}
+                  <StatsSpan>{el.currency}</StatsSpan>
                 </li>
               ))}
             </StyledUl>
@@ -89,22 +88,22 @@ function ChangingCurrency({ currenciesRatesArray, currency, id }) {
                 <p>
                   {" "}
                   You want to exchange
-                  <StyledStatsSpan> {currency} </StyledStatsSpan>
+                  <StatsSpan> {currency} </StatsSpan>
                   to
-                  <StyledStatsSpan> {newCurrency} </StyledStatsSpan>
+                  <StatsSpan> {newCurrency} </StatsSpan>
                 </p>
               </>
             ) : (
               ""
             )}
-          </StyledFormRow>
+          </FormRow>
           <div>
-            <StyledButtonSecondary onClick={handleExchange}>
-              <StyledButtonWithEmojiDiv>
+            <ButtonSecondary onClick={handleExchange}>
+              <ButtonWithEmojiDiv>
                 <HiArrowPath />
                 Change currency
-              </StyledButtonWithEmojiDiv>
-            </StyledButtonSecondary>
+              </ButtonWithEmojiDiv>
+            </ButtonSecondary>
           </div>
         </>
       )}

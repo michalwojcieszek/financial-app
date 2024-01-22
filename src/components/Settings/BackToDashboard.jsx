@@ -1,6 +1,6 @@
 import { HiArrowUturnLeft } from "react-icons/hi2";
-import StyledButtonSecondary from "../../ui/StyledButtonSecondary";
-import StyledButtonWithEmojiDiv from "../../ui/StyledButtonWithEmojiDiv";
+import ButtonSecondary from "../../ui/styledComponents/ButtonSecondary";
+import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
 import { useNavigate } from "react-router-dom";
 
 function BackToDashboard({ id }) {
@@ -11,12 +11,12 @@ function BackToDashboard({ id }) {
   }
   return (
     <div>
-      <StyledButtonSecondary onClick={handleGoBackToDashboard}>
-        <StyledButtonWithEmojiDiv>
+      <ButtonSecondary onClick={handleGoBackToDashboard}>
+        <ButtonWithEmojiDiv>
           <HiArrowUturnLeft />
           Go back to your dashboard
-        </StyledButtonWithEmojiDiv>
-      </StyledButtonSecondary>
+        </ButtonWithEmojiDiv>
+      </ButtonSecondary>
     </div>
   );
 }

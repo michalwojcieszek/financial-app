@@ -1,9 +1,23 @@
 import styled from "styled-components";
 import { useApp } from "../contexts/AppContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
 import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
+
+const FlexHeaderDiv = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  cursor: pointer;
+`;
+
+const FlexHeaderTextDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  /* gap: rem; */
+`;
 
 const StyledHeader = styled.header`
   background: var(--gradient-default);
@@ -17,7 +31,20 @@ const StyledHeader = styled.header`
 const StyledH1 = styled.h1`
   font-weight: 500;
   color: white;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
+  letter-spacing: 0.3rem;
+  /* text-transform: uppercase; */
+`;
+
+const EmojiParagraph = styled.p`
+  font-size: 3.5rem;
+`;
+
+const StyledSubtitle = styled.p`
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
 `;
 
 const UserInfo = styled.div`
@@ -51,6 +78,7 @@ const LogOutButton = styled.button`
 function Header() {
   const { setIsAuthenticated, isAuthenticated } = useApp();
   const navigate = useNavigate();
+  const { id } = useParams();
 
   function logOut() {
     setIsAuthenticated(false);
@@ -58,10 +86,25 @@ function Header() {
     toast.success("You have successfully logged out");
   }
 
+  function handleClickTitle() {
+    if (isAuthenticated) {
+      navigate(`/users/${id}`);
+    }
+    if (!isAuthenticated) {
+      navigate("/");
+    }
+  }
+
   return (
     <>
       <StyledHeader>
-        <StyledH1>💰 Your financial app.</StyledH1>
+        <FlexHeaderDiv onClick={handleClickTitle}>
+          <EmojiParagraph>💸</EmojiParagraph>
+          <FlexHeaderTextDiv>
+            <StyledH1>BudgetMaster</StyledH1>
+            <StyledSubtitle>Mind your budget.</StyledSubtitle>
+          </FlexHeaderTextDiv>
+        </FlexHeaderDiv>
         <UserInfo>
           {/* <HelloParagraph>👋 Hello Jonas </HelloParagraph> */}
           {isAuthenticated ? (

@@ -7,7 +7,9 @@ const StyledFooter = styled.footer`
   align-items: center;
   justify-items: stretch;
   grid-template-columns: auto 1fr;
-  /* margin-top: auto; */
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 `;
 
 const StyledCopyright = styled.p`
@@ -23,7 +25,7 @@ function Footer() {
       <StyledFooter>
         <StyledCopyright>
           {" "}
-          &copy; Copyright {new Date().getFullYear()} by mwoj
+          &copy; Copyright {new Date().getFullYear()} by Michal Wojcieszek
         </StyledCopyright>
       </StyledFooter>
     </>

@@ -6,9 +6,9 @@ import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
 import { useApp } from "../../contexts/AppContext";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
-import { deleteAccount } from "../../hooks/UsersDataAPI/apiFetching";
 import { useState } from "react";
 import Spinner from "../../ui/Spinner";
+import { deleteAccount } from "../../hooks/UsersDataAPI/apiFetching";
 
 const StyledPopupContainerDiv = styled.div`
   /* display: none; */

@@ -10,15 +10,13 @@ const StyledLayout = styled.div`
   position: relative;
 `;
 
-const StyledDiv = styled.div`
+const Main = styled.main`
   max-width: 48rem;
-  margin: 0 auto;
-  margin-top: 3rem;
+  margin: 3rem auto;
   padding: 0 3rem;
 `;
 
-const StyledMain = styled.main`
-  /* background-color: green; */
+const StyledDiv = styled.div`
   height: 100dvh;
 `;
 
@@ -27,14 +25,14 @@ function AppLayout() {
     <>
       <StyledLayout>
         <Header />
-        <StyledMain>
-          <StyledDiv>
+        <StyledDiv>
+          <Main>
             <Outlet />
-          </StyledDiv>
-        </StyledMain>
+          </Main>
+          <Footer />
+        </StyledDiv>
         <SettingsPopupContainer />
       </StyledLayout>
-      {/* <Footer /> */}
     </>
   );
 }

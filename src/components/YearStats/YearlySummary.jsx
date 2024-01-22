@@ -1,14 +1,6 @@
-import styled from "styled-components";
 import StatsSpan from "../../ui/styledComponents/StatsSpan";
 import H3 from "../../ui/styledComponents/H3";
-
-const StyledYearStatsUl = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  list-style: none;
-`;
+import YearStatsUl from "../../ui/styledComponents/YearStatsUl";
 
 function YearlySummary({
   expenses,
@@ -28,7 +20,7 @@ function YearlySummary({
   }, 0);
 
   return (
-    <StyledYearStatsUl>
+    <YearStatsUl>
       <H3>Yearly stats</H3>
       {monthsExceedingLimit ? (
         <li>
@@ -58,7 +50,7 @@ function YearlySummary({
       ) : (
         <StatsSpan color={incomeColor}>No money has been saved</StatsSpan>
       )}
-    </StyledYearStatsUl>
+    </YearStatsUl>
   );
 }
 

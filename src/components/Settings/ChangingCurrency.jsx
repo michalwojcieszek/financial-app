@@ -1,29 +1,21 @@
+//libraries
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { SelectCurrency } from "../../ui/styledComponents/SelectCurrency";
+import { HiArrowPath } from "react-icons/hi2";
+//styling
 import Spinner from "../../ui/Spinner";
+import { SelectCurrency } from "../../ui/styledComponents/SelectCurrency";
 import ButtonSecondary from "../../ui/styledComponents/ButtonSecondary";
 import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
 import FormRow from "../../ui/styledComponents/FormRow";
 import StatsSpan from "../../ui/styledComponents/StatsSpan";
-import styled from "styled-components";
-import { useState } from "react";
-import { HiArrowPath } from "react-icons/hi2";
 import H3 from "../../ui/styledComponents/H3";
 import H4 from "../../ui/styledComponents/H4";
+import Paragraph from "../../ui/styledComponents/Paragraph";
+//functions
 import { exchangeUserExpenses } from "../../hooks/UsersDataAPI/exchangeUserExpenses";
-import { useNavigate } from "react-router-dom";
-
-const StyledUl = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  list-style: none;
-`;
-
-const StyledParagraph = styled.p`
-  margin-bottom: 1rem;
-`;
+import ChangingCurrencyUl from "../../ui/styledComponents/ChangingCurrencyUl";
 
 function ChangingCurrency({ currenciesRatesArray, currency, id }) {
   const navigate = useNavigate();
@@ -62,17 +54,17 @@ function ChangingCurrency({ currenciesRatesArray, currency, id }) {
           </FormRow>
           <FormRow>
             <H4>Live currency rates:</H4>
-            <StyledParagraph>
+            <Paragraph>
               Your current currency: <StatsSpan>{currency}</StatsSpan>
-            </StyledParagraph>
-            <StyledUl>
+            </Paragraph>
+            <ChangingCurrencyUl>
               {currenciesRatesArray.map((el) => (
                 <li key={el.currency}>
                   1 <StatsSpan>{currency}</StatsSpan> is {el.rate}{" "}
                   <StatsSpan>{el.currency}</StatsSpan>
                 </li>
               ))}
-            </StyledUl>
+            </ChangingCurrencyUl>
             <SelectCurrency
               onChange={(e) => setNewCurrency(e.target.value)}
               defaultValue={currency}

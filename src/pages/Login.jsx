@@ -17,7 +17,6 @@ import { SelectCurrency } from "../ui/SelectCurrency";
 
 function Login() {
   const allUsers = useLoaderData();
-  console.log(allUsers);
   const navigate = useNavigate();
   const {
     ifUserHaveAccount,
@@ -50,7 +49,6 @@ function Login() {
     }
 
     //Check if name is unique
-    console.log(allUsers);
     if (
       allUsers.some(
         (user) => user.userData.name.toLowerCase() === name.toLowerCase()

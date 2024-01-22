@@ -34,7 +34,6 @@ function MonthlyStats({
     navigate(`/users/${id}/settings`);
   }
 
-  console.log(sumSaved, income);
   let incomeColor;
   switch (true) {
     case sumSaved < income * 0.25:

@@ -13,7 +13,6 @@ function YearlyStats({ expenses, limit, income, currency }) {
     return acc + sumInMonth;
   }, 0);
 
-  console.log(typeof limit, typeof income);
   const sumIncomes = income * monthsNum;
   const sumLimits = limit * monthsNum;
   const goalToSave = sumIncomes - sumLimits;

@@ -13,6 +13,7 @@ import StyledInput from "../ui/StyledInput";
 import StyledButtonSecondary from "../ui/StyledButtonSecondary";
 import StyledStatsSpan from "../ui/StyledStatsSpan";
 import { useState } from "react";
+import addExpenseEveryMonth from "../hooks/addExpenseEveryMonth";
 
 const StyledOptional = styled.span`
   color: var(--color-grey-500);
@@ -91,11 +92,15 @@ function AddExpenseForm({ currency }) {
     };
     setIsLoading(true);
     if (isRecurring) {
+      console.log(`checked`);
+      await addExpenseEveryMonth(id, newExpense);
     }
 
     if (!isRecurring) {
+      console.log(`NOT checked`);
       await addMonthlyExpense(id, month, newExpense);
     }
+
     resetAddExpenseFields();
     setIsLoading(false);
     //HERE I WANT TO RE-RENDER MONTH COMPONENT

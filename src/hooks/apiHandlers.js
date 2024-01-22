@@ -18,8 +18,6 @@ export async function addMonthlyExpense(id, month, newExpense) {
     ...user,
     expenses: { ...user.expenses, [month]: newMonthlyExpenses },
   };
-  console.log(userWithNewExpense);
-
   //sending refactored user's object to API
   const res = await fetch(`${URL_JSON_SERVER}/${id}`, {
     method: "PUT",

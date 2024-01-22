@@ -538,19 +538,280 @@
             "category": "food",
             "cost": "4.01",
             "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:04:32.500Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:04"
+            },
+            "category": "insurance",
+            "cost": "2",
+            "description": "2"
+          },
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
           }
         ],
-        "february": [],
-        "march": [],
-        "april": [],
-        "may": [],
-        "june": [],
-        "july": [],
-        "august": [],
-        "september": [],
-        "october": [],
-        "november": [],
-        "december": []
+        "february": [
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
+          }
+        ],
+        "march": [
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
+          }
+        ],
+        "april": [
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
+          }
+        ],
+        "may": [
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
+          }
+        ],
+        "june": [
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
+          }
+        ],
+        "july": [
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
+          }
+        ],
+        "august": [
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
+          }
+        ],
+        "september": [
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
+          }
+        ],
+        "october": [
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
+          }
+        ],
+        "november": [
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
+          }
+        ],
+        "december": [
+          {
+            "expenseId": "2024-01-22T12:28:34.475Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:28"
+            },
+            "category": "subscription",
+            "cost": "180",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T12:31:03.476Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "13:31"
+            },
+            "category": "medicines",
+            "cost": "200",
+            "description": "a"
+          }
+        ]
       }
     }
   ]

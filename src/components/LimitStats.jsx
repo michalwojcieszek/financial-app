@@ -10,7 +10,6 @@ function LimitStats({ sumExpenses, limit, isLimitCrossed, period, currency }) {
   const percExpensesOfLimit = (sumExpenses / limit) * 100;
   const leftToSpend = limit - sumExpenses;
 
-  console.log(expensesCompLimit);
   let limitColor;
   switch (true) {
     case expensesCompLimit > 100 || expensesCompLimit < 0:
@@ -29,7 +28,6 @@ function LimitStats({ sumExpenses, limit, isLimitCrossed, period, currency }) {
       limitColor = "--color-blue-700";
       break;
   }
-  console.log(typeof limit, limit);
   return (
     <StyledFormRow>
       <H4>Limit tracking</H4>

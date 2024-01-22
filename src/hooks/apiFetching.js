@@ -11,6 +11,16 @@ export async function postData(newUser) {
   return data.id;
 }
 
+export async function updateUserData(newUserData, id) {
+  const res = await fetch(`${URL_JSON_SERVER}/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(newUserData),
+    headers: { "Content-Type": "application/json" },
+  });
+  const data = await res.json();
+  return data;
+}
+
 export async function getAllUsers() {
   const res = await fetch(URL_JSON_SERVER);
   const data = await res.json();
@@ -25,63 +35,13 @@ export async function getUserDataById(id) {
   return userData;
 }
 
+export async function getUserExpensesById(id) {
+  const { expenses } = await getUserDataById(id);
+  return expenses;
+}
+
 export async function getMonthlyExpensesFromId(id, month) {
   const user = await getUserDataById(id);
   const montlyExpenses = user?.expenses?.[month];
   return montlyExpenses;
 }
-
-// const URL_JSON_SERVER = "http://localhost:8000/users";
-
-// const userTemplate = {
-//   userData: {
-//     name: "",
-//     password: "",
-//     monthlyLimit: "",
-//   },
-//   expenses: {
-//     january: {
-//       entertainment: [],
-//       food: [],
-//     },
-//   },
-// };
-
-// const [ifUserHaveAccount, setIfUserHaveAccount] = useState(false);
-// const [name, setName] = useState("");
-// const [password, setPassword] = useState("");
-// const [limit, setLimit] = useState("");
-// const [income, setIncome] = useState("");
-
-// const setUser = function () {
-//   const newUser = {
-//     ...userTemplate,
-//     userData: {
-//       ...userTemplate.userData,
-//       name: name,
-//       password: password,
-//       monthlyIncome: income,
-//       monthlyLimit: limit,
-//     },
-//   };
-
-//   async function fetchData() {
-//     const res = await fetch(URL_JSON_SERVER, {
-//       method: "POST",
-//       body: JSON.stringify(newUser),
-//       headers: { "Content-Type": "application/json" },
-//     });
-//     const data = await res.json();
-//     console.log(data);
-//   }
-//   fetchData();
-// };
-
-// function getData() {
-//   async function fetchData() {
-//     const res = await fetch(URL_JSON_SERVER);
-//     const data = await res.json();
-//     console.log(data);
-//   }
-//   fetchData();
-// }

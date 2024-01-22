@@ -36,8 +36,6 @@ const StyledHeaderOfTable = styled.div`
 `;
 
 function MonthlyExpenses({ expensesThisMonth, monthString, currency }) {
-  console.log(expensesThisMonth);
-
   return (
     <Section>
       {!expensesThisMonth.length ? (

@@ -1,4 +1,4 @@
-import { URL_JSON_SERVER, getUserDataById } from "./apiFetching";
+import { getUserDataById, updateUserData } from "./apiFetching";
 
 //Exchanging all values
 export async function exchangeUserExpenses(id, rate, newCurrency) {
@@ -33,11 +33,6 @@ export async function exchangeUserExpenses(id, rate, newCurrency) {
   };
 
   //sending refactored user's object to API
-  const res = await fetch(`${URL_JSON_SERVER}/${id}`, {
-    method: "PUT",
-    body: JSON.stringify(userWithNewExpensesData),
-    headers: { "Content-Type": "application/json" },
-  });
-  const data = await res.json();
+  const data = updateUserData(userWithNewExpensesData, id);
   return data;
 }

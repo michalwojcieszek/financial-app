@@ -51,7 +51,7 @@ function IncomeStats({
           </StatsSpan>{" "}
           <SpanGreyedOut>({crossedIncomeByPerc.toFixed(2)}%) </SpanGreyedOut>
           more than your income, which means{" "}
-          <StatsSpan color={incomeColor}>you have no saving</StatsSpan>.
+          <StatsSpan color={incomeColor}>you have no savings</StatsSpan>.
         </p>
       )}
       <ProgressBar

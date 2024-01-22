@@ -50,7 +50,6 @@ function Selection() {
         name="months"
         id="month-select"
         onChange={(e) => changeMonth(e.target.value)}
-        defaultValue="year"
       >
         <option value="year">YEARLY STATS</option>
         <option value="january">january</option>

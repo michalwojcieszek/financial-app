@@ -1,5 +1,13 @@
 export const URL_JSON_SERVER = "http://localhost:8000/users";
 
+//GET all users
+export async function getAllUsers() {
+  const res = await fetch(URL_JSON_SERVER);
+  const data = await res.json();
+  return data;
+}
+
+//POST new User
 export async function postData(newUser) {
   const res = await fetch(URL_JSON_SERVER, {
     method: "POST",
@@ -11,6 +19,7 @@ export async function postData(newUser) {
   return data.id;
 }
 
+//PUT new user's data
 export async function updateUserData(newUserData, id) {
   const res = await fetch(`${URL_JSON_SERVER}/${id}`, {
     method: "PUT",
@@ -21,27 +30,12 @@ export async function updateUserData(newUserData, id) {
   return data;
 }
 
-export async function getAllUsers() {
-  const res = await fetch(URL_JSON_SERVER);
+//DELETE - whole account
+export async function deleteAccount(id) {
+  const res = await fetch(`${URL_JSON_SERVER}/${id}`, {
+    method: "DELETE",
+  });
   const data = await res.json();
   console.log(data);
   return data;
-}
-
-export async function getUserDataById(id) {
-  const res = await fetch(URL_JSON_SERVER);
-  const data = await res.json();
-  const userData = data.find((user) => user.id === id);
-  return userData;
-}
-
-export async function getUserExpensesById(id) {
-  const { expenses } = await getUserDataById(id);
-  return expenses;
-}
-
-export async function getMonthlyExpensesFromId(id, month) {
-  const user = await getUserDataById(id);
-  const montlyExpenses = user?.expenses?.[month];
-  return montlyExpenses;
 }

@@ -1,4 +1,5 @@
-import { getUserDataById, updateUserData } from "./apiFetching";
+import { updateUserData } from "./apiFetching";
+import { getUserDataById } from "./apiHandlers";
 
 //Exchanging all values
 export async function exchangeUserExpenses(id, rate, newCurrency) {

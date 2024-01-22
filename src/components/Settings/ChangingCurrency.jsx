@@ -10,7 +10,7 @@ import { useState } from "react";
 import { HiArrowPath } from "react-icons/hi2";
 import H3 from "../../ui/H3";
 import H4 from "../../ui/H4";
-import { exchangeUserExpenses } from "../../hooks/exchangeUserExpenses";
+import { exchangeUserExpenses } from "../../hooks/UsersDataAPI/exchangeUserExpenses";
 import { useNavigate } from "react-router-dom";
 
 const StyledUl = styled.ul`

@@ -6,14 +6,16 @@ import { HiOutlineCheckCircle } from "react-icons/hi2";
 import ButtonWithEmojiDiv from "../ui/StyledButtonWithEmojiDiv";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
-import { addMonthlyExpense } from "../hooks/apiHandlers";
+import {
+  addExpenseEveryMonth,
+  addMonthlyExpense,
+} from "../hooks/UsersDataAPI/apiHandlers";
 import Spinner from "../ui/Spinner";
 import StyledSelect from "../ui/StyledSelect";
 import StyledInput from "../ui/StyledInput";
 import StyledButtonSecondary from "../ui/StyledButtonSecondary";
 import StyledStatsSpan from "../ui/StyledStatsSpan";
 import { useState } from "react";
-import addExpenseEveryMonth from "../hooks/addExpenseEveryMonth";
 
 const StyledOptional = styled.span`
   color: var(--color-grey-500);

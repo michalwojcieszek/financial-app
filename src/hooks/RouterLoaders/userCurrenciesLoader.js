@@ -1,5 +1,5 @@
-import { getUserDataById } from "./apiFetching";
-import { exchangeCurrApi } from "./exchangeCurrApi";
+import { getUserDataById } from "../UsersDataAPI/apiHandlers";
+import exchangeCurrApi from "../ExchangeCurrencyAPI/exchangeCurrApi";
 
 export async function userCurrenciesLoader({ params }) {
   const user = await getUserDataById(params.id);

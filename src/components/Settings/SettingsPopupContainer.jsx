@@ -6,7 +6,7 @@ import StyledButtonWithEmojiDiv from "../../ui/StyledButtonWithEmojiDiv";
 import { useApp } from "../../contexts/AppContext";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
-import { deleteAccount } from "../../hooks/apiHandlers";
+import { deleteAccount } from "../../hooks/UsersDataAPI/apiFetching";
 import { useState } from "react";
 import Spinner from "../../ui/Spinner";
 
@@ -71,7 +71,6 @@ function SettingsPopupContainer() {
 
   async function confirmDeleteAccount() {
     setIsLoading(true);
-
     //deleting from API
     await deleteAccount(id);
     //closing the popup

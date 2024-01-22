@@ -1,6 +1,6 @@
 import { HiOutlineXCircle } from "react-icons/hi2";
 import styled from "styled-components";
-import { deleteExpense } from "../hooks/apiHandlers";
+import { deleteExpense } from "../hooks/UsersDataAPI/apiHandlers";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import Spinner from "../ui/Spinner";

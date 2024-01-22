@@ -7,11 +7,11 @@ import Dashboard from "./pages/Dashboard";
 import { Toaster } from "react-hot-toast";
 import PageNotFound from "./pages/PageNotFound";
 import Month from "./pages/Month";
-import { userLoader } from "./hooks/userLoader";
+import { userLoader } from "./hooks/RouterLoaders/userLoader";
 import Settings from "./pages/Settings";
 import Year from "./pages/Year";
-import { getAllUsers as allUsersLoader } from "./hooks/apiFetching";
-import { userCurrenciesLoader } from "./hooks/userCurrenciesLoader";
+import { getAllUsers as allUsersLoader } from "./hooks/UsersDataAPI/apiFetching";
+import { userCurrenciesLoader } from "./hooks/RouterLoaders/userCurrenciesLoader";
 
 //---------------------------------------- MY TRY
 const router = createBrowserRouter([

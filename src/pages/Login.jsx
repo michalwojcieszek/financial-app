@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import ButtonUnderline from "../ui/ButtonUnderline";
 import H2 from "../ui/H2";
 import { useApp } from "../contexts/AppContext";
-import { postData } from "../hooks/apiFetching";
+import { postData } from "../hooks/UsersDataAPI/apiFetching";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
 import Spinner from "../ui/Spinner";

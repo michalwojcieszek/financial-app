@@ -15,9 +15,9 @@ function IncomeStats({
   currency,
 }) {
   const isIncomeCrossed = expense > income ? true : false;
-  const crossedIncomeBy = (expense - income).toFixed(2);
-  const totalSavingsPerc = ((sumSaved / income) * 100).toFixed(2);
-  const crossedIncomeByPerc = ((crossedIncomeBy / income) * 100).toFixed(2);
+  const crossedIncomeBy = expense - income;
+  const totalSavingsPerc = (sumSaved / income) * 100;
+  const crossedIncomeByPerc = (crossedIncomeBy / income) * 100;
 
   return (
     <StyledFormRow>
@@ -29,7 +29,7 @@ function IncomeStats({
             {currency} {sumSaved.toFixed(2)}{" "}
           </StyledStatsSpan>
           <StyledStatsSpanGreyedOut>
-            ({totalSavingsPerc}% of income)
+            ({totalSavingsPerc.toFixed(2)}% of income)
           </StyledStatsSpanGreyedOut>
         </p>
       )}
@@ -65,7 +65,7 @@ function IncomeStats({
         color={incomeColor}
       />
       <StyledStatsSpanGreyedOut size="small">
-        income: {currency} {income}
+        income: {currency} {income.toFixed(2)}
       </StyledStatsSpanGreyedOut>
     </StyledFormRow>
   );

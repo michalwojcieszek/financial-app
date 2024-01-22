@@ -1,4 +1,3 @@
-import { useLoaderData } from "react-router-dom";
 import Section from "../../ui/Section";
 import StyledFormDiv from "../../ui/StyledFormDiv";
 import YearlySummary from "./YearlySummary";
@@ -9,21 +8,21 @@ import H3 from "../../ui/H3";
 
 function YearlyStats({ expenses, limit, income, currency }) {
   const monthsNum = 12;
-
   const sumExpenses = Object.values(expenses).reduce((acc, cur) => {
     const sumInMonth = cur.reduce((acc2, cur2) => acc2 + Number(cur2.cost), 0);
     return acc + sumInMonth;
   }, 0);
 
-  const sumIncomes = (income * monthsNum).toFixed(2);
-  const sumLimits = (limit * monthsNum).toFixed(2);
-  const goalToSave = (sumIncomes - sumLimits).toFixed(2);
+  console.log(typeof limit, typeof income);
+  const sumIncomes = income * monthsNum;
+  const sumLimits = limit * monthsNum;
+  const goalToSave = sumIncomes - sumLimits;
   const isLimitCrossed = sumLimits < sumExpenses ? true : false;
 
   const sumSaved = sumIncomes - sumExpenses;
 
-  const averageCost = (sumExpenses / monthsNum).toFixed(2);
-  const totalSavings = (sumIncomes - sumExpenses).toFixed(2);
+  const averageCost = sumExpenses / monthsNum;
+  const totalSavings = sumIncomes - sumExpenses;
 
   let incomeColor;
   switch (true) {

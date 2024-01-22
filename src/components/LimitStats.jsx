@@ -5,9 +5,9 @@ import StyledStatsSpan from "../ui/StyledStatsSpan";
 import StyledStatsSpanGreyedOut from "../ui/StyledStatsSpanGreyedOut";
 
 function LimitStats({ sumExpenses, limit, isLimitCrossed, period, currency }) {
-  const expensesCompLimit = (100 - (sumExpenses / limit) * 100).toFixed(2);
+  const expensesCompLimit = 100 - (sumExpenses / limit) * 100;
   const crossedLimitBy = sumExpenses - limit;
-  const percExpensesOfLimit = ((sumExpenses / limit) * 100).toFixed(2);
+  const percExpensesOfLimit = (sumExpenses / limit) * 100;
   const leftToSpend = limit - sumExpenses;
 
   console.log(expensesCompLimit);
@@ -55,12 +55,12 @@ function LimitStats({ sumExpenses, limit, isLimitCrossed, period, currency }) {
           {currency} {sumExpenses.toFixed(2)}
         </StyledStatsSpan>{" "}
         <StyledStatsSpanGreyedOut>
-          ({percExpensesOfLimit}% of limit)
+          ({percExpensesOfLimit.toFixed(2)}% of limit)
         </StyledStatsSpanGreyedOut>
       </p>
-      <ProgressBar filled={expensesCompLimit} color={limitColor} />
+      <ProgressBar filled={expensesCompLimit.toFixed(2)} color={limitColor} />
       <StyledStatsSpanGreyedOut size="small">
-        limit of expenses: {currency} {limit}
+        limit of expenses: {currency} {limit.toFixed(2)}
       </StyledStatsSpanGreyedOut>
     </StyledFormRow>
   );

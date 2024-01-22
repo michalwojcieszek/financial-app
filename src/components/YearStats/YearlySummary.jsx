@@ -44,14 +44,14 @@ function YearlySummary({
         </StyledStatsSpan>{" "}
         spent (
         <StyledStatsSpan>
-          {currency} {averageCost}
+          {currency} {averageCost.toFixed(2)}
         </StyledStatsSpan>{" "}
         on average)
       </li>
       {sumSaved > 0 ? (
         <li>
           <StyledStatsSpan color={incomeColor}>
-            {currency} {sumSaved}
+            {currency} {sumSaved.toFixed(2)}
           </StyledStatsSpan>{" "}
           saved
         </li>

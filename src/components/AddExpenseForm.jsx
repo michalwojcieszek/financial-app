@@ -11,9 +11,23 @@ import Spinner from "../ui/Spinner";
 import StyledSelect from "../ui/StyledSelect";
 import StyledInput from "../ui/StyledInput";
 import StyledButtonSecondary from "../ui/StyledButtonSecondary";
+import StyledStatsSpan from "../ui/StyledStatsSpan";
+import { useState } from "react";
 
 const StyledOptional = styled.span`
   color: var(--color-grey-500);
+`;
+
+const InputCheckboxDiv = styled.div`
+  width: 20rem;
+  flex-shrink: 0;
+`;
+
+const InputCheckbox = styled.input`
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: red;
 `;
 
 const ExpenseFormRow = styled.div`
@@ -33,7 +47,7 @@ const ExpenseForm = styled.form`
   gap: 1rem;
 `;
 
-function AddExpenseForm() {
+function AddExpenseForm({ currency }) {
   const navigate = useNavigate();
   const { id, month } = useParams();
   const {
@@ -47,10 +61,13 @@ function AddExpenseForm() {
     isLoading,
   } = useApp();
 
+  const [isRecurring, setIsRecurring] = useState(false);
+
   function resetAddExpenseFields() {
     setCategory("");
     setCost("");
     setDescription("");
+    setIsRecurring(false);
   }
 
   async function handleSubmit(e) {
@@ -73,11 +90,15 @@ function AddExpenseForm() {
       description,
     };
     setIsLoading(true);
-    const newMonthlyExpenses = await addMonthlyExpense(id, month, newExpense);
-    console.log(newMonthlyExpenses);
+    if (isRecurring) {
+    }
+
+    if (!isRecurring) {
+      await addMonthlyExpense(id, month, newExpense);
+    }
     resetAddExpenseFields();
-    //HERE I WANT TO RE-RENDER MONTH COMPONENT
     setIsLoading(false);
+    //HERE I WANT TO RE-RENDER MONTH COMPONENT
     navigate(`/users/${id}/${month}`);
     toast.success("Expense has been added successfully");
   }
@@ -120,7 +141,9 @@ function AddExpenseForm() {
           </InputSelectDiv>
         </ExpenseFormRow>
         <ExpenseFormRow>
-          <label>Expense in $</label>
+          <label>
+            Expense in <StyledStatsSpan>{currency}</StyledStatsSpan>
+          </label>
           <InputSelectDiv>
             <StyledInput
               size="medium"
@@ -145,6 +168,17 @@ function AddExpenseForm() {
             />
           </InputSelectDiv>
         </ExpenseFormRow>
+        <ExpenseFormRow>
+          <label>Add expense to every month</label>
+          <InputCheckboxDiv>
+            <InputCheckbox
+              type="checkbox"
+              value={isRecurring}
+              onChange={(e) => setIsRecurring(e.target.checked)}
+            />
+          </InputCheckboxDiv>
+        </ExpenseFormRow>
+
         <div>
           <StyledButtonSecondary>
             <ButtonWithEmojiDiv>

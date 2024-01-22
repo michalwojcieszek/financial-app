@@ -8,8 +8,13 @@ import MonthlyExpensesChart from "./MonthlyExpensesChart";
 import LimitStats from "../LimitStats";
 import IncomeStats from "../IncomeStats";
 
-function MonthlyStats({ userData, expensesThisMonth, monthString, currency }) {
-  const { income, limit } = userData;
+function MonthlyStats({
+  expensesThisMonth,
+  monthString,
+  currency,
+  limit,
+  income,
+}) {
   const { id } = useParams();
   const navigate = useNavigate();
 

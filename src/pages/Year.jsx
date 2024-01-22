@@ -4,14 +4,16 @@ import YearlyStats from "../components/YearStats/YearlyStats";
 function Year() {
   const user = useLoaderData();
   const { expenses } = user;
-  const { limit, income, currency } = user.userData;
+  const { currency, income, limit } = user.userData;
+  const numIncome = parseFloat(income);
+  const numLimit = parseFloat(limit);
 
   return (
     <YearlyStats
       expenses={expenses}
-      limit={limit}
-      income={income}
       currency={currency}
+      income={numIncome}
+      limit={numLimit}
     />
   );
 }

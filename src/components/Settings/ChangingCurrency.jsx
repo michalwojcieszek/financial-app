@@ -48,8 +48,8 @@ function ChangingCurrency({ currenciesRatesArray, currency, id }) {
           <FormRow>
             <H3>Change currency</H3>
             <label>
-              Income, limit and your expenses will be calculated to the new
-              currency.
+              Income, savingsGoal and your expenses will be calculated to the
+              new currency.
             </label>
           </FormRow>
           <FormRow>

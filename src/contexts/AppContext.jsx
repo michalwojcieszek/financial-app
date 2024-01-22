@@ -10,7 +10,7 @@ function AppProvider({ children }) {
   const [ifUserHaveAccount, setIfUserHaveAccount] = useState(false);
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [limit, setLimit] = useState("");
+  const [savingsGoal, setSavingsGoal] = useState("");
   const [income, setIncome] = useState("");
   const [currency, setCurrency] = useState("USD");
 
@@ -31,8 +31,8 @@ function AppProvider({ children }) {
         setName,
         password,
         setPassword,
-        limit,
-        setLimit,
+        savingsGoal,
+        setSavingsGoal,
         income,
         setIncome,
         isAuthenticated,

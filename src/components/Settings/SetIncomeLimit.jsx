@@ -8,14 +8,14 @@ import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
 import { HiAdjustmentsVertical } from "react-icons/hi2";
 import H3 from "../../ui/styledComponents/H3";
 
-function SetIncomeLimit({ income, limit, id }) {
+function SetIncomeLimit({ income, savingsGoal, id }) {
   const [newIncome, setNewIncome] = useState(income);
-  const [newLimit, setNewLimit] = useState(limit);
+  const [newLimit, setNewLimit] = useState(savingsGoal);
 
   async function handleSaveChanges() {
-    if (income === newIncome && limit === newLimit) {
+    if (income === newIncome && savingsGoal === newLimit) {
       toast.error(
-        `New limit and income are the same as previously. No change has been made.`
+        `New savingsGoal and income are the same as previously. No change has been made.`
       );
       return;
     }
@@ -26,7 +26,7 @@ function SetIncomeLimit({ income, limit, id }) {
   return (
     <>
       <FormRow>
-        <H3>Set new income and limit</H3>
+        <H3>Set new income and savingsGoal</H3>
         <label>Set new monthly income</label>
         <Input
           type="number"
@@ -36,11 +36,11 @@ function SetIncomeLimit({ income, limit, id }) {
         />
       </FormRow>
       <FormRow>
-        <label>Set new limit of expenses</label>
+        <label>Set new savingsGoal of expenses</label>
         <Input
           type="number"
           size="large"
-          defaultValue={limit}
+          defaultValue={savingsGoal}
           onChange={(e) => setNewLimit(e.target.value)}
         />
       </FormRow>

@@ -6,35 +6,34 @@ import LimitStats from "../LimitStats";
 import IncomeStats from "../IncomeStats";
 import H3 from "../../ui/styledComponents/H3";
 
-function YearlyStats({ expenses, limit, income, currency }) {
+function YearlyStats({ expenses, savingsGoal, income, currency }) {
   const monthsNum = 12;
   const sumExpenses = Object.values(expenses).reduce((acc, cur) => {
     const sumInMonth = cur.reduce((acc2, cur2) => acc2 + Number(cur2.cost), 0);
     return acc + sumInMonth;
   }, 0);
 
+  //diferent variable name than month
   const sumIncomes = income * monthsNum;
-  const sumLimits = limit * monthsNum;
-  const goalToSave = sumIncomes - sumLimits;
-  const isLimitCrossed = sumLimits < sumExpenses ? true : false;
-
-  const sumSaved = sumIncomes - sumExpenses;
-
+  const sumSavingsGoal = savingsGoal * monthsNum;
   const averageCost = sumExpenses / monthsNum;
   const totalSavings = sumIncomes - sumExpenses;
+  //same variable name as in month
+  const sumSaved = sumIncomes - sumExpenses;
+  const isSavingsGoalAchieved = sumSaved > savingsGoal ? true : false;
 
   let incomeColor;
   switch (true) {
-    case totalSavings < goalToSave * 0.25:
+    case totalSavings < sumIncomes * 0.25:
       incomeColor = "--stats-red";
       break;
-    case totalSavings < goalToSave * 0.5:
+    case totalSavings < sumIncomes * 0.5:
       incomeColor = "--stats-orange";
       break;
-    case totalSavings < goalToSave * 0.75:
+    case totalSavings < sumIncomes * 0.75:
       incomeColor = "--stats-yellow";
       break;
-    case totalSavings >= goalToSave * 0.75:
+    case totalSavings >= sumIncomes * 0.75:
       incomeColor = "--stats-green";
       break;
     default:
@@ -54,26 +53,28 @@ function YearlyStats({ expenses, limit, income, currency }) {
     <Section>
       <YearlySummary
         expenses={expenses}
-        limit={limit}
+        savingsGoal={savingsGoal}
         averageCost={averageCost}
         sumExpenses={sumExpenses}
         incomeColor={incomeColor}
         sumSaved={sumSaved}
-        isLimitCrossed={isLimitCrossed}
         currency={currency}
       />
       <FormDiv>
         <LimitStats
           sumExpenses={sumExpenses}
-          limit={sumLimits}
+          savingsGoal={sumSavingsGoal}
+          sumSaved={sumSaved}
+          isSavingsGoalAchieved={isSavingsGoalAchieved}
           period="year"
           currency={currency}
+          income={sumIncomes}
         />
         <IncomeStats
           expense={sumExpenses}
           income={sumIncomes}
           incomeColor={incomeColor}
-          isLimitCrossed={isLimitCrossed}
+          isSavingsGoalAchieved={isSavingsGoalAchieved}
           totalSavings={totalSavings}
           sumSaved={sumSaved}
           period="year"

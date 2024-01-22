@@ -5,9 +5,9 @@ import Selection from "../components/Selection";
 function Year() {
   const user = useLoaderData();
   const { expenses } = user;
-  const { currency, income, limit } = user.userData;
+  const { currency, income, savingsGoal } = user.userData;
   const numIncome = parseFloat(income);
-  const numLimit = parseFloat(limit);
+  const numLimit = parseFloat(savingsGoal);
 
   return (
     <>
@@ -16,7 +16,7 @@ function Year() {
         expenses={expenses}
         currency={currency}
         income={numIncome}
-        limit={numLimit}
+        savingsGoal={numLimit}
       />
     </>
   );

@@ -12,7 +12,7 @@ function Settings() {
   const { setIsSettingsPopupOpen } = useApp();
   const { user, currenciesRatesArray } = useLoaderData();
   const { id } = useParams();
-  const { limit, income, currency } = user.userData;
+  const { savingsGoal, income, currency } = user.userData;
 
   return (
     <Section type="flex">
@@ -21,7 +21,7 @@ function Settings() {
         <H2>Settings</H2>
       </FormDiv>
       <FormDiv>
-        <SetIncomeLimit income={income} limit={limit} id={id} />
+        <SetIncomeLimit income={income} savingsGoal={savingsGoal} id={id} />
       </FormDiv>
       <FormDiv>
         <ChangingCurrency

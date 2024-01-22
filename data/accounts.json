@@ -95,7 +95,7 @@
       "userData": {
         "name": "abcd",
         "password": "abc",
-        "limit": "1",
+        "savingsGoal": "1",
         "income": "1"
       },
       "expenses": {
@@ -118,7 +118,7 @@
       "userData": {
         "name": "3",
         "password": "3",
-        "limit": "100",
+        "savingsGoal": "100",
         "income": "100"
       },
       "expenses": {
@@ -141,7 +141,7 @@
       "userData": {
         "name": "123",
         "password": "123",
-        "limit": "201",
+        "savingsGoal": "201",
         "income": "1000"
       },
       "expenses": {
@@ -258,7 +258,7 @@
       "userData": {
         "name": "m",
         "password": "1",
-        "limit": "1000",
+        "savingsGoal": "1000",
         "income": "2000"
       },
       "expenses": {
@@ -302,7 +302,7 @@
       "userData": {
         "name": "222",
         "password": "22222",
-        "limit": "2",
+        "savingsGoal": "2",
         "income": "3"
       },
       "expenses": {
@@ -325,7 +325,7 @@
       "userData": {
         "name": "12345",
         "password": "12345",
-        "limit": "10",
+        "savingsGoal": "10",
         "income": "200"
       },
       "expenses": {
@@ -359,7 +359,7 @@
       "userData": {
         "name": "12345678",
         "password": "12345",
-        "limit": "199",
+        "savingsGoal": "199",
         "income": "200"
       },
       "expenses": {
@@ -393,7 +393,7 @@
       "userData": {
         "name": "5",
         "password": "55555",
-        "limit": "200",
+        "savingsGoal": "200",
         "income": "1000"
       },
       "expenses": {
@@ -448,7 +448,7 @@
       "userData": {
         "name": "aaa",
         "password": "11111",
-        "limit": "151.28",
+        "savingsGoal": "151.28",
         "income": "2017.04",
         "currency": "EUR"
       },
@@ -523,7 +523,7 @@
       "userData": {
         "name": "abcdefg",
         "password": "12345",
-        "limit": "49.00",
+        "savingsGoal": "49.00",
         "income": "1999.99",
         "currency": "USD"
       },
@@ -819,7 +819,7 @@
       "userData": {
         "name": "Edyta",
         "password": "12345",
-        "limit": "2000",
+        "savingsGoal": "2000",
         "income": "3500",
         "currency": "PLN"
       },
@@ -966,6 +966,462 @@
             "category": "housing",
             "cost": "600",
             "description": "flat fees"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8147",
+      "userData": {
+        "name": "123456",
+        "password": "123456",
+        "savingsGoal": "2000",
+        "income": "4000",
+        "currency": "USD"
+      },
+      "expenses": {
+        "january": [
+          {
+            "expenseId": "2024-01-22T17:53:06.644Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "18:53"
+            },
+            "category": "subscription",
+            "cost": "2000",
+            "description": "a"
+          }
+        ],
+        "february": [
+          {
+            "expenseId": "2024-01-22T16:21:10.992Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:21"
+            },
+            "category": "education",
+            "cost": "1000",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:23:02.219Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:23"
+            },
+            "category": "medicines",
+            "cost": "500",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:24:48.120Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:24"
+            },
+            "category": "medicines",
+            "cost": "250",
+            "description": ""
+          }
+        ],
+        "march": [
+          {
+            "expenseId": "2024-01-22T16:21:10.992Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:21"
+            },
+            "category": "education",
+            "cost": "1000",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T18:27:03.440Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "19:27"
+            },
+            "category": "food",
+            "cost": "4000",
+            "description": "a"
+          }
+        ],
+        "april": [
+          {
+            "expenseId": "2024-01-22T16:21:10.992Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:21"
+            },
+            "category": "education",
+            "cost": "1000",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:23:02.219Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:23"
+            },
+            "category": "medicines",
+            "cost": "500",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:24:48.120Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:24"
+            },
+            "category": "medicines",
+            "cost": "250",
+            "description": ""
+          },
+          {
+            "expenseId": "2024-01-22T18:27:03.440Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "19:27"
+            },
+            "category": "food",
+            "cost": "4000",
+            "description": "a"
+          }
+        ],
+        "may": [
+          {
+            "expenseId": "2024-01-22T16:21:10.992Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:21"
+            },
+            "category": "education",
+            "cost": "1000",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:23:02.219Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:23"
+            },
+            "category": "medicines",
+            "cost": "500",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:24:48.120Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:24"
+            },
+            "category": "medicines",
+            "cost": "250",
+            "description": ""
+          },
+          {
+            "expenseId": "2024-01-22T18:27:03.440Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "19:27"
+            },
+            "category": "food",
+            "cost": "4000",
+            "description": "a"
+          }
+        ],
+        "june": [
+          {
+            "expenseId": "2024-01-22T16:21:10.992Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:21"
+            },
+            "category": "education",
+            "cost": "1000",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:23:02.219Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:23"
+            },
+            "category": "medicines",
+            "cost": "500",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:24:48.120Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:24"
+            },
+            "category": "medicines",
+            "cost": "250",
+            "description": ""
+          },
+          {
+            "expenseId": "2024-01-22T18:27:03.440Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "19:27"
+            },
+            "category": "food",
+            "cost": "4000",
+            "description": "a"
+          }
+        ],
+        "july": [
+          {
+            "expenseId": "2024-01-22T16:21:10.992Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:21"
+            },
+            "category": "education",
+            "cost": "1000",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:23:02.219Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:23"
+            },
+            "category": "medicines",
+            "cost": "500",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:24:48.120Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:24"
+            },
+            "category": "medicines",
+            "cost": "250",
+            "description": ""
+          },
+          {
+            "expenseId": "2024-01-22T18:27:03.440Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "19:27"
+            },
+            "category": "food",
+            "cost": "4000",
+            "description": "a"
+          }
+        ],
+        "august": [
+          {
+            "expenseId": "2024-01-22T16:21:10.992Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:21"
+            },
+            "category": "education",
+            "cost": "1000",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:23:02.219Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:23"
+            },
+            "category": "medicines",
+            "cost": "500",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:24:48.120Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:24"
+            },
+            "category": "medicines",
+            "cost": "250",
+            "description": ""
+          },
+          {
+            "expenseId": "2024-01-22T18:27:03.440Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "19:27"
+            },
+            "category": "food",
+            "cost": "4000",
+            "description": "a"
+          }
+        ],
+        "september": [
+          {
+            "expenseId": "2024-01-22T16:21:10.992Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:21"
+            },
+            "category": "education",
+            "cost": "1000",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:23:02.219Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:23"
+            },
+            "category": "medicines",
+            "cost": "500",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:24:48.120Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:24"
+            },
+            "category": "medicines",
+            "cost": "250",
+            "description": ""
+          },
+          {
+            "expenseId": "2024-01-22T18:27:03.440Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "19:27"
+            },
+            "category": "food",
+            "cost": "4000",
+            "description": "a"
+          }
+        ],
+        "october": [
+          {
+            "expenseId": "2024-01-22T16:21:10.992Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:21"
+            },
+            "category": "education",
+            "cost": "1000",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:23:02.219Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:23"
+            },
+            "category": "medicines",
+            "cost": "500",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:24:48.120Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:24"
+            },
+            "category": "medicines",
+            "cost": "250",
+            "description": ""
+          },
+          {
+            "expenseId": "2024-01-22T18:27:03.440Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "19:27"
+            },
+            "category": "food",
+            "cost": "4000",
+            "description": "a"
+          }
+        ],
+        "november": [
+          {
+            "expenseId": "2024-01-22T16:21:10.992Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:21"
+            },
+            "category": "education",
+            "cost": "1000",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:23:02.219Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:23"
+            },
+            "category": "medicines",
+            "cost": "500",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:24:48.120Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:24"
+            },
+            "category": "medicines",
+            "cost": "250",
+            "description": ""
+          },
+          {
+            "expenseId": "2024-01-22T18:27:03.440Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "19:27"
+            },
+            "category": "food",
+            "cost": "4000",
+            "description": "a"
+          }
+        ],
+        "december": [
+          {
+            "expenseId": "2024-01-22T16:21:10.992Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:21"
+            },
+            "category": "education",
+            "cost": "1000",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:23:02.219Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:23"
+            },
+            "category": "medicines",
+            "cost": "500",
+            "description": "a"
+          },
+          {
+            "expenseId": "2024-01-22T16:24:48.120Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "17:24"
+            },
+            "category": "medicines",
+            "cost": "250",
+            "description": ""
+          },
+          {
+            "expenseId": "2024-01-22T18:27:03.440Z",
+            "addedOn": {
+              "date": "22.01.2024",
+              "time": "19:27"
+            },
+            "category": "food",
+            "cost": "4000",
+            "description": "a"
           }
         ]
       }

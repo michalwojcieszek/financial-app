@@ -12,7 +12,7 @@ function MonthlyStats({
   expensesThisMonth,
   monthString,
   currency,
-  limit,
+  savingsGoal,
   income,
 }) {
   const { id } = useParams();
@@ -26,9 +26,11 @@ function MonthlyStats({
     (acc, cur) => acc + cur,
     0
   );
+
   const sumSaved = income - sumExpensesThisMonth;
-  const goalToSave = income - limit;
-  const isLimitCrossed = sumExpensesThisMonth > limit ? true : false;
+  const isSavingsGoalAchieved = sumSaved > savingsGoal ? true : false;
+
+  // const leftToSpendTotal = income - sumSaved;
 
   function handleGoToSettings() {
     navigate(`/users/${id}/settings`);
@@ -61,7 +63,7 @@ function MonthlyStats({
       <div>
         Your goal is to save{" "}
         <StatsSpan color="--color-blue-700">
-          {currency} {goalToSave.toFixed(2)}
+          {currency} {savingsGoal.toFixed(2)}
         </StatsSpan>{" "}
         each month.{" "}
         <p>
@@ -74,16 +76,18 @@ function MonthlyStats({
       <FormDiv>
         <LimitStats
           sumExpenses={sumExpensesThisMonth}
-          limit={limit}
-          isLimitCrossed={isLimitCrossed}
+          savingsGoal={savingsGoal}
+          sumSaved={sumSaved}
+          isSavingsGoalAchieved={isSavingsGoalAchieved}
           period="month"
           currency={currency}
+          income={income}
         />
         <IncomeStats
           expense={sumExpensesThisMonth}
           income={income}
           incomeColor={incomeColor}
-          isLimitCrossed={isLimitCrossed}
+          isSavingsGoalAchieved={isSavingsGoalAchieved}
           sumSaved={sumSaved}
           period="month"
           currency={currency}

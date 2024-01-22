@@ -2,7 +2,7 @@ const userTemplate = {
   userData: {
     name: "",
     password: "",
-    limit: "",
+    savingsGoal: "",
     income: "",
     currency: "",
   },

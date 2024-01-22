@@ -30,10 +30,10 @@ const StyledHeader = styled.header`
 `;
 
 const StyledH1 = styled.h1`
-  font-weight: 500;
+  /* font-weight: 400; */
   color: white;
   font-size: 2.2rem;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.4rem;
   /* text-transform: uppercase; */
 `;
 

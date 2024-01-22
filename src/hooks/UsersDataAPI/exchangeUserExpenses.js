@@ -7,12 +7,12 @@ export async function exchangeUserExpenses(id, rate, newCurrency) {
   const user = await getUserDataById(id);
   const { userData, expenses } = user;
 
-  //new userData (income, limit, currency)
+  //new userData (income, savingsGoal, currency)
   const newUserData = {
     ...userData,
     currency: newCurrency,
     income: (userData.income * rate).toFixed(2),
-    limit: (userData.limit * rate).toFixed(2),
+    savingsGoal: (userData.savingsGoal * rate).toFixed(2),
   };
 
   console.log(Object.entries(expenses));

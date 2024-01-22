@@ -64,18 +64,18 @@ export async function deleteExpense(id, month, expenseId) {
   return data;
 }
 
-//Changing user's income and limit
+//Changing user's income and savingsGoal
 export async function changeIncomeAndLimit(id, newIncome, newLimit) {
   //getting current user's object
   const user = await getUserDataById(id);
 
-  //refactoring user's object to have new income and limit
+  //refactoring user's object to have new income and savingsGoal
   const userWithNewIncomeAndLimit = {
     ...user,
     userData: {
       ...user.userData,
       income: newIncome,
-      limit: newLimit,
+      savingsGoal: newLimit,
     },
   };
   console.log(userWithNewIncomeAndLimit);

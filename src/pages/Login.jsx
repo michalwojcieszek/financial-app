@@ -3,7 +3,7 @@ import ButtonUnderline from "../ui/styledComponents/ButtonUnderline";
 import H2 from "../ui/styledComponents/H2";
 import { useApp } from "../contexts/AppContext";
 import { postData } from "../hooks/UsersDataAPI/apiFetching";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useNavigation } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
 import Spinner from "../ui/Spinner";
 import Section from "../ui/styledComponents/Section";
@@ -16,6 +16,9 @@ import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
 import { SelectCurrency } from "../ui/styledComponents/SelectCurrency";
 
 function Login() {
+  const navigation = useNavigation();
+  const isIdle = navigation.idle === "idle";
+
   const allUsers = useLoaderData();
   const navigate = useNavigate();
   const {
@@ -25,8 +28,8 @@ function Login() {
     setName,
     password,
     setPassword,
-    limit,
-    setLimit,
+    savingsGoal,
+    setSavingsGoal,
     income,
     setIncome,
     setIsAuthenticated,
@@ -39,11 +42,20 @@ function Login() {
     setName("");
     setPassword("");
     setIncome("");
-    setLimit("");
+    setSavingsGoal("");
+  }
+
+  function handleUserValidated(id) {
+    //going to dashboard
+    navigate(`/users/${id}`);
+    //clean inputs
+    clearInputs();
+    setIsAuthenticated(true);
+    toast.success(`Welcome to the BudgetMaster 🙌`);
   }
 
   async function handleSignUp() {
-    if (!name || !password || !income || !limit) {
+    if (!name || !password || !income || !savingsGoal) {
       toast.error(`Fill all the fields`);
       return;
     }
@@ -65,14 +77,14 @@ function Login() {
       return;
     }
 
-    if (+income < 0 || +limit < 0) {
-      toast.error(`Income and limit cannot be less than zero`);
+    if (+income < 0 || +savingsGoal < 0) {
+      toast.error(`Income and savingsGoal cannot be less than zero`);
       return;
     }
 
-    if (+income < +limit) {
+    if (+income < +savingsGoal) {
       toast.error(
-        `In order to save money you cannot spend more than you earn 😊`
+        `It is unfortunately impossible to save more than you earn 😊`
       );
       return;
     }
@@ -85,15 +97,12 @@ function Login() {
         name,
         password,
         income,
-        limit,
+        savingsGoal,
         currency,
       },
     };
     const newUserId = await postData(newUser);
-    navigate(`/users/${newUserId}`);
-    //clean inputs
-    clearInputs();
-    setIsAuthenticated(true);
+    handleUserValidated(newUserId);
   }
 
   function handleSubmit(e) {
@@ -128,10 +137,7 @@ function Login() {
       return;
     }
     const existingUserId = existingUser.id;
-    navigate(`/users/${existingUserId}`);
-    //clean inputs
-    clearInputs();
-    setIsAuthenticated(true);
+    handleUserValidated(existingUserId);
   }
 
   if (isLoading) return <Spinner />;
@@ -192,12 +198,12 @@ function Login() {
                   />
                 </FormRow>
                 <FormRow>
-                  <label>Monthly limit of expenses</label>
+                  <label>Monthly savings goal</label>
                   <Input
                     size="large"
                     type="number"
-                    value={limit}
-                    onChange={(e) => setLimit(e.target.value)}
+                    value={savingsGoal}
+                    onChange={(e) => setSavingsGoal(e.target.value)}
                   />
                 </FormRow>
                 <FormRow>

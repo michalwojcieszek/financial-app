@@ -6,9 +6,9 @@ import Selection from "../components/Selection";
 
 function Month() {
   const user = useLoaderData();
-  const { currency, income, limit } = user.userData;
+  const { currency, income, savingsGoal } = user.userData;
   const numIncome = parseFloat(income);
-  const numLimit = parseFloat(limit);
+  const numSavingsGoal = parseFloat(savingsGoal);
 
   const { month } = useParams();
   const monthString = month[0].toUpperCase() + month.slice(1);
@@ -25,7 +25,7 @@ function Month() {
       />
       <MonthlyStats
         income={numIncome}
-        limit={numLimit}
+        savingsGoal={numSavingsGoal}
         userData={user.userData}
         expensesThisMonth={expensesThisMonth}
         monthString={monthString}

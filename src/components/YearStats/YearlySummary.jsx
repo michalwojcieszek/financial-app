@@ -4,7 +4,7 @@ import YearStatsUl from "../../ui/styledComponents/YearStatsUl";
 
 function YearlySummary({
   expenses,
-  limit,
+  savingsGoal,
   sumExpenses,
   averageCost,
   incomeColor,
@@ -16,7 +16,7 @@ function YearlySummary({
       (acc2, cur2) => acc2 + Number(cur2.cost),
       0
     );
-    return acc + (monthlyExpenses > limit ? 1 : 0);
+    return acc + (monthlyExpenses > savingsGoal ? 1 : 0);
   }, 0);
 
   return (

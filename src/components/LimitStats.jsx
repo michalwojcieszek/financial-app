@@ -4,59 +4,82 @@ import FormRow from "../ui/styledComponents/FormRow";
 import StatsSpan from "../ui/styledComponents/StatsSpan";
 import SpanGreyedOut from "../ui/styledComponents/SpanGreyedOut";
 
-function LimitStats({ sumExpenses, limit, isLimitCrossed, period, currency }) {
-  const expensesCompLimit = 100 - (sumExpenses / limit) * 100;
-  const crossedLimitBy = sumExpenses - limit;
-  const percExpensesOfLimit = (sumExpenses / limit) * 100;
-  const leftToSpend = limit - sumExpenses;
+function LimitStats({
+  sumExpenses,
+  savingsGoal,
+  isSavingsGoalAchieved,
+  period,
+  currency,
+  sumSaved,
+  income,
+}) {
+  const limit = income - savingsGoal;
+  const leftToSpendLimit = limit - sumExpenses;
+  const savedPercOfGoal = (leftToSpendLimit / limit) * 100;
+  // const savedPercOfGoal = (sumSaved / savingsGoal) * 100;
+  const crossedLimitBy = savingsGoal - sumSaved;
 
-  let limitColor;
+  let savingsGoalColor;
   switch (true) {
-    case expensesCompLimit > 100 || expensesCompLimit < 0:
-      limitColor = "--stats-red";
+    case savedPercOfGoal < 0:
+      savingsGoalColor = "--stats-red";
       break;
-    case expensesCompLimit > 75:
-      limitColor = "--stats-green";
+    case savedPercOfGoal >= 100:
+      savingsGoalColor = "--stats-green";
       break;
-    case expensesCompLimit >= 50:
-      limitColor = "--stats-yellow";
+    case savedPercOfGoal >= 75:
+      savingsGoalColor = "--stats-yellow";
       break;
-    case expensesCompLimit < 50:
-      limitColor = "--stats-orange";
+    case savedPercOfGoal < 50:
+      savingsGoalColor = "--stats-orange";
       break;
     default:
-      limitColor = "--color-blue-700";
+      savingsGoalColor = "--color-blue-700";
       break;
   }
   return (
     <FormRow>
       <H4>Limit tracking</H4>
-      {isLimitCrossed ? (
+      {!isSavingsGoalAchieved && crossedLimitBy !== 0 && (
         <p>
-          Crossed the limit by{" "}
-          <StatsSpan color={limitColor}>
+          Crossed the savings goal by{" "}
+          <StatsSpan color={savingsGoalColor}>
             {currency} {crossedLimitBy.toFixed(2)}
           </StatsSpan>
         </p>
-      ) : (
+      )}
+      {!isSavingsGoalAchieved && crossedLimitBy === 0 && (
+        <p>You have no money to spend if you do not want to cross the limit.</p>
+      )}
+      {isSavingsGoalAchieved && (
         <p>
-          <StatsSpan color={limitColor}>
-            {currency} {leftToSpend.toFixed(2)}
+          <StatsSpan color={savingsGoalColor}>
+            {currency} {leftToSpendLimit.toFixed(2)}
           </StatsSpan>{" "}
-          left to spend to not cross the limit.
+          available in order to save{" "}
+          <StatsSpan color="--color-blue-700">
+            {currency} {savingsGoal.toFixed(2)}
+          </StatsSpan>{" "}
         </p>
       )}
       <p>
         Expenses this {period}:
-        <StatsSpan color={limitColor}>
+        <StatsSpan color={savingsGoalColor}>
           {" "}
           {currency} {sumExpenses.toFixed(2)}
         </StatsSpan>{" "}
         <SpanGreyedOut>
-          ({percExpensesOfLimit.toFixed(2)}% of limit)
+          (
+          {savedPercOfGoal <= 0
+            ? (100 + Math.abs(savedPercOfGoal)).toFixed(2)
+            : savedPercOfGoal.toFixed(2)}
+          % of the limit)
         </SpanGreyedOut>
       </p>
-      <ProgressBar filled={expensesCompLimit.toFixed(2)} color={limitColor} />
+      <ProgressBar
+        filled={savedPercOfGoal <= 0 ? 100 : savedPercOfGoal}
+        color={savingsGoalColor}
+      />
       <SpanGreyedOut size="small">
         limit of expenses: {currency} {limit.toFixed(2)}
       </SpanGreyedOut>

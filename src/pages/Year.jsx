@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import YearlyStats from "../components/YearStats/YearlyStats";
+import Selection from "../components/Selection";
 
 function Year() {
   const user = useLoaderData();
@@ -9,12 +10,15 @@ function Year() {
   const numLimit = parseFloat(limit);
 
   return (
-    <YearlyStats
-      expenses={expenses}
-      currency={currency}
-      income={numIncome}
-      limit={numLimit}
-    />
+    <>
+      <Selection />
+      <YearlyStats
+        expenses={expenses}
+        currency={currency}
+        income={numIncome}
+        limit={numLimit}
+      />
+    </>
   );
 }
 

@@ -2,6 +2,7 @@ import AddExpenseForm from "../components/AddExpenseForm";
 import MonthlyExpenses from "../components/MonthlyExpenses";
 import { useLoaderData, useParams } from "react-router-dom";
 import MonthlyStats from "../components/MonthStats/MonthlyStats";
+import Selection from "../components/Selection";
 
 function Month() {
   const user = useLoaderData();
@@ -15,6 +16,7 @@ function Month() {
 
   return (
     <>
+      <Selection />
       <AddExpenseForm currency={currency} />
       <MonthlyExpenses
         expensesThisMonth={expensesThisMonth}

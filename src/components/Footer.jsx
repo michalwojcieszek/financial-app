@@ -7,9 +7,10 @@ const StyledFooter = styled.footer`
   align-items: center;
   justify-items: stretch;
   grid-template-columns: auto 1fr;
-  bottom: 0;
-  position: absolute;
   width: 100%;
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* height: 5rem; */
 `;
 
 const StyledCopyright = styled.p`

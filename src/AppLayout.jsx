@@ -6,8 +6,9 @@ import SettingsPopupContainer from "./components/Settings/SettingsPopupContainer
 
 const StyledLayout = styled.div`
   display: grid;
-  grid-template-rows: 9rem 1fr;
+  grid-template-rows: 9rem 1fr auto;
   position: relative;
+  height: 100vh;
 `;
 
 const Main = styled.main`
@@ -16,23 +17,19 @@ const Main = styled.main`
   padding: 0 3rem;
 `;
 
-const StyledDiv = styled.div`
-  height: 100dvh;
-`;
-
 function AppLayout() {
   return (
     <>
       <StyledLayout>
         <Header />
-        <StyledDiv>
-          <Main>
-            <Outlet />
-          </Main>
-          <Footer />
-        </StyledDiv>
-        <SettingsPopupContainer />
+        {/* <StyledDiv> */}
+        <Main>
+          <Outlet />
+        </Main>
+        {/* </StyledDiv> */}
+        <Footer />
       </StyledLayout>
+      <SettingsPopupContainer />
     </>
   );
 }

@@ -15,8 +15,6 @@ const FlexHeaderDiv = styled.div`
 const FlexHeaderTextDiv = styled.div`
   display: flex;
   flex-direction: column;
-
-  /* gap: rem; */
 `;
 
 const StyledHeader = styled.header`
@@ -26,6 +24,9 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-items: stretch;
   grid-template-columns: auto 1fr;
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
 `;
 
 const StyledH1 = styled.h1`
@@ -41,6 +42,7 @@ const EmojiParagraph = styled.p`
 `;
 
 const StyledSubtitle = styled.p`
+  font-size: 1.4rem;
   font-weight: 400;
   color: white;
   text-transform: uppercase;

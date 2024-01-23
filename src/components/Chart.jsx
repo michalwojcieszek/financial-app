@@ -51,6 +51,7 @@ function Chart({ categoryCost }) {
             }
             // dot={false}
             label
+            labelLine={false}
             offset={10}
           >
             {categoryCostToChart.map((entry, index) => (

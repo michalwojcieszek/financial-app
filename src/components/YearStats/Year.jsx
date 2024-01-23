@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import YearlyStats from "../components/YearStats/YearlyStats";
+import YearlyStats from "./YearlyStats";
 
 function Year() {
   const user = useLoaderData();

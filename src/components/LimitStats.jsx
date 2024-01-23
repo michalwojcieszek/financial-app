@@ -27,10 +27,10 @@ function LimitStats({
     case savedPercOfGoal >= 100:
       savingsGoalColor = "--stats-green";
       break;
-    case savedPercOfGoal >= 75:
+    case savedPercOfGoal >= 25:
       savingsGoalColor = "--stats-yellow";
       break;
-    case savedPercOfGoal < 50:
+    case savedPercOfGoal < 25:
       savingsGoalColor = "--stats-orange";
       break;
     default:

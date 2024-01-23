@@ -22,6 +22,8 @@ function AppProvider({ children }) {
   //SettingsPopup
   const [isSettingsPopupOpen, setIsSettingsPopupOpen] = useState(false);
 
+  const [currentMonth, setCurrentMonth] = useState("year");
+
   return (
     <AppContext.Provider
       value={{
@@ -49,6 +51,8 @@ function AppProvider({ children }) {
         setIsSettingsPopupOpen,
         currency,
         setCurrency,
+        currentMonth,
+        setCurrentMonth,
       }}
     >
       {children}

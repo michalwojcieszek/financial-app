@@ -37,7 +37,7 @@ function Chart({ categoryCost }) {
     <>
       <H3>Expenses summary</H3>
       <ChartContainerDiv>
-        <PieChart width={400} height={300}>
+        <PieChart width={400} height={350}>
           <Pie
             data={categoryCostToChart}
             dataKey="value"
@@ -49,7 +49,7 @@ function Chart({ categoryCost }) {
             paddingAngle={
               Object.entries(categoryCostToChart).length <= 1 ? 0 : 3
             }
-            dot={false}
+            // dot={false}
             label
             offset={10}
           >
@@ -64,7 +64,7 @@ function Chart({ categoryCost }) {
             layout="horizontal"
             verticalAlign="top"
             iconType="circle"
-            wrapperStyle={{ fontSize: "15px" }}
+            wrapperStyle={{ fontSize: "1.5rem", top: "0rem" }}
             align="center"
           />
         </PieChart>

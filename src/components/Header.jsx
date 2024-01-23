@@ -30,7 +30,7 @@ const StyledHeader = styled.header`
 `;
 
 const StyledH1 = styled.h1`
-  /* font-weight: 400; */
+  font-weight: 400;
   color: white;
   font-size: 2.2rem;
   letter-spacing: 0.4rem;
@@ -43,7 +43,7 @@ const EmojiParagraph = styled.p`
 
 const StyledSubtitle = styled.p`
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 300;
   color: white;
   text-transform: uppercase;
   letter-spacing: 0.3rem;

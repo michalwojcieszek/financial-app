@@ -1,6 +1,5 @@
 import H3 from "../ui/styledComponents/H3";
 import Section from "../ui/styledComponents/Section";
-import StatsSpan from "../ui/styledComponents/StatsSpan";
 import ExpenseItem from "./ExpenseItem";
 import styled from "styled-components";
 
@@ -18,6 +17,7 @@ const StyledHeaderOfTable = styled.div`
   display: grid;
   grid-template-columns: auto 1.7fr 1.5fr 1fr auto;
   gap: 2.5rem;
+  letter-spacing: 0.02rem;
   align-items: center;
   justify-items: center;
   justify-content: center;

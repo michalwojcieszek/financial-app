@@ -6,6 +6,7 @@ import H2 from "../ui/styledComponents/H2";
 import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
 import Select from "../ui/styledComponents/Select";
 import ButtonSecondary from "../ui/styledComponents/ButtonSecondary";
+import { useEffect } from "react";
 
 const SelectionDiv = styled.div`
   display: flex;
@@ -19,9 +20,16 @@ const SelectionDiv = styled.div`
 `;
 
 function Selection() {
-  const { setCategory, setCost, setDescription } = useApp();
+  const {
+    setCategory,
+    setCost,
+    setDescription,
+    currentMonth,
+    setCurrentMonth,
+  } = useApp();
+
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { id, month } = useParams();
 
   function handleGoToSettings() {
     navigate(`/users/${id}/settings`);
@@ -33,14 +41,25 @@ function Selection() {
     setDescription("");
   }
 
-  function changeMonth(month) {
-    clearInputs();
-    if (month === "year") {
+  function changeMonth(selectionValue) {
+    if (selectionValue === "year") {
       navigate(`/users/${id}`);
+      // setCurrentMonth(selectionValue);
       return;
     }
-    navigate(`/users/${id}/${month}`);
+    navigate(`/users/${id}/${selectionValue}`);
+    // setCurrentMonth(selectionValue);
+    clearInputs();
   }
+
+  //reading URL to set appropriate Select value
+  useEffect(
+    function () {
+      if (!month) setCurrentMonth("year");
+      if (month) setCurrentMonth(month);
+    },
+    [month, setCurrentMonth]
+  );
 
   return (
     <SelectionDiv>
@@ -49,6 +68,7 @@ function Selection() {
         size="large"
         name="months"
         id="month-select"
+        value={currentMonth}
         onChange={(e) => changeMonth(e.target.value)}
       >
         <option value="year">YEARLY STATS</option>

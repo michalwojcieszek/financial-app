@@ -16,9 +16,6 @@ import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
 import { SelectCurrency } from "../ui/styledComponents/SelectCurrency";
 
 function Login() {
-  const navigation = useNavigation();
-  const isIdle = navigation.idle === "idle";
-
   const allUsers = useLoaderData();
   const navigate = useNavigate();
   const {

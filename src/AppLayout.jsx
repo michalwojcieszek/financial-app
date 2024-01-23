@@ -27,9 +27,9 @@ function AppLayout() {
       <StyledLayout>
         <Header />
         <Main>
-          {/* {isLoading && <Spinner />} */}
-          {/* {!isLoading && <Outlet />} */}
-          <Outlet />
+          {isLoading && <Spinner />}
+          {!isLoading && <Outlet />}
+          {/* <Outlet /> */}
         </Main>
         <Footer />
       </StyledLayout>

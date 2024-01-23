@@ -16,13 +16,13 @@ const StyledExpensesList = styled.ul`
 
 const StyledHeaderOfTable = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr 1.5fr 1fr auto;
-  gap: 1rem;
+  grid-template-columns: auto 1.7fr 1.5fr 1fr auto;
+  gap: 2.5rem;
   align-items: center;
   justify-items: center;
-  border-radius: 5px;
+  justify-content: center;
   padding: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
   font-weight: 500;
 

@@ -1338,6 +1338,16 @@
             "category": "food",
             "cost": "4000",
             "description": "a"
+          },
+          {
+            "expenseId": "2024-01-23T10:23:45.312Z",
+            "addedOn": {
+              "date": "23.01.2024",
+              "time": "11:23"
+            },
+            "category": "medicines",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "november": [

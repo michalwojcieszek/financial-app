@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router-dom";
 import YearlyStats from "../components/YearStats/YearlyStats";
-import Selection from "../components/Selection";
 
 function Year() {
   const user = useLoaderData();
@@ -11,7 +10,6 @@ function Year() {
 
   return (
     <>
-      <Selection />
       <YearlyStats
         expenses={expenses}
         currency={currency}

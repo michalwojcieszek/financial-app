@@ -2,6 +2,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { useApp } from "../contexts/AppContext";
 import { useEffect } from "react";
 import styled from "styled-components";
+import Selection from "../components/Selection";
 
 const StyledDashboardLayoutDiv = styled.div`
   display: flex;
@@ -22,6 +23,7 @@ function Dashboard() {
 
   return (
     <StyledDashboardLayoutDiv>
+      <Selection />
       <Outlet />
     </StyledDashboardLayoutDiv>
   );

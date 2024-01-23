@@ -7,6 +7,7 @@ import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
 import Select from "../ui/styledComponents/Select";
 import ButtonSecondary from "../ui/styledComponents/ButtonSecondary";
 import { useEffect } from "react";
+import { useGlobal } from "../contexts/GlobalContext";
 
 const SelectionDiv = styled.div`
   display: flex;
@@ -20,13 +21,9 @@ const SelectionDiv = styled.div`
 `;
 
 function Selection() {
-  const {
-    setCategory,
-    setCost,
-    setDescription,
-    currentMonth,
-    setCurrentMonth,
-  } = useApp();
+  const { setCategory, setCost, setDescription } = useApp();
+
+  const { setCurrentMonth, currentMonth } = useGlobal();
 
   const navigate = useNavigate();
   const { id, month } = useParams();

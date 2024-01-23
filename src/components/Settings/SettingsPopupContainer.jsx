@@ -3,12 +3,11 @@ import Section from "../../ui/styledComponents/Section";
 import { HiOutlinePower, HiXMark } from "react-icons/hi2";
 import ButtonDeleteAccount from "../../ui/styledComponents/ButtonDeleteAccount";
 import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
-import { useApp } from "../../contexts/AppContext";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useState } from "react";
 import Spinner from "../../ui/Spinner";
 import { deleteAccount } from "../../hooks/UsersDataAPI/apiFetching";
+import { useGlobal } from "../../contexts/GlobalContext";
 
 const StyledPopupContainerDiv = styled.div`
   /* display: none; */
@@ -61,25 +60,32 @@ const StyledParagraphSmall = styled.p`
 function SettingsPopupContainer() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { isSettingsPopupOpen, setIsSettingsPopupOpen, setIsAuthenticated } =
-    useApp();
-  const [isLoading, setIsLoading] = useState(false);
+
+  const {
+    unAuthenticate,
+    isSettingsPopupOpen,
+    openSettingsPopup,
+    closeSettingsPopup,
+    isLoading,
+    loading,
+    notLoading,
+  } = useGlobal();
 
   function handleClickBackground(e) {
-    if (e.target === e.currentTarget) setIsSettingsPopupOpen(false);
+    if (e.target === e.currentTarget) closeSettingsPopup();
   }
 
   async function confirmDeleteAccount() {
-    setIsLoading(true);
+    loading();
     //deleting from API
     await deleteAccount(id);
     //closing the popup
-    setIsSettingsPopupOpen(false);
+    closeSettingsPopup();
     //same as logging out
-    setIsAuthenticated(false);
+    unAuthenticate();
     navigate("/");
 
-    setIsLoading(false);
+    notLoading();
     toast.success("You have successfully deleted your account");
   }
 
@@ -92,7 +98,7 @@ function SettingsPopupContainer() {
     >
       <StyledConfirmDiv>
         <Section>
-          <StyledCloseIcon onClick={() => setIsSettingsPopupOpen(false)} />
+          <StyledCloseIcon onClick={() => openSettingsPopup()} />
           <StyledParagraphBig>
             Are you sure to delete the account?
           </StyledParagraphBig>

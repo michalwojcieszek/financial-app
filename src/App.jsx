@@ -2,7 +2,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./pages/Login";
 import GlobalStyles from "./styles/GlobalStyles";
 import AppLayout from "./AppLayout";
-import { AppProvider } from "./contexts/AppContext";
 import Dashboard from "./pages/Dashboard";
 import { Toaster } from "react-hot-toast";
 import PageNotFound from "./pages/PageNotFound";
@@ -12,6 +11,7 @@ import Settings from "./pages/Settings";
 import Year from "./components/yearStats/Year";
 import { getAllUsers as allUsersLoader } from "./hooks/UsersDataAPI/apiFetching";
 import { userCurrenciesLoader } from "./hooks/RouterLoaders/userCurrenciesLoader";
+import { GlobalProvider } from "./contexts/GlobalContext";
 
 //---------------------------------------- MY TRY
 const router = createBrowserRouter([
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <AppProvider>
+      <GlobalProvider>
         <GlobalStyles />
         <RouterProvider router={router} />
         <Toaster
@@ -75,7 +75,7 @@ function App() {
             },
           }}
         />
-      </AppProvider>
+      </GlobalProvider>
     </>
   );
 }

@@ -3,10 +3,10 @@ import ButtonDeleteAccount from "../../ui/styledComponents/ButtonDeleteAccount";
 import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
 import DivDeleteButton from "../../ui/styledComponents/DivDeleteButton";
 
-function DeleteAccount({ setIsSettingsPopupOpen }) {
+function DeleteAccount({ openSettingsPopup }) {
   return (
     <DivDeleteButton>
-      <ButtonDeleteAccount onClick={() => setIsSettingsPopupOpen(true)}>
+      <ButtonDeleteAccount onClick={() => openSettingsPopup()}>
         <ButtonWithEmojiDiv>
           <HiOutlineTrash />
           Delete your account

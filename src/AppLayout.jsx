@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Footer from "./components/Footer";
 import SettingsPopupContainer from "./components/Settings/SettingsPopupContainer";
 import Spinner from "./ui/Spinner";
+import { LoginProvider } from "./contexts/LoginContext";
 
 const StyledLayout = styled.div`
   display: grid;
@@ -26,11 +27,12 @@ function AppLayout() {
     <>
       <StyledLayout>
         <Header />
-        <Main>
-          {isLoading && <Spinner />}
-          {!isLoading && <Outlet />}
-          {/* <Outlet /> */}
-        </Main>
+        <LoginProvider>
+          <Main>
+            {isLoading && <Spinner />}
+            {!isLoading && <Outlet />}
+          </Main>
+        </LoginProvider>
         <Footer />
       </StyledLayout>
       <SettingsPopupContainer />

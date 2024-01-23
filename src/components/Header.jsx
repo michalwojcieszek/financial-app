@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { useApp } from "../contexts/AppContext";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
 import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
+import { useGlobal } from "../contexts/GlobalContext";
 
 const FlexHeaderDiv = styled.div`
   display: flex;
@@ -78,12 +78,12 @@ const LogOutButton = styled.button`
 `;
 
 function Header() {
-  const { setIsAuthenticated, isAuthenticated } = useApp();
+  const { isAuthenticated, unAuthenticate, authenticate } = useGlobal();
   const navigate = useNavigate();
   const { id } = useParams();
 
   function logOut() {
-    setIsAuthenticated(false);
+    authenticate();
     navigate("/");
     toast.success("You have successfully logged out");
   }

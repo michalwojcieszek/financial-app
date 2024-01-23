@@ -1,6 +1,5 @@
 import H3 from "../ui/styledComponents/H3";
 import styled from "styled-components";
-import { useApp } from "../contexts/AppContext";
 import Section from "../ui/styledComponents/Section";
 import { HiOutlineCheckCircle } from "react-icons/hi2";
 import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
@@ -15,7 +14,8 @@ import Select from "../ui/styledComponents/Select";
 import Input from "../ui/styledComponents/Input";
 import ButtonSecondary from "../ui/styledComponents/ButtonSecondary";
 import StatsSpan from "../ui/styledComponents/StatsSpan";
-import { useState } from "react";
+import { useGlobal } from "../contexts/GlobalContext";
+import { useAddExpense } from "../contexts/AddExpenseContext";
 
 const StyledOptional = styled.span`
   color: var(--color-grey-500);
@@ -60,18 +60,12 @@ function AddExpenseForm({ currency }) {
     setCost,
     description,
     setDescription,
-    setIsLoading,
-    isLoading,
-  } = useApp();
+    clearAll,
+    ifRecurring,
+    setIfRecurring,
+  } = useAddExpense();
 
-  const [isRecurring, setIsRecurring] = useState(false);
-
-  function resetAddExpenseFields() {
-    setCategory("");
-    setCost("");
-    setDescription("");
-    setIsRecurring(false);
-  }
+  const { isLoading, loading, notLoading } = useGlobal();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -92,19 +86,19 @@ function AddExpenseForm({ currency }) {
       cost,
       description,
     };
-    setIsLoading(true);
-    if (isRecurring) {
+    loading();
+    if (ifRecurring) {
       console.log(`checked`);
       await addExpenseEveryMonth(id, newExpense);
     }
 
-    if (!isRecurring) {
+    if (!ifRecurring) {
       console.log(`NOT checked`);
       await addMonthlyExpense(id, month, newExpense);
     }
 
-    resetAddExpenseFields();
-    setIsLoading(false);
+    clearAll();
+    notLoading();
     //HERE I WANT TO RE-RENDER MONTH COMPONENT
     navigate(`/users/${id}/${month}`);
     toast.success("Expense has been added successfully");
@@ -180,8 +174,8 @@ function AddExpenseForm({ currency }) {
           <InputCheckboxDiv>
             <InputCheckbox
               type="checkbox"
-              value={isRecurring}
-              onChange={(e) => setIsRecurring(e.target.checked)}
+              value={ifRecurring}
+              onChange={(e) => setIfRecurring(e.target.checked)}
             />
           </InputCheckboxDiv>
         </ExpenseFormRow>

@@ -1,9 +1,8 @@
 import toast from "react-hot-toast";
 import ButtonUnderline from "../ui/styledComponents/ButtonUnderline";
 import H2 from "../ui/styledComponents/H2";
-import { useApp } from "../contexts/AppContext";
 import { postData } from "../hooks/UsersDataAPI/apiFetching";
-import { useLoaderData, useNavigate, useNavigation } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
 import Spinner from "../ui/Spinner";
 import Section from "../ui/styledComponents/Section";
@@ -14,40 +13,43 @@ import FormDiv from "../ui/styledComponents/FormDiv";
 import { HiOutlineUser, HiOutlineUserPlus } from "react-icons/hi2";
 import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
 import { SelectCurrency } from "../ui/styledComponents/SelectCurrency";
+import { useGlobal } from "../contexts/GlobalContext";
+import { useLogin } from "../contexts/LoginContext";
 
 function Login() {
   const allUsers = useLoaderData();
   const navigate = useNavigate();
+  const { authenticate } = useGlobal();
   const {
-    ifUserHaveAccount,
-    setIfUserHaveAccount,
     name,
-    setName,
     password,
-    setPassword,
     savingsGoal,
-    setSavingsGoal,
     income,
-    setIncome,
-    setIsAuthenticated,
-    isLoading,
     currency,
+    setName,
+    setPassword,
+    setSavingsGoal,
+    setIncome,
     setCurrency,
-  } = useApp();
+    clearInputs,
+    ifUserHaveAccount,
+    userHasAccount,
+    userNoAccount,
+  } = useLogin();
 
-  function clearInputs() {
-    setName("");
-    setPassword("");
-    setIncome("");
-    setSavingsGoal("");
-  }
+  // function clearInputs() {
+  //   setName("");
+  //   setPassword("");
+  //   setIncome("");
+  //   setSavingsGoal("");
+  // }
 
   function handleUserValidated(id) {
     //going to dashboard
     navigate(`/users/${id}`);
     //clean inputs
     clearInputs();
-    setIsAuthenticated(true);
+    authenticate();
     toast.success(`Welcome to the BudgetMaster 🙌`);
   }
 
@@ -137,8 +139,6 @@ function Login() {
     handleUserValidated(existingUserId);
   }
 
-  if (isLoading) return <Spinner />;
-
   return (
     <Section>
       {ifUserHaveAccount ? (
@@ -147,7 +147,7 @@ function Login() {
           <p>
             If you do not have your own account click here to sign up &darr;
           </p>
-          <ButtonUnderline onClick={() => setIfUserHaveAccount(false)}>
+          <ButtonUnderline onClick={() => userNoAccount()}>
             GO TO SIGN UP
           </ButtonUnderline>
         </>
@@ -157,7 +157,7 @@ function Login() {
           <p>
             If you already have your own account click here to log in &darr;
           </p>
-          <ButtonUnderline onClick={() => setIfUserHaveAccount(true)}>
+          <ButtonUnderline onClick={() => userHasAccount()}>
             GO TO LOG IN
           </ButtonUnderline>
         </>

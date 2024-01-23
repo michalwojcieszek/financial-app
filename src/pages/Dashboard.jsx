@@ -1,8 +1,8 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { useApp } from "../contexts/AppContext";
 import { useEffect } from "react";
 import styled from "styled-components";
 import Selection from "../components/Selection";
+import { useGlobal } from "../contexts/GlobalContext";
 
 const StyledDashboardLayoutDiv = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const StyledDashboardLayoutDiv = styled.div`
 
 function Dashboard() {
   const navigate = useNavigate();
-  const { isAuthenticated } = useApp();
+  const { isAuthenticated } = useGlobal();
 
   useEffect(
     function () {

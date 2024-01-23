@@ -2,6 +2,31 @@ import { createContext, useContext, useState } from "react";
 
 const AppContext = createContext();
 
+const initialState = {
+  //global
+  isLoading: false,
+  isAuthenticated: false,
+  isSettingsPopupOpen: false,
+  currentMonth: "year",
+  //login
+  ifUserHaveAccount: false,
+  name: "",
+  password: "",
+  savingsGoal: "",
+  income: "",
+  currency: "USD",
+  //addExpense
+  category: "",
+  cost: "",
+  description: "",
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case: "typeName"
+  }
+}
+
 function AppProvider({ children }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);

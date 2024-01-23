@@ -2,6 +2,7 @@ import AddExpenseForm from "../components/monthStats/AddExpenseForm";
 import MonthlyExpenses from "../components/monthStats/MonthlyExpenses";
 import { useLoaderData, useParams } from "react-router-dom";
 import MonthlyStats from "../components/MonthStats/MonthlyStats";
+import { AddExpenseProvider } from "../../contexts/AddExpenseContext";
 
 function Month() {
   //useLoaderData
@@ -18,7 +19,9 @@ function Month() {
 
   return (
     <>
-      <AddExpenseForm currency={currency} />
+      <AddExpenseProvider>
+        <AddExpenseForm currency={currency} />
+      </AddExpenseProvider>
       <MonthlyExpenses
         expensesThisMonth={expensesThisMonth}
         monthString={monthString}

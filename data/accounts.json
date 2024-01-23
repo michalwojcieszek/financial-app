@@ -1058,26 +1058,6 @@
             "description": "a"
           },
           {
-            "expenseId": "2024-01-22T16:23:02.219Z",
-            "addedOn": {
-              "date": "22.01.2024",
-              "time": "17:23"
-            },
-            "category": "medicines",
-            "cost": "500",
-            "description": "a"
-          },
-          {
-            "expenseId": "2024-01-22T16:24:48.120Z",
-            "addedOn": {
-              "date": "22.01.2024",
-              "time": "17:24"
-            },
-            "category": "medicines",
-            "cost": "250",
-            "description": ""
-          },
-          {
             "expenseId": "2024-01-22T18:27:03.440Z",
             "addedOn": {
               "date": "22.01.2024",

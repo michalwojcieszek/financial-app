@@ -78,12 +78,12 @@ const LogOutButton = styled.button`
 `;
 
 function Header() {
-  const { isAuthenticated, unAuthenticate, authenticate } = useGlobal();
+  const { isAuthenticated, unAuthenticate } = useGlobal();
   const navigate = useNavigate();
   const { id } = useParams();
 
   function logOut() {
-    authenticate();
+    unAuthenticate();
     navigate("/");
     toast.success("You have successfully logged out");
   }

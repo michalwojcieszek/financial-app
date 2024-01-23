@@ -52,7 +52,7 @@ function AddExpenseProvider({ children }) {
   }
 
   function setIfRecurring(checkbox) {
-    dispatch({ type: "isRecurring", payload: checkbox });
+    dispatch({ type: "setIfRecurring", payload: checkbox });
   }
 
   function clearAll() {

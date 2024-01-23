@@ -1,4 +1,4 @@
-import AddExpenseForm from "../components/AddExpenseForm";
+import AddExpenseForm from "../components/monthStats/AddExpenseForm";
 import MonthlyExpenses from "../components/MonthlyExpenses";
 import { useLoaderData, useParams } from "react-router-dom";
 import MonthlyStats from "../components/MonthStats/MonthlyStats";

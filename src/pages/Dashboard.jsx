@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import Selection from "../components/Selection";
 import { useGlobal } from "../contexts/GlobalContext";
+import { AddExpenseProvider } from "../contexts/AddExpenseContext";
 
 const StyledDashboardLayoutDiv = styled.div`
   display: flex;
@@ -23,8 +24,10 @@ function Dashboard() {
 
   return (
     <StyledDashboardLayoutDiv>
-      <Selection />
-      <Outlet />
+      <AddExpenseProvider>
+        <Selection />
+        <Outlet />
+      </AddExpenseProvider>
     </StyledDashboardLayoutDiv>
   );
 }

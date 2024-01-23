@@ -62,7 +62,7 @@ function GlobalProvider({ children }) {
   }
 
   function setCurrentMonth(month) {
-    dispatch({ type: "notLoading", payload: month });
+    dispatch({ type: "setCurrentMonth", payload: month });
   }
 
   return (

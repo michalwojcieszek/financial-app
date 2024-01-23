@@ -4,7 +4,6 @@ import H2 from "../ui/styledComponents/H2";
 import { postData } from "../hooks/UsersDataAPI/apiFetching";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
-import Spinner from "../ui/Spinner";
 import Section from "../ui/styledComponents/Section";
 import Input from "../ui/styledComponents/Input";
 import FormRow from "../ui/styledComponents/FormRow";

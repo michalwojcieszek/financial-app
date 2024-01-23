@@ -990,6 +990,16 @@
             "category": "subscription",
             "cost": "2000",
             "description": "a"
+          },
+          {
+            "expenseId": "2024-01-23T19:14:33.354Z",
+            "addedOn": {
+              "date": "23.01.2024",
+              "time": "20:14"
+            },
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "february": [
@@ -1022,6 +1032,16 @@
             "category": "medicines",
             "cost": "250",
             "description": ""
+          },
+          {
+            "expenseId": "2024-01-23T19:14:33.354Z",
+            "addedOn": {
+              "date": "23.01.2024",
+              "time": "20:14"
+            },
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "march": [
@@ -1044,6 +1064,16 @@
             "category": "food",
             "cost": "4000",
             "description": "a"
+          },
+          {
+            "expenseId": "2024-01-23T19:14:33.354Z",
+            "addedOn": {
+              "date": "23.01.2024",
+              "time": "20:14"
+            },
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "april": [
@@ -1066,6 +1096,16 @@
             "category": "food",
             "cost": "4000",
             "description": "a"
+          },
+          {
+            "expenseId": "2024-01-23T19:14:33.354Z",
+            "addedOn": {
+              "date": "23.01.2024",
+              "time": "20:14"
+            },
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "may": [
@@ -1090,24 +1130,14 @@
             "description": "a"
           },
           {
-            "expenseId": "2024-01-22T16:24:48.120Z",
+            "expenseId": "2024-01-23T19:14:33.354Z",
             "addedOn": {
-              "date": "22.01.2024",
-              "time": "17:24"
+              "date": "23.01.2024",
+              "time": "20:14"
             },
-            "category": "medicines",
-            "cost": "250",
-            "description": ""
-          },
-          {
-            "expenseId": "2024-01-22T18:27:03.440Z",
-            "addedOn": {
-              "date": "22.01.2024",
-              "time": "19:27"
-            },
-            "category": "food",
-            "cost": "4000",
-            "description": "a"
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "june": [
@@ -1150,6 +1180,16 @@
             "category": "food",
             "cost": "4000",
             "description": "a"
+          },
+          {
+            "expenseId": "2024-01-23T19:14:33.354Z",
+            "addedOn": {
+              "date": "23.01.2024",
+              "time": "20:14"
+            },
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "july": [
@@ -1184,14 +1224,14 @@
             "description": ""
           },
           {
-            "expenseId": "2024-01-22T18:27:03.440Z",
+            "expenseId": "2024-01-23T19:14:33.354Z",
             "addedOn": {
-              "date": "22.01.2024",
-              "time": "19:27"
+              "date": "23.01.2024",
+              "time": "20:14"
             },
-            "category": "food",
-            "cost": "4000",
-            "description": "a"
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "august": [
@@ -1234,6 +1274,16 @@
             "category": "food",
             "cost": "4000",
             "description": "a"
+          },
+          {
+            "expenseId": "2024-01-23T19:14:33.354Z",
+            "addedOn": {
+              "date": "23.01.2024",
+              "time": "20:14"
+            },
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "september": [
@@ -1276,6 +1326,16 @@
             "category": "food",
             "cost": "4000",
             "description": "a"
+          },
+          {
+            "expenseId": "2024-01-23T19:14:33.354Z",
+            "addedOn": {
+              "date": "23.01.2024",
+              "time": "20:14"
+            },
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "october": [
@@ -1328,6 +1388,16 @@
             "category": "medicines",
             "cost": "2",
             "description": "2"
+          },
+          {
+            "expenseId": "2024-01-23T19:14:33.354Z",
+            "addedOn": {
+              "date": "23.01.2024",
+              "time": "20:14"
+            },
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "november": [
@@ -1340,6 +1410,16 @@
             "category": "medicines",
             "cost": "250",
             "description": ""
+          },
+          {
+            "expenseId": "2024-01-23T19:14:33.354Z",
+            "addedOn": {
+              "date": "23.01.2024",
+              "time": "20:14"
+            },
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ],
         "december": [
@@ -1382,6 +1462,16 @@
             "category": "food",
             "cost": "4000",
             "description": "a"
+          },
+          {
+            "expenseId": "2024-01-23T19:14:33.354Z",
+            "addedOn": {
+              "date": "23.01.2024",
+              "time": "20:14"
+            },
+            "category": "clothes",
+            "cost": "2",
+            "description": "2"
           }
         ]
       }

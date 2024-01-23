@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Section from "../../ui/styledComponents/Section";
 import { HiOutlinePower, HiXMark } from "react-icons/hi2";
 import ButtonDeleteAccount from "../../ui/styledComponents/ButtonDeleteAccount";
@@ -10,10 +10,12 @@ import { deleteAccount } from "../../hooks/UsersDataAPI/apiFetching";
 import { useGlobal } from "../../contexts/GlobalContext";
 
 const StyledPopupContainerDiv = styled.div`
-  /* display: none; */
-  display: ${(props) =>
-    props.isSettingsPopupOpen === "true" ? "block" : "none"};
-  /* props.$isSettingsPopupOpen.toString() === "true" ? "block" : "none"}; */
+  ${({ isSettingsPopupOpen }) =>
+    isSettingsPopupOpen !== "true" &&
+    css`
+      display: none;
+    `}
+
   position: fixed;
   top: 0;
   right: 0;
@@ -64,7 +66,6 @@ function SettingsPopupContainer() {
   const {
     unAuthenticate,
     isSettingsPopupOpen,
-    openSettingsPopup,
     closeSettingsPopup,
     isLoading,
     loading,
@@ -98,7 +99,7 @@ function SettingsPopupContainer() {
     >
       <StyledConfirmDiv>
         <Section>
-          <StyledCloseIcon onClick={() => openSettingsPopup()} />
+          <StyledCloseIcon onClick={() => closeSettingsPopup()} />
           <StyledParagraphBig>
             Are you sure to delete the account?
           </StyledParagraphBig>

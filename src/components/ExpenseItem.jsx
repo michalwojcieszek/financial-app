@@ -2,9 +2,8 @@ import { HiOutlineXCircle } from "react-icons/hi2";
 import styled from "styled-components";
 import { deleteExpense } from "../hooks/UsersDataAPI/apiHandlers";
 import { useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
-import Spinner from "../ui/Spinner";
 import toast from "react-hot-toast";
+import { useGlobal } from "../contexts/GlobalContext";
 
 const StyledListItem = styled.li`
   display: grid;
@@ -84,21 +83,19 @@ function getEmoji(text) {
 }
 
 function ExpenseItem({ expense, currency }) {
-  const [isLoading, setIsLoading] = useState("");
+  const { loading, notLoading } = useGlobal();
   const navigate = useNavigate();
   const { category, cost, description, addedOn, expenseId } = expense;
   const emoji = getEmoji(category);
   const { id, month } = useParams();
 
   async function handleDelete() {
-    setIsLoading(true);
+    loading();
     await deleteExpense(id, month, expenseId);
     navigate(`/users/${id}/${month}`);
     toast.success("Expense successfully deleted");
-    setIsLoading(false);
+    notLoading();
   }
-
-  if (isLoading) return <Spinner />;
 
   return (
     <StyledListItem key={expenseId}>

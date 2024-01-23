@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { useNavigate, useParams } from "react-router-dom";
-import { useApp } from "../contexts/AppContext";
 import H2 from "../ui/styledComponents/H2";
 import ButtonWithEmojiDiv from "../ui/styledComponents/ButtonWithEmojiDiv";
 import Select from "../ui/styledComponents/Select";
 import ButtonSecondary from "../ui/styledComponents/ButtonSecondary";
 import { useEffect } from "react";
 import { useGlobal } from "../contexts/GlobalContext";
+import { useAddExpense } from "../contexts/AddExpenseContext";
 
 const SelectionDiv = styled.div`
   display: flex;
@@ -21,8 +21,7 @@ const SelectionDiv = styled.div`
 `;
 
 function Selection() {
-  const { setCategory, setCost, setDescription } = useApp();
-
+  const { clearAll } = useAddExpense();
   const { setCurrentMonth, currentMonth } = useGlobal();
 
   const navigate = useNavigate();
@@ -30,12 +29,6 @@ function Selection() {
 
   function handleGoToSettings() {
     navigate(`/users/${id}/settings`);
-  }
-
-  function clearInputs() {
-    setCategory("");
-    setCost("");
-    setDescription("");
   }
 
   function changeMonth(selectionValue) {
@@ -46,16 +39,18 @@ function Selection() {
     }
     navigate(`/users/${id}/${selectionValue}`);
     // setCurrentMonth(selectionValue);
-    clearInputs();
+    clearAll();
   }
 
   //reading URL to set appropriate Select value
   useEffect(
     function () {
-      if (!month) setCurrentMonth("year");
-      if (month) setCurrentMonth(month);
+      if (month !== currentMonth) {
+        if (!month) setCurrentMonth("year");
+        if (month) setCurrentMonth(month);
+      }
     },
-    [month, setCurrentMonth]
+    [month, currentMonth]
   );
 
   return (

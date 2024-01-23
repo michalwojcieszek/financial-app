@@ -9,6 +9,7 @@ const StyledDashboardLayoutDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin: 2rem 0;
 `;
 
 function Dashboard() {

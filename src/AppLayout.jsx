@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import SettingsPopupContainer from "./components/Settings/SettingsPopupContainer";
 import Spinner from "./ui/Spinner";
 import { LoginProvider } from "./contexts/LoginContext";
+import { useGlobal } from "./contexts/GlobalContext";
 
 const StyledLayout = styled.div`
   display: grid;
@@ -15,13 +16,15 @@ const StyledLayout = styled.div`
 
 const Main = styled.main`
   max-width: 52rem;
-  margin: 3rem auto;
+  margin: auto;
   padding: 0 3rem;
 `;
 
 function AppLayout() {
   const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+  const isLoadingNavState = navigation.state === "loading";
+  const { isLoading } = useGlobal();
+  console.log(isLoading);
 
   return (
     <>
@@ -29,8 +32,8 @@ function AppLayout() {
         <Header />
         <LoginProvider>
           <Main>
-            {isLoading && <Spinner />}
-            {!isLoading && <Outlet />}
+            {(isLoading || isLoadingNavState) && <Spinner />}
+            {!isLoading && !isLoadingNavState && <Outlet />}
           </Main>
         </LoginProvider>
         <Footer />

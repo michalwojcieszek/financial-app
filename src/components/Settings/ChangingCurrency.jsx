@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { HiArrowPath } from "react-icons/hi2";
 //styling
-import Spinner from "../../ui/Spinner";
 import { SelectCurrency } from "../../ui/styledComponents/SelectCurrency";
 import ButtonSecondary from "../../ui/styledComponents/ButtonSecondary";
 import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
@@ -16,10 +15,11 @@ import Paragraph from "../../ui/styledComponents/Paragraph";
 //functions
 import { exchangeUserExpenses } from "../../hooks/UsersDataAPI/exchangeUserExpenses";
 import ChangingCurrencyUl from "../../ui/styledComponents/ChangingCurrencyUl";
+import { useGlobal } from "../../contexts/GlobalContext";
 
 function ChangingCurrency({ currenciesRatesArray, currency, id }) {
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
+  const { loading, notLoading } = useGlobal();
 
   const [newCurrency, setNewCurrency] = useState(currency);
 
@@ -30,75 +30,69 @@ function ChangingCurrency({ currenciesRatesArray, currency, id }) {
       toast.error(`The currency is the same`);
       return;
     }
-    setIsLoading(true);
+    loading();
     const exchangeRate = currenciesRatesArray.filter(
       (el) => el.currency === newCurrency
     )[0].rate;
     await exchangeUserExpenses(id, exchangeRate, newCurrency);
-    setIsLoading(false);
+    notLoading();
     navigate(`/users/${id}`);
   }
 
   return (
     <>
-      {isLoading ? (
-        <Spinner />
-      ) : (
-        <>
-          <FormRow>
-            <H3>Change currency</H3>
-            <label>
-              Income, savingsGoal and your expenses will be calculated to the
-              new currency.
-            </label>
-          </FormRow>
-          <FormRow>
-            <H4>Live currency rates:</H4>
-            <Paragraph>
-              Your current currency: <StatsSpan>{currency}</StatsSpan>
-            </Paragraph>
-            <ChangingCurrencyUl>
-              {currenciesRatesArray.map((el) => (
-                <li key={el.currency}>
-                  1 <StatsSpan>{currency}</StatsSpan> is {el.rate}{" "}
-                  <StatsSpan>{el.currency}</StatsSpan>
-                </li>
-              ))}
-            </ChangingCurrencyUl>
-            <SelectCurrency
-              onChange={(e) => setNewCurrency(e.target.value)}
-              defaultValue={currency}
-            >
-              <option value="USD">USD (🇺🇸)</option>
-              <option value="EUR">EUR (🇪🇺)</option>
-              <option value="GBP">GBP (🇬🇧)</option>
-              <option value="CHF">CHF (🇨🇭)</option>
-              <option value="PLN">PLN (🇵🇱)</option>
-            </SelectCurrency>
-            {isCurrencyChanged ? (
-              <>
-                <p>
-                  {" "}
-                  You want to exchange
-                  <StatsSpan> {currency} </StatsSpan>
-                  to
-                  <StatsSpan> {newCurrency} </StatsSpan>
-                </p>
-              </>
-            ) : (
-              ""
-            )}
-          </FormRow>
-          <div>
-            <ButtonSecondary onClick={handleExchange}>
-              <ButtonWithEmojiDiv>
-                <HiArrowPath />
-                Change currency
-              </ButtonWithEmojiDiv>
-            </ButtonSecondary>
-          </div>
-        </>
-      )}
+      <FormRow>
+        <H3>Change currency</H3>
+        <label>
+          Income, savingsGoal and your expenses will be calculated to the new
+          currency.
+        </label>
+      </FormRow>
+      <FormRow>
+        <H4>Live currency rates:</H4>
+        <Paragraph>
+          Your current currency: <StatsSpan>{currency}</StatsSpan>
+        </Paragraph>
+        <ChangingCurrencyUl>
+          {currenciesRatesArray.map((el) => (
+            <li key={el.currency}>
+              1 <StatsSpan>{currency}</StatsSpan> is {el.rate}{" "}
+              <StatsSpan>{el.currency}</StatsSpan>
+            </li>
+          ))}
+        </ChangingCurrencyUl>
+        <SelectCurrency
+          onChange={(e) => setNewCurrency(e.target.value)}
+          defaultValue={currency}
+        >
+          <option value="USD">USD (🇺🇸)</option>
+          <option value="EUR">EUR (🇪🇺)</option>
+          <option value="GBP">GBP (🇬🇧)</option>
+          <option value="CHF">CHF (🇨🇭)</option>
+          <option value="PLN">PLN (🇵🇱)</option>
+        </SelectCurrency>
+        {isCurrencyChanged ? (
+          <>
+            <p>
+              {" "}
+              You want to exchange
+              <StatsSpan> {currency} </StatsSpan>
+              to
+              <StatsSpan> {newCurrency} </StatsSpan>
+            </p>
+          </>
+        ) : (
+          ""
+        )}
+      </FormRow>
+      <div>
+        <ButtonSecondary onClick={handleExchange}>
+          <ButtonWithEmojiDiv>
+            <HiArrowPath />
+            Change currency
+          </ButtonWithEmojiDiv>
+        </ButtonSecondary>
+      </div>
     </>
   );
 }

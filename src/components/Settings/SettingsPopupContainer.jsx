@@ -5,7 +5,6 @@ import ButtonDeleteAccount from "../../ui/styledComponents/ButtonDeleteAccount";
 import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
-import Spinner from "../../ui/Spinner";
 import { deleteAccount } from "../../hooks/UsersDataAPI/apiFetching";
 import { useGlobal } from "../../contexts/GlobalContext";
 
@@ -89,8 +88,6 @@ function SettingsPopupContainer() {
     notLoading();
     toast.success("You have successfully deleted your account");
   }
-
-  if (isLoading) return <Spinner />;
 
   return (
     <StyledPopupContainerDiv

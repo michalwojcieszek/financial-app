@@ -9,7 +9,6 @@ import {
   addExpenseEveryMonth,
   addMonthlyExpense,
 } from "../../hooks/UsersDataAPI/apiHandlers";
-import Spinner from "../../ui/Spinner";
 import Select from "../../ui/styledComponents/Select";
 import Input from "../../ui/styledComponents/Input";
 import ButtonSecondary from "../../ui/styledComponents/ButtonSecondary";
@@ -65,7 +64,7 @@ function AddExpenseForm({ currency }) {
     setIfRecurring,
   } = useAddExpense();
 
-  const { isLoading, loading, notLoading } = useGlobal();
+  const { loading, notLoading } = useGlobal();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -103,8 +102,6 @@ function AddExpenseForm({ currency }) {
     navigate(`/users/${id}/${month}`);
     toast.success("Expense has been added successfully");
   }
-
-  if (isLoading) return <Spinner />;
 
   return (
     <Section>

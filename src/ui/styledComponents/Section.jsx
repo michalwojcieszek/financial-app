@@ -7,6 +7,7 @@ const Section = styled.section`
       display: flex;
       flex-direction: column;
       gap: 2rem;
+      margin: 2rem 0;
     `}
 
   padding: 2rem;

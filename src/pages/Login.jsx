@@ -36,13 +36,6 @@ function Login() {
     userNoAccount,
   } = useLogin();
 
-  // function clearInputs() {
-  //   setName("");
-  //   setPassword("");
-  //   setIncome("");
-  //   setSavingsGoal("");
-  // }
-
   function handleUserValidated(id) {
     //going to dashboard
     navigate(`/users/${id}`);

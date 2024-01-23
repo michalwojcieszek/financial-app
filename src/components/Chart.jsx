@@ -27,11 +27,12 @@ const colors = [
   "#be4bdb",
   "#862e9c",
 ];
+// const roundedValue = parseFloat(value.toFixed(2));
 
 function Chart({ categoryCost }) {
   const categoryCostToChart = Object.entries(categoryCost).map((arr) => {
     const [name, value] = arr;
-    return { name, value };
+    return { name, value: parseFloat(value.toFixed(2)) };
   });
   return (
     <>
@@ -49,16 +50,17 @@ function Chart({ categoryCost }) {
             paddingAngle={
               Object.entries(categoryCostToChart).length <= 1 ? 0 : 3
             }
-            // dot={false}
             label
             labelLine={false}
-            offset={10}
+            offset={5}
           >
             {categoryCostToChart.map((entry, index) => (
               <Cell key={index} fill={colors[index]} />
             ))}
           </Pie>
-          <Tooltip formatter={(value, name, props) => value.toFixed(2)} />
+          <Tooltip
+            formatter={(value, name, props) => parseFloat(value).toFixed(2)}
+          />
           <Legend
             width="100%"
             iconSize={5}

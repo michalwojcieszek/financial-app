@@ -15,7 +15,7 @@ const StyledLayout = styled.div`
 `;
 
 const Main = styled.main`
-  width: 52rem;
+  max-width: 52rem;
   margin: auto;
   padding: 0 3rem;
 `;
@@ -30,12 +30,12 @@ function AppLayout() {
     <>
       <StyledLayout>
         <Header />
-        <LoginProvider>
-          <Main>
+        <Main>
+          <LoginProvider>
             {(isLoading || isLoadingNavState) && <Spinner />}
             {!isLoading && !isLoadingNavState && <Outlet />}
-          </Main>
-        </LoginProvider>
+          </LoginProvider>
+        </Main>
         <Footer />
       </StyledLayout>
       <SettingsPopupContainer />

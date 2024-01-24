@@ -39,6 +39,26 @@ const StyledH1 = styled.h1`
 
 const EmojiParagraph = styled.p`
   font-size: 3.5rem;
+  animation: move 6s infinite forwards;
+
+  @keyframes move {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    10%,
+    90% {
+      transform: translateY(0);
+    }
+    15%,
+    85% {
+      transform: translateY(-2px);
+    }
+    20%,
+    80% {
+      transform: translateY(2px);
+    }
+  }
 `;
 
 const StyledSubtitle = styled.p`
@@ -108,7 +128,6 @@ function Header() {
           </FlexHeaderTextDiv>
         </FlexHeaderDiv>
         <UserInfo>
-          {/* <HelloParagraph>👋 Hello Jonas </HelloParagraph> */}
           {isAuthenticated ? (
             <LogOutButton onClick={logOut}>
               <ButtonWithEmojiDiv>

@@ -12,11 +12,13 @@ import Year from "./components/yearStats/Year";
 import { getAllUsers as allUsersLoader } from "./hooks/UsersDataAPI/apiFetching";
 import { userCurrenciesLoader } from "./hooks/RouterLoaders/userCurrenciesLoader";
 import { GlobalProvider } from "./contexts/GlobalContext";
+import Error from "./pages/Error";
 
 //---------------------------------------- MY TRY
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -30,11 +32,13 @@ const router = createBrowserRouter([
             path: "users/:id/:month",
             element: <Month />,
             loader: userLoader,
+            errorElement: <Error />,
           },
           {
             path: "users/:id",
             element: <Year />,
             loader: userLoader,
+            errorElement: <Error />,
           },
         ],
       },
@@ -42,6 +46,7 @@ const router = createBrowserRouter([
         path: "users/:id/settings",
         element: <Settings />,
         loader: userCurrenciesLoader,
+        errorElement: <Error />,
       },
       {
         path: "*",

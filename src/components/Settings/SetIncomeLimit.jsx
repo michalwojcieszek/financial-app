@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { changeIncomeAndLimit } from "../../hooks/UsersDataAPI/apiHandlers";
+import { changeIncomeAndLimit } from "../../hooks/usersDataAPI/apiHandlers";
 import toast from "react-hot-toast";
 import Input from "../../ui/styledComponents/Input";
 import FormRow from "../../ui/styledComponents/FormRow";

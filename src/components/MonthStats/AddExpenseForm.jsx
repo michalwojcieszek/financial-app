@@ -8,7 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   addExpenseEveryMonth,
   addMonthlyExpense,
-} from "../../hooks/UsersDataAPI/apiHandlers";
+} from "../../hooks/usersDataAPI/apiHandlers";
 import Select from "../../ui/styledComponents/Select";
 import Input from "../../ui/styledComponents/Input";
 import ButtonSecondary from "../../ui/styledComponents/ButtonSecondary";

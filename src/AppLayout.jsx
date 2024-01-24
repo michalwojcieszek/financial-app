@@ -15,7 +15,7 @@ const StyledLayout = styled.div`
 `;
 
 const Main = styled.main`
-  max-width: 52rem;
+  width: 52rem;
   margin: auto;
   padding: 0 3rem;
 `;

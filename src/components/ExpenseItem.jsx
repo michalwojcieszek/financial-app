@@ -1,6 +1,6 @@
 import { HiOutlineXCircle } from "react-icons/hi2";
 import styled from "styled-components";
-import { deleteExpense } from "../hooks/UsersDataAPI/apiHandlers";
+import { deleteExpense } from "../hooks/usersDataAPI/apiHandlers";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useGlobal } from "../contexts/GlobalContext";

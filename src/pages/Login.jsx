@@ -1,8 +1,8 @@
 import toast from "react-hot-toast";
 import ButtonUnderline from "../ui/styledComponents/ButtonUnderline";
 import H2 from "../ui/styledComponents/H2";
-import { postData } from "../hooks/usersDataAPI/apiFetching";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { getAllUsers, postData } from "../hooks/usersDataAPI/apiFetching";
+import { useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
 import Section from "../ui/styledComponents/Section";
 import Input from "../ui/styledComponents/Input";
@@ -16,7 +16,6 @@ import { useGlobal } from "../contexts/GlobalContext";
 import { useLogin } from "../contexts/LoginContext";
 
 function Login() {
-  const allUsers = useLoaderData();
   const navigate = useNavigate();
   const { authenticate } = useGlobal();
   const {
@@ -36,20 +35,27 @@ function Login() {
     userNoAccount,
   } = useLogin();
 
-  function handleUserValidated(id) {
+  function handleUserValidated(id, username) {
     //going to dashboard
     navigate(`/users/${id}`);
     //clean inputs
     clearInputs();
     authenticate();
-    toast.success(`Welcome to the BudgetMaster 🙌`);
+    toast.success(`Welcome to the BudgetMaster, ${username} 🙌`);
   }
 
+  async function getAllUsersToCheck() {
+    const allUsers = await getAllUsers();
+    return allUsers;
+  }
+
+  /////////////////////// SIGNING UP
   async function handleSignUp() {
     if (!name || !password || !income || !savingsGoal) {
       toast.error(`Fill all the fields`);
       return;
     }
+    const allUsers = await getAllUsersToCheck();
 
     //Check if name is unique
     if (
@@ -93,7 +99,8 @@ function Login() {
       },
     };
     const newUserId = await postData(newUser);
-    handleUserValidated(newUserId);
+    const username = newUser.userData.name;
+    handleUserValidated(newUserId, username);
   }
 
   function handleSubmit(e) {
@@ -102,11 +109,13 @@ function Login() {
     if (!ifUserHaveAccount) handleSignUp();
   }
 
+  /////////////////////// LOGGGIN IN
   async function handleLogIn() {
     if (!name || !password) {
       toast.error(`Fill all the fields`);
       return;
     }
+    const allUsers = await getAllUsersToCheck();
 
     //Check if userName exists
     if (
@@ -117,6 +126,7 @@ function Login() {
       toast.error(`There is no user with this name.`);
       return;
     }
+
     //Finding the data of the user
     const existingUser = allUsers.find(
       (user) => user.userData.name.toLowerCase() === name.toLowerCase()
@@ -128,7 +138,8 @@ function Login() {
       return;
     }
     const existingUserId = existingUser.id;
-    handleUserValidated(existingUserId);
+    const username = existingUser.userData.name;
+    handleUserValidated(existingUserId, username);
   }
 
   return (

@@ -4,7 +4,7 @@ const LoginContext = createContext();
 
 const initialState = {
   //login
-  ifUserHaveAccount: false,
+  ifUserHaveAccount: true,
   name: "",
   password: "",
   savingsGoal: "",

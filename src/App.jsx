@@ -9,7 +9,6 @@ import Month from "./pages/Month";
 import { userLoader } from "./hooks/RouterLoaders/userLoader";
 import Settings from "./pages/Settings";
 import Year from "./components/yearStats/Year";
-import { getAllUsers as allUsersLoader } from "./hooks/usersDataAPI/apiFetching";
 import { userCurrenciesLoader } from "./hooks/RouterLoaders/userCurrenciesLoader";
 import { GlobalProvider } from "./contexts/GlobalContext";
 import Error from "./pages/Error";
@@ -23,7 +22,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Login />,
-        loader: allUsersLoader,
       },
       {
         element: <Dashboard />,
@@ -32,13 +30,13 @@ const router = createBrowserRouter([
             path: "users/:id/:month",
             element: <Month />,
             loader: userLoader,
-            errorElement: <Error />,
+            // errorElement: <Error />,
           },
           {
             path: "users/:id",
             element: <Year />,
             loader: userLoader,
-            errorElement: <Error />,
+            // errorElement: <Error />,
           },
         ],
       },

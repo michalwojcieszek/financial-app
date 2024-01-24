@@ -12,10 +12,12 @@ import StatsSpan from "../../ui/styledComponents/StatsSpan";
 import H3 from "../../ui/styledComponents/H3";
 import H4 from "../../ui/styledComponents/H4";
 import Paragraph from "../../ui/styledComponents/Paragraph";
+import BlinkingLight from "../../ui/styledComponents/BlinkingLight";
 //functions
-import { exchangeUserExpenses } from "../../hooks/UsersDataAPI/exchangeUserExpenses";
 import ChangingCurrencyUl from "../../ui/styledComponents/ChangingCurrencyUl";
 import { useGlobal } from "../../contexts/GlobalContext";
+import { exchangeUserExpenses } from "../../hooks/usersDataAPI/exchangeUserExpenses";
+import CurrencyOneLineFlex from "../../ui/styledComponents/CurrencyOneLineFlex";
 
 function ChangingCurrency({ currenciesRatesArray, currency, id }) {
   const navigate = useNavigate();
@@ -49,7 +51,17 @@ function ChangingCurrency({ currenciesRatesArray, currency, id }) {
         </label>
       </FormRow>
       <FormRow>
-        <H4>Live currency rates:</H4>
+        <CurrencyOneLineFlex>
+          <BlinkingLight className="fa fa-circle"></BlinkingLight>
+          <H4 style={{ margin: "0" }}>
+            <span style={{ color: "#f00" }}>
+              {" "}
+              {new Date().toLocaleDateString()} {" - "}
+              {new Date().toLocaleTimeString()}
+            </span>{" "}
+            currency rates:
+          </H4>
+        </CurrencyOneLineFlex>
         <Paragraph>
           Your current currency: <StatsSpan>{currency}</StatsSpan>
         </Paragraph>

@@ -1,22 +1,30 @@
-import { getUserDataById } from "../UsersDataAPI/apiHandlers";
+import { getUserDataById } from "../usersDataAPI/apiHandlers";
 import exchangeCurrApi from "../ExchangeCurrencyAPI/exchangeCurrApi";
 
 export async function userCurrenciesLoader({ params }) {
-  const user = await getUserDataById(params.id);
-  const userCurrency = user.userData.currency;
-  const allCurrencies = ["USD", "EUR", "GBP", "CHF", "PLN"];
-  const currenciesAvailableToExchange = allCurrencies.filter(
-    (curr) => curr !== userCurrency
-  );
+  try {
+    const user = await getUserDataById(params.id);
+    const userCurrency = user.userData.currency;
+    const allCurrencies = ["USD", "EUR", "GBP", "CHF", "PLN"];
+    const currenciesAvailableToExchange = allCurrencies.filter(
+      (curr) => curr !== userCurrency
+    );
 
-  const exchangeRatePromises = currenciesAvailableToExchange.map(
-    async (currency) => {
-      const rate = await exchangeCurrApi(userCurrency, currency);
-      return { rate, currency };
-    }
-  );
+    const exchangeRatePromises = currenciesAvailableToExchange.map(
+      async (currency) => {
+        try {
+          const rate = await exchangeCurrApi(userCurrency, currency);
+          return { rate, currency };
+        } catch (err) {
+          throw new Error("Failed currency exchange");
+        }
+      }
+    );
 
-  const currenciesRatesArray = await Promise.all(exchangeRatePromises);
+    const currenciesRatesArray = await Promise.all(exchangeRatePromises);
 
-  return { user, currenciesRatesArray };
+    return { user, currenciesRatesArray };
+  } catch {
+    throw Error("Failed currency exchange");
+  }
 }

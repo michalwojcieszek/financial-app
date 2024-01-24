@@ -51,7 +51,7 @@ function Chart({ categoryCost }) {
               Object.entries(categoryCostToChart).length <= 1 ? 0 : 3
             }
             label
-            labelLine={false}
+            labelLine={true}
             offset={5}
           >
             {categoryCostToChart.map((entry, index) => (

@@ -9,7 +9,7 @@ import Month from "./pages/Month";
 import { userLoader } from "./hooks/RouterLoaders/userLoader";
 import Settings from "./pages/Settings";
 import Year from "./components/yearStats/Year";
-import { getAllUsers as allUsersLoader } from "./hooks/UsersDataAPI/apiFetching";
+import { getAllUsers as allUsersLoader } from "./hooks/usersDataAPI/apiFetching";
 import { userCurrenciesLoader } from "./hooks/RouterLoaders/userCurrenciesLoader";
 import { GlobalProvider } from "./contexts/GlobalContext";
 import Error from "./pages/Error";

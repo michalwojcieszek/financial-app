@@ -5,7 +5,7 @@ import ButtonDeleteAccount from "../../ui/styledComponents/ButtonDeleteAccount";
 import ButtonWithEmojiDiv from "../../ui/styledComponents/ButtonWithEmojiDiv";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
-import { deleteAccount } from "../../hooks/UsersDataAPI/apiFetching";
+import { deleteAccount } from "../../hooks/usersDataAPI/apiFetching";
 import { useGlobal } from "../../contexts/GlobalContext";
 
 const StyledPopupContainerDiv = styled.div`
@@ -66,7 +66,6 @@ function SettingsPopupContainer() {
     unAuthenticate,
     isSettingsPopupOpen,
     closeSettingsPopup,
-    isLoading,
     loading,
     notLoading,
   } = useGlobal();

@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 import ButtonUnderline from "../ui/styledComponents/ButtonUnderline";
 import H2 from "../ui/styledComponents/H2";
-import { postData } from "../hooks/UsersDataAPI/apiFetching";
+import { postData } from "../hooks/usersDataAPI/apiFetching";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import userTemplate from "../hooks/userTemplate";
 import Section from "../ui/styledComponents/Section";

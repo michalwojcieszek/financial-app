@@ -21,8 +21,8 @@ const Main = styled.main`
   padding: 0 3rem;
 
   @media (max-width: 540px) {
-    /* padding: 0 0.5rem; //Adjust padding for screens under 540px width */
-    max-width: 38rem;
+    /* padding: 0 1rem; //Adjust padding for screens under 540px width */
+    /* max-width: 38rem; */
   }
 `;
 

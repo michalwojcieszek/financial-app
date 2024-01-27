@@ -21,7 +21,7 @@ const StyledOptional = styled.span`
 `;
 
 const InputCheckboxDiv = styled.div`
-  width: 20rem;
+  /* width: 15rem; */
   flex-shrink: 0;
 `;
 
@@ -39,8 +39,16 @@ const ExpenseFormRow = styled.div`
   gap: 1rem;
 `;
 
+const ExpenseFormRowCheckbox = styled.div`
+  display: flex;
+  gap: 1rem;
+  /* justify-content: space-between; */
+  align-items: center;
+`;
+
 const InputSelectDiv = styled.div`
-  width: 20rem;
+  /* width: 20rem; */
+  max-width: 20rem;
   flex-shrink: 0;
 `;
 
@@ -48,6 +56,10 @@ const ExpenseForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+`;
+
+const Label = styled.label`
+  flex-shrink: 1;
 `;
 
 function AddExpenseForm({ currency }) {
@@ -109,7 +121,7 @@ function AddExpenseForm({ currency }) {
       <H3>Adding a new expense</H3>
       <ExpenseForm onSubmit={handleSubmit}>
         <ExpenseFormRow>
-          <label>Expense category</label>
+          <Label>Expense category</Label>
           <InputSelectDiv>
             <Select
               size="medium"
@@ -140,9 +152,9 @@ function AddExpenseForm({ currency }) {
           </InputSelectDiv>
         </ExpenseFormRow>
         <ExpenseFormRow>
-          <label>
+          <Label>
             Expense in <StatsSpan>{currency}</StatsSpan>
-          </label>
+          </Label>
           <InputSelectDiv>
             <Input
               size="medium"
@@ -154,9 +166,9 @@ function AddExpenseForm({ currency }) {
           </InputSelectDiv>
         </ExpenseFormRow>
         <ExpenseFormRow>
-          <label>
+          <Label>
             Description <StyledOptional>(optional)</StyledOptional>
-          </label>
+          </Label>
           <InputSelectDiv>
             <Input
               size="medium"
@@ -167,8 +179,8 @@ function AddExpenseForm({ currency }) {
             />
           </InputSelectDiv>
         </ExpenseFormRow>
-        <ExpenseFormRow>
-          <label>Add expense to every month</label>
+        <ExpenseFormRowCheckbox>
+          <Label>Add expense to every month</Label>
           <InputCheckboxDiv>
             <InputCheckbox
               type="checkbox"
@@ -176,8 +188,7 @@ function AddExpenseForm({ currency }) {
               onChange={(e) => setIfRecurring(e.target.checked)}
             />
           </InputCheckboxDiv>
-        </ExpenseFormRow>
-
+        </ExpenseFormRowCheckbox>
         <ButtonSecondary>
           <ButtonWithEmojiDiv>
             <HiOutlineCheckCircle />

@@ -11,6 +11,9 @@ const ButtonSecondary = styled.button`
   transition: background 1s;
   letter-spacing: 1px;
   font-family: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     background: var(--gradient-hover);

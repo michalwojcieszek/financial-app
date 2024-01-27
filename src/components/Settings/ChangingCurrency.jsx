@@ -97,14 +97,12 @@ function ChangingCurrency({ currenciesRatesArray, currency, id }) {
           ""
         )}
       </FormRow>
-      <div>
-        <ButtonSecondary onClick={handleExchange}>
-          <ButtonWithEmojiDiv>
-            <HiArrowPath />
-            Change currency
-          </ButtonWithEmojiDiv>
-        </ButtonSecondary>
-      </div>
+      <ButtonSecondary onClick={handleExchange}>
+        <ButtonWithEmojiDiv>
+          <HiArrowPath />
+          Change currency
+        </ButtonWithEmojiDiv>
+      </ButtonSecondary>
     </>
   );
 }

@@ -44,14 +44,12 @@ function SetIncomeLimit({ income, savingsGoal, id }) {
           onChange={(e) => setNewLimit(e.target.value)}
         />
       </FormRow>
-      <div>
-        <ButtonSecondary onClick={handleSaveChanges}>
-          <ButtonWithEmojiDiv>
-            <HiAdjustmentsVertical />
-            Save changes
-          </ButtonWithEmojiDiv>
-        </ButtonSecondary>
-      </div>
+      <ButtonSecondary onClick={handleSaveChanges}>
+        <ButtonWithEmojiDiv>
+          <HiAdjustmentsVertical />
+          Save changes
+        </ButtonWithEmojiDiv>
+      </ButtonSecondary>
     </>
   );
 }

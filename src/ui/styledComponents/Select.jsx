@@ -5,7 +5,7 @@ const Select = styled.select`
     props.size === "large" &&
     css`
       padding: 1rem;
-      width: 50%;
+      width: 80%;
       font-size: 1.6rem;
     `}
 

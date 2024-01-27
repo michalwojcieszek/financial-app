@@ -40,7 +40,7 @@ function LimitStats({
   return (
     <FormRow>
       <H4>Limit tracking</H4>
-      {!isSavingsGoalAchieved && crossedLimitBy !== 0 && (
+      {!isSavingsGoalAchieved && crossedLimitBy > 0 && (
         <p>
           Crossed the savings goal by{" "}
           <StatsSpan color={savingsGoalColor}>

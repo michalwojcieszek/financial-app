@@ -20,7 +20,8 @@ function YearlyStats({ expenses, savingsGoal, income, currency }) {
   const totalSavings = sumIncomes - sumExpenses;
   //same variable name as in month
   const sumSaved = sumIncomes - sumExpenses;
-  const isSavingsGoalAchieved = sumSaved > savingsGoal ? true : false;
+  const isSavingsGoalAchieved = sumSaved > sumSavingsGoal ? true : false;
+  console.log(sumSaved, savingsGoal);
 
   let incomeColor;
   switch (true) {

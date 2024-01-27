@@ -5,7 +5,7 @@ const StyledProgressBarDiv = styled.div`
   overflow: hidden;
   border-radius: 5px;
   background-color: var(--color-grey-300);
-  width: 35rem;
+  width: 100%;
   height: 2.5rem;
 `;
 

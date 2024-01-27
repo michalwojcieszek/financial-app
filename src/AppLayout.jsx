@@ -15,9 +15,15 @@ const StyledLayout = styled.div`
 `;
 
 const Main = styled.main`
-  max-width: 52rem;
+  /* width: 54rem; */
+  max-width: 54rem;
   margin: auto;
   padding: 0 3rem;
+
+  @media (max-width: 540px) {
+    /* padding: 0 0.5rem; //Adjust padding for screens under 540px width */
+    max-width: 38rem;
+  }
 `;
 
 function AppLayout() {

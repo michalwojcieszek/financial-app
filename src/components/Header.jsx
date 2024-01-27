@@ -34,7 +34,6 @@ const StyledH1 = styled.h1`
   color: white;
   font-size: 2.2rem;
   letter-spacing: 0.4rem;
-  /* text-transform: uppercase; */
 `;
 
 const EmojiParagraph = styled.p`

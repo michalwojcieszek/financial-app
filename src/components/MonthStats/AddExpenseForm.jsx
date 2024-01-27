@@ -36,6 +36,7 @@ const ExpenseFormRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 `;
 
 const InputSelectDiv = styled.div`
@@ -177,14 +178,12 @@ function AddExpenseForm({ currency }) {
           </InputCheckboxDiv>
         </ExpenseFormRow>
 
-        <div>
-          <ButtonSecondary>
-            <ButtonWithEmojiDiv>
-              <HiOutlineCheckCircle />
-              <span>Add Expense</span>
-            </ButtonWithEmojiDiv>
-          </ButtonSecondary>
-        </div>
+        <ButtonSecondary>
+          <ButtonWithEmojiDiv>
+            <HiOutlineCheckCircle />
+            <span>Add Expense</span>
+          </ButtonWithEmojiDiv>
+        </ButtonSecondary>
       </ExpenseForm>
     </Section>
   );

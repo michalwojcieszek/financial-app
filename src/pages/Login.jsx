@@ -223,25 +223,23 @@ function Login() {
             ) : (
               ""
             )}
-            <div>
-              {ifUserHaveAccount ? (
-                <ButtonPrimary>
-                  <ButtonWithEmojiDiv>
-                    <HiOutlineUser />
-                    LOG IN
-                  </ButtonWithEmojiDiv>
-                </ButtonPrimary>
-              ) : (
-                // <Button onClick={handleLogIn}>LOG IN</Button>
-                <ButtonPrimary>
-                  <ButtonWithEmojiDiv>
-                    <HiOutlineUserPlus />
-                    SIGN UP
-                  </ButtonWithEmojiDiv>
-                </ButtonPrimary>
-                // <Button onClick={handleSignUp}>SIGN UP</Button>
-              )}
-            </div>
+            {ifUserHaveAccount ? (
+              <ButtonPrimary>
+                <ButtonWithEmojiDiv>
+                  <HiOutlineUser />
+                  LOG IN
+                </ButtonWithEmojiDiv>
+              </ButtonPrimary>
+            ) : (
+              // <Button onClick={handleLogIn}>LOG IN</Button>
+              <ButtonPrimary>
+                <ButtonWithEmojiDiv>
+                  <HiOutlineUserPlus />
+                  SIGN UP
+                </ButtonWithEmojiDiv>
+              </ButtonPrimary>
+              // <Button onClick={handleSignUp}>SIGN UP</Button>
+            )}
           </FormDiv>
         </>
       </form>

@@ -1,7 +1,7 @@
 import { useMonth } from "../../contexts/MonthContext";
 import H3 from "../../ui/styledComponents/H3";
 import Section from "../../ui/styledComponents/Section";
-import ExpenseItem from "./ExpenseItem";
+import ExpenseItem from "../ExpenseItem";
 import styled from "styled-components";
 
 const StyledExpensesList = styled.ul`

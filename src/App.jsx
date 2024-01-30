@@ -6,7 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import { Toaster } from "react-hot-toast";
 import PageNotFound from "./pages/PageNotFound";
 import Month from "./pages/Month";
-import { userLoader } from "./hooks/routerLoaders/userLoader";
+import { getUserLoader } from "./hooks/routerLoaders/userLoader";
 import Settings from "./pages/Settings";
 import Year from "./components/yearStats/Year";
 import { userCurrenciesLoader } from "./hooks/routerLoaders/userCurrenciesLoader";
@@ -29,12 +29,12 @@ const router = createBrowserRouter([
           {
             path: "users/:id/:month",
             element: <Month />,
-            loader: userLoader,
+            loader: getUserLoader,
           },
           {
             path: "users/:id",
             element: <Year />,
-            loader: userLoader,
+            loader: getUserLoader,
             // errorElement: <Error />,
           },
         ],

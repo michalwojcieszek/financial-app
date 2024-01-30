@@ -22,7 +22,7 @@ const Main = styled.main`
 
   @media (max-width: 540px) {
     /* padding: 0 1rem; //Adjust padding for screens under 540px width */
-    /* max-width: 38rem; */
+    max-width: 38rem;
   }
 `;
 

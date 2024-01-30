@@ -304,16 +304,6 @@
             "description": "a"
           },
           {
-            "expenseId": "2024-01-22T18:27:03.440Z",
-            "addedOn": {
-              "date": "22.01.2024",
-              "time": "19:27"
-            },
-            "category": "food",
-            "cost": "3679.16",
-            "description": "a"
-          },
-          {
             "expenseId": "2024-01-23T23:32:26.326Z",
             "addedOn": {
               "date": "24.01.2024",
@@ -804,30 +794,6 @@
         "savingsGoal": "1000",
         "income": "2000",
         "currency": "USD"
-      },
-      "expenses": {
-        "january": [],
-        "february": [],
-        "march": [],
-        "april": [],
-        "may": [],
-        "june": [],
-        "july": [],
-        "august": [],
-        "september": [],
-        "october": [],
-        "november": [],
-        "december": []
-      }
-    },
-    {
-      "id": "b064",
-      "userData": {
-        "name": "Michal",
-        "password": "1233456",
-        "savingsGoal": "1000",
-        "income": "2500",
-        "currency": "PLN"
       },
       "expenses": {
         "january": [],

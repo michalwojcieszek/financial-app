@@ -54,9 +54,9 @@ const GlobalStyles = createGlobalStyle`
 html {
   font-size: 62.5%;
 
-  @media (max-width: 540px) {
-    font-size: 60%
-  }
+  /* @media (max-width: 540px) {
+    font-size: 70%
+  } */
 }
 
 body {

@@ -1,7 +1,7 @@
 import AddExpenseForm from "../components/monthStats/AddExpenseForm";
 import MonthlyExpenses from "../components/MonthlyExpenses";
 import { useLoaderData, useParams } from "react-router-dom";
-import MonthlyStats from "../components/MonthStats/MonthlyStats";
+import MonthlyStats from "../components/monthStats/MonthlyStats";
 
 function Month() {
   const user = useLoaderData();

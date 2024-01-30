@@ -6,10 +6,10 @@ import Dashboard from "./pages/Dashboard";
 import { Toaster } from "react-hot-toast";
 import PageNotFound from "./pages/PageNotFound";
 import Month from "./pages/Month";
-import { userLoader } from "./hooks/RouterLoaders/userLoader";
+import { userLoader } from "./hooks/routerLoaders/userLoader";
 import Settings from "./pages/Settings";
-import Year from "./components/YearStats/Year";
-import { userCurrenciesLoader } from "./hooks/RouterLoaders/userCurrenciesLoader";
+import Year from "./components/yearStats/Year";
+import { userCurrenciesLoader } from "./hooks/routerLoaders/userCurrenciesLoader";
 import { GlobalProvider } from "./contexts/GlobalContext";
 import Error from "./pages/Error";
 

@@ -8,7 +8,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Month from "./pages/Month";
 import { userLoader } from "./hooks/RouterLoaders/userLoader";
 import Settings from "./pages/Settings";
-import Year from "./components/yearStats/Year";
+import Year from "./components/YearStats/Year";
 import { userCurrenciesLoader } from "./hooks/RouterLoaders/userCurrenciesLoader";
 import { GlobalProvider } from "./contexts/GlobalContext";
 import Error from "./pages/Error";
@@ -30,7 +30,6 @@ const router = createBrowserRouter([
             path: "users/:id/:month",
             element: <Month />,
             loader: userLoader,
-            // errorElement: <Error />,
           },
           {
             path: "users/:id",

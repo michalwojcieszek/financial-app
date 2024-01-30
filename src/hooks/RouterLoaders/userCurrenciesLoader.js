@@ -1,5 +1,5 @@
 import { getUserDataById } from "../usersDataAPI/apiHandlers";
-import exchangeCurrApi from "../ExchangeCurrencyAPI/exchangeCurrApi";
+import exchangeCurrApi from "../exchangeCurrencyAPI/exchangeCurrApi";
 
 export async function userCurrenciesLoader({ params }) {
   try {

@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 import PageNotFound from "./pages/PageNotFound";
 import Month from "./pages/Month";
 import Settings from "./pages/Settings";
-import { userCurrenciesLoader } from "./hooks/routerLoaders/userCurrenciesLoader";
+import { getUserCurrenciesLoader } from "./hooks/routerLoaders/userCurrenciesLoader";
 import { GlobalProvider } from "./contexts/GlobalContext";
 import Error from "./pages/Error";
 import { getUserLoader } from "./hooks/RouterLoaders/userLoader";
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "users/:id/settings",
         element: <Settings />,
-        loader: userCurrenciesLoader,
+        loader: getUserCurrenciesLoader,
         errorElement: <Error />,
       },
       {

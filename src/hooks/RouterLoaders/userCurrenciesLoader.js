@@ -1,7 +1,7 @@
 import { getUserDataById } from "../usersDataAPI/apiHandlers";
 import exchangeCurrApi from "../exchangeCurrencyAPI/exchangeCurrApi";
 
-export async function userCurrenciesLoader({ params }) {
+export async function getUserCurrenciesLoader({ params }) {
   try {
     const user = await getUserDataById(params.id);
     const userCurrency = user.userData.currency;

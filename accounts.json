@@ -168,16 +168,6 @@
       "expenses": {
         "january": [
           {
-            "expenseId": "2024-01-22T17:53:06.644Z",
-            "addedOn": {
-              "date": "22.01.2024",
-              "time": "18:53"
-            },
-            "category": "subscription",
-            "cost": "1839.58",
-            "description": "a"
-          },
-          {
             "expenseId": "2024-01-23T19:14:33.354Z",
             "addedOn": {
               "date": "23.01.2024",
@@ -186,16 +176,6 @@
             "category": "clothes",
             "cost": "1.84",
             "description": "2"
-          },
-          {
-            "expenseId": "2024-01-23T23:32:26.326Z",
-            "addedOn": {
-              "date": "24.01.2024",
-              "time": "00:32"
-            },
-            "category": "insurance",
-            "cost": "5",
-            "description": "5"
           }
         ],
         "february": [
@@ -260,36 +240,6 @@
             "category": "education",
             "cost": "919.79",
             "description": "a"
-          },
-          {
-            "expenseId": "2024-01-22T18:27:03.440Z",
-            "addedOn": {
-              "date": "22.01.2024",
-              "time": "19:27"
-            },
-            "category": "food",
-            "cost": "3679.16",
-            "description": "a"
-          },
-          {
-            "expenseId": "2024-01-23T19:14:33.354Z",
-            "addedOn": {
-              "date": "23.01.2024",
-              "time": "20:14"
-            },
-            "category": "clothes",
-            "cost": "1.84",
-            "description": "2"
-          },
-          {
-            "expenseId": "2024-01-23T23:32:26.326Z",
-            "addedOn": {
-              "date": "24.01.2024",
-              "time": "00:32"
-            },
-            "category": "insurance",
-            "cost": "5",
-            "description": "5"
           }
         ],
         "april": [
@@ -302,16 +252,6 @@
             "category": "education",
             "cost": "919.79",
             "description": "a"
-          },
-          {
-            "expenseId": "2024-01-23T23:32:26.326Z",
-            "addedOn": {
-              "date": "24.01.2024",
-              "time": "00:32"
-            },
-            "category": "insurance",
-            "cost": "5",
-            "description": "5"
           }
         ],
         "may": [
@@ -510,26 +450,6 @@
             "category": "food",
             "cost": "3679.16",
             "description": "a"
-          },
-          {
-            "expenseId": "2024-01-23T19:14:33.354Z",
-            "addedOn": {
-              "date": "23.01.2024",
-              "time": "20:14"
-            },
-            "category": "clothes",
-            "cost": "1.84",
-            "description": "2"
-          },
-          {
-            "expenseId": "2024-01-23T23:32:26.326Z",
-            "addedOn": {
-              "date": "24.01.2024",
-              "time": "00:32"
-            },
-            "category": "insurance",
-            "cost": "5",
-            "description": "5"
           }
         ],
         "september": [
@@ -686,16 +606,6 @@
             "category": "clothes",
             "cost": "1.84",
             "description": "2"
-          },
-          {
-            "expenseId": "2024-01-23T23:32:26.326Z",
-            "addedOn": {
-              "date": "24.01.2024",
-              "time": "00:32"
-            },
-            "category": "insurance",
-            "cost": "5",
-            "description": "5"
           }
         ],
         "december": [
@@ -797,6 +707,41 @@
       },
       "expenses": {
         "january": [],
+        "february": [],
+        "march": [],
+        "april": [],
+        "may": [],
+        "june": [],
+        "july": [],
+        "august": [],
+        "september": [],
+        "october": [],
+        "november": [],
+        "december": []
+      }
+    },
+    {
+      "id": "d552",
+      "userData": {
+        "name": "abcdefdgdsdads",
+        "password": "123456",
+        "savingsGoal": "5",
+        "income": "10",
+        "currency": "USD"
+      },
+      "expenses": {
+        "january": [
+          {
+            "expenseId": "2024-01-30T16:17:57.186Z",
+            "addedOn": {
+              "date": "30.01.2024",
+              "time": "17:17"
+            },
+            "category": "medicines",
+            "cost": "5",
+            "description": "5"
+          }
+        ],
         "february": [],
         "march": [],
         "april": [],

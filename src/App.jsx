@@ -10,10 +10,9 @@ import Settings from "./pages/Settings";
 import { getUserCurrenciesLoader } from "./hooks/routerLoaders/userCurrenciesLoader";
 import { GlobalProvider } from "./contexts/GlobalContext";
 import Error from "./pages/Error";
-import { getUserLoader } from "./hooks/RouterLoaders/userLoader";
+import { getUserLoader } from "./hooks/routerLoaders/userLoader";
 import Year from "./components/yearStats/Year";
 
-//---------------------------------------- MY TRY
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
